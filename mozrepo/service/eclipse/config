@@ -1,0 +1,6 @@
+# eclipse and relevant modules
+
+[apt]
+install += "eclipse"
+install += "eclipse-egit"
+

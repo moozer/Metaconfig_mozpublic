@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/config/!svn/ver/5542/projects/metaconfig/public/config/tcpwrapper/files/etc
+END
+hosts.allow
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/config/!svn/ver/5542/projects/metaconfig/public/config/tcpwrapper/files/etc/hosts.allow
+END
+hosts.deny
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/config/!svn/ver/5006/projects/metaconfig/public/config/tcpwrapper/files/etc/hosts.deny
+END

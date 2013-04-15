@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/config/!svn/ver/5629/projects/metaconfig/public/config/bind9-zone-office/files/etc/bind
+END
+db.office
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/config/!svn/ver/5047/projects/metaconfig/public/config/bind9-zone-office/files/etc/bind/db.office
+END
+db.office.forward
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/config/!svn/ver/5629/projects/metaconfig/public/config/bind9-zone-office/files/etc/bind/db.office.forward
+END
+db.office.reverse
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/config/!svn/ver/5335/projects/metaconfig/public/config/bind9-zone-office/files/etc/bind/db.office.reverse
+END

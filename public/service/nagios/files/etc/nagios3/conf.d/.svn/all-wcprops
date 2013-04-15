@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/config/!svn/ver/5447/projects/metaconfig/public/service/nagios/files/etc/nagios3/conf.d
+END
+services_nagios2.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/config/!svn/ver/5447/projects/metaconfig/public/service/nagios/files/etc/nagios3/conf.d/services_nagios2.cfg
+END
+generic-host_nagios2.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/config/!svn/ver/4952/projects/metaconfig/public/service/nagios/files/etc/nagios3/conf.d/generic-host_nagios2.cfg
+END
+hostgroups_nagios2.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/config/!svn/ver/5414/projects/metaconfig/public/service/nagios/files/etc/nagios3/conf.d/hostgroups_nagios2.cfg
+END
+commands.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/config/!svn/ver/5447/projects/metaconfig/public/service/nagios/files/etc/nagios3/conf.d/commands.cfg
+END

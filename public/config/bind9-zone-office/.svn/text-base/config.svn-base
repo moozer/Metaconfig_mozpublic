@@ -1,0 +1,23 @@
+##
+## Configuration for public/config/bind9-zone-office
+##
+
+[trigger.reload-bind9]
+files += "/etc/bind/db.office.*"
+command = ["invoke-rc.d", "bind9", "reload"]
+
+[settings]
+#zone_10_name =
+zone_10_network = "10.0.0"
+zone_10_network_reverse = "0.0.10"
+zone_10_hostmaster = "hostmaster@sikkerhed.org."
+zone_10_ns = "ns"
+zone_10_lines = []
+
+records_a = []
+records_cname = []
+
+alias = dict()
+
+[settings.public/service/bind9]
+zones_include += "office"

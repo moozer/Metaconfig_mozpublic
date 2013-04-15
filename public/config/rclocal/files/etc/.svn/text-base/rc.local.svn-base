@@ -1,0 +1,7 @@
+%#!%(shell)
+%header("##")
+#foreach line in lines
+  %(line)
+#end
+
+exit 0

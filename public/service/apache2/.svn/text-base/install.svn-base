@@ -1,0 +1,33 @@
+##
+## Configuration for service/apache2
+##
+
+[apt]
+install += ["apache2", "cronolog"]
+
+[files]
+foreach x in $settings["public/service/apache2"]["mods_disable"]
+  rm += ("/etc/apache2/mods-enabled/%s.conf" % x)
+  rm += ("/etc/apache2/mods-enabled/%s.load" % x)
+end
+
+foreach x in $settings["public/service/apache2"]["sites_disable"]
+  rm += ("/etc/apache2/sites-enabled/%s" % x)
+end
+
+foreach x in $settings["public/service/apache2"]["sites_enable"]
+  name = "/etc/apache2/sites-enabled/" + x
+  symlink += name
+  symlink[name]["target"] = "../sites-available/" + x
+end
+
+foreach x in $settings["public/service/apache2"]["mods_enable"]
+  name = "/etc/apache2/mods-enabled/" + x + ".conf"
+  symlink += name
+  symlink[name]["target"] = "../mods-available/" + x + ".conf"
+  symlink[name]["skip_dead"] = True
+
+  name = "/etc/apache2/mods-enabled/" + x + ".load"
+  symlink += name
+  symlink[name]["target"] = "../mods-available/" + x + ".load"
+end

@@ -1,0 +1,19 @@
+##
+## Configuration for public/config/motd
+##
+
+if PLATFORM_OS_NAME == "debian"
+  [trigger.reload-motd]
+  files += "/etc/motd.tail"
+  if PLATFORM_OS_VERSION > "6.0"
+    command = ["/etc/init.d/bootlogs", "start"]
+  else
+    command = ["/etc/init.d/bootmisc.sh", "start"]
+  end
+elif PLATFORM_OS_NAME == "fedora"
+  [files]
+  remap["/etc/motd.tail"] = "/etc/motd"
+end
+
+[settings]
+banner = "[34m#####[m Managed with MetaConfig | http://metaconfig.com [34m#####[m"

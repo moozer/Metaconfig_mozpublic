@@ -1,0 +1,98 @@
+%header("##")
+#if version > "2.0"
+  @version: %(version)
+#end
+
+## Options ##
+options {
+  chain_hostnames(0);
+  time_reopen(10);
+  time_reap(360);
+
+  log_fifo_size(2048);
+  create_dirs(yes);
+
+  owner(root); group(adm); perm(0640);
+  dir_owner(root); dir_group(adm); dir_perm(0755);
+
+  use_dns(yes);
+  use_fqdn(yes);
+  stats_freq(3600);
+
+  ts_format(iso);
+  frac_digits(6);
+};
+
+## Sources ##
+source s_local {
+        internal();
+        unix-stream("/dev/log" keep_timestamp(no));
+#if version > "2.0"
+          file("/proc/kmsg" program_override("kernel"));
+#else
+          file("/proc/kmsg" log_prefix("kernel: "));
+#end
+};
+
+#if network_server
+  source s_network {
+          tcp(max-connections(42) keep-alive(yes));
+  };
+#end
+
+## Destinations ##
+#if network_server
+  destination df_server_logs       {
+    file("/data/log/virtual/$FULLHOST_FROM/$FACILITY/log-$YEAR-$MONTH-$DAY");
+    file("/data/log/virtual/$FULLHOST_FROM/$FACILITY/current");
+    file("/data/log/combined/$FACILITY/current");
+  };
+  destination df_server_everything {
+    file("/data/log/virtual/$FULLHOST_FROM/everything/log-$YEAR-$MONTH-$DAY");
+    file("/data/log/virtual/$FULLHOST_FROM/everything/current");
+    file("/data/log/combined/everything/current");
+  };
+#end
+#if network_client
+  destination dn_network    { tcp("%(network_destination)" template("$ISODATE $FULLHOST $MESSAGE\n") template_escape(no)); };
+#end
+destination du_all        { usertty("*"); };
+destination df_critical   { file("/var/log/critical/log-$YEAR-$MONTH-$DAY");   file("/var/log/critical/current");   };
+destination df_facility   { file("/var/log/$FACILITY/log-$YEAR-$MONTH-$DAY");  file("/var/log/$FACILITY/current");  };
+destination df_everything { file("/var/log/everything/log-$YEAR-$MONTH-$DAY"); file("/var/log/everything/current"); };
+destination df_mail       { file("/var/log/mailstats/log-$YEAR-$MONTH-$DAY.log"  template("$DATE $HOST $PROGRAM[$PID]: $MESSAGE\n") frac_digits(0) ts_format(bsd)); };
+#if logwatchers
+  destination dp_logwatch   {
+  #foreach lw in logwatchers
+      program("%(lw)");
+  #end
+  };
+#end
+
+## Filters ##
+filter f_critical         { level(crit,alert,emerg); };
+filter f_emerg            { level(emerg); };
+filter f_mail             { facility(mail); };
+
+## Logs ##
+#if network_server
+  log                       { source(s_network);                     destination(df_server_logs);       };
+  log                       { source(s_network);                     destination(df_server_everything); };
+#end
+#if network_client
+  log                       { source(s_local);                       destination(dn_network);           };
+#end
+#if logwatchers
+  #if network_server
+    log                       { source(s_network);                     destination(dp_logwatch);          };
+  #else
+    log                       { source(s_local);                       destination(dp_logwatch);          };
+  #end
+#end
+log                       { source(s_local);                       destination(df_everything);        };
+log                       { source(s_local);                       destination(df_facility);          };
+log                       { source(s_local); filter(f_critical);   destination(df_critical);          };
+log                       { source(s_local); filter(f_emerg);      destination(du_all);               };
+#if mailstats
+  log                       { source(s_local); filter(f_mail);       destination(df_mail);              };
+#end

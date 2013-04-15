@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
+"DisableSR"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\sr]
+"Start"=dword:00000004
+
+"ImagePath"=hex(2):5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,\
+  74,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,44,00,52,\
+  00,49,00,56,00,45,00,52,00,53,00,5c,00,73,00,72,00,2e,00,73,00,79,00,73,00,\
+  00,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\sr\Parameters]
+"FirstRun"=dword:00000001
+

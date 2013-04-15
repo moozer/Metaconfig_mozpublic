@@ -1,0 +1,6 @@
+%#!/bin/sh
+%header("##")
+#method cmd(patterns, ipatterns)
+  find $* -xdev '(' -name '%("' -or -name '".join(patterns))' -or -iname '%("' -or -iname '".join(ipatterns))' ')' ##
+#end 
+%cmd(patterns, ipatterns) 

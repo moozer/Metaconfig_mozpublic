@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/config/!svn/ver/4847/projects/metaconfig/public/service/openvpn/examples
+END
+client-tunnel.conf
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/config/!svn/ver/4847/projects/metaconfig/public/service/openvpn/examples/client-tunnel.conf
+END
+client-int.conf
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/config/!svn/ver/4847/projects/metaconfig/public/service/openvpn/examples/client-int.conf
+END
+client-ext.conf
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/config/!svn/ver/4847/projects/metaconfig/public/service/openvpn/examples/client-ext.conf
+END

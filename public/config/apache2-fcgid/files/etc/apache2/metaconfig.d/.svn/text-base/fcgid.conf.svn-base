@@ -1,0 +1,8 @@
+<IfModule mod_fcgid.c>
+    #foreach key in config
+      Fcgid%(key) %(config[key])
+    #end
+    #if extensions
+      AddHandler fcgid-script %(" ".join(extensions))
+    #end
+</IfModule>

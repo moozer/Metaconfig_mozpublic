@@ -1,0 +1,30 @@
+##
+## Configuration for public/config/john
+##
+[settings]
+## Wordlist file name, to be used in batch mode
+wordlist = "/usr/share/john/password.lst"
+## Use idle cycles only
+idle = "Y"
+## Crash recovery file saving delay in seconds
+save = "300"
+## Beep when a password is found (who needs this anyway?)
+beep = "N"
+
+## Incremental modes
+incall_minlen = "0"
+incall_maxlen = "8"
+incall_charcount = "95"
+incalpha_minlen = "1"
+incalpha_maxlen = "8"
+incalpha_charcount = "26"
+incdigits_minlen = "1"
+incdigits_maxlen = "8"
+incdigits_charcount = "10"
+incalnum_minlen = "1"
+incalnum_maxlen = "8"
+incalnum_charcount = "36"
+inclanman_minlen = "0"
+inclanman_maxlen = "7"
+inclanman_charcount = "69"
+

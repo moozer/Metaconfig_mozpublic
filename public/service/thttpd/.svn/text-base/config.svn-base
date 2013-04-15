@@ -1,0 +1,21 @@
+##
+## Configuration for public/service/thttpd
+##
+
+[apt]
+install += "thttpd"
+
+[trigger.restart-thttpd]
+files += "/etc/thttpd/thttpd.conf"
+command = ["invoke-rc.d", "thttpd", "restart"]
+
+[settings]
+exclude_svn = True
+user        = "www-data"
+logfile     = "/var/log/thttpd.log"
+webroot     = "/var/www"
+logfile     = ""
+port        = "80"
+chroot      = True
+vhost       = True
+charset     = "utf-8"

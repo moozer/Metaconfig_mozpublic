@@ -1,0 +1,21 @@
+##
+## Configuration for public/config/locale
+##
+
+[apt]
+install += "locales"
+
+[trigger.locale-gen]
+files += "/etc/locale.gen"
+command = ["locale-gen"]
+
+[settings]
+locales = []
+locales += "en_DK.UTF-8 UTF-8"
+default_locale = "en_DK.UTF-8"
+default_language = "en_DK:en"
+
+## Other common used locales
+#locales += "da_DK.UTF-8 UTF-8"
+#locales += "da_DK ISO-8859-1"
+#locales += "da_DK.ISO-8859-15 ISO-8859-15"

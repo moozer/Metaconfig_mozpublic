@@ -1,0 +1,115 @@
+##
+## Configuration for public/service/samba
+##
+
+modify "public/config/firewall"
+
+[apt]
+install += "samba"
+
+[files]
+mkdir += "/data/samba/share"
+mkdir += "/data/samba/backup"
+mkdir += "/etc/skel/.windows"
+mkdir += "/etc/skel/.windows/documents"
+mkdir += "/etc/skel/.windows/desktop"
+mkdir += "/etc/skel/.windows/email"
+mkdir += "/etc/skel/.windows/roaming"
+
+owner["/data/samba/share"] = "samba-share:samba-share"
+owner["/data/samba/backup"] = "samba-backup:samba-backup"
+
+[settings.public/config/firewall]
+tcp_ports += [139, 445]
+
+[settings]
+#samba_domain    =
+samba_interfaces = "*"
+samba_loglevel   = "1"
+logon_drives     = []
+logon_drives     += "B|\\\\fs0\\backup"
+logon_drives     += "H|\\\\fs0\\profile"
+logon_drives     += "S|\\\\fs0\\share"
+
+regfiles_laptop  = []
+regfiles_domain  = []
+regfiles_user  = []
+
+# Folder mappings (desktop, documents, favorites)
+regfiles_domain += "user-shell-folders.reg"
+regfiles_domain += "shell-folders.reg"
+
+# Network drive names
+regfiles_user += "shell-folder-names.reg"
+
+# Regedit settings
+regfiles_user += "regedit-bookmark-hkcu-windows.reg"
+regfiles_user += "regedit-bookmark-hklm-windows.reg"
+
+# Windows Explorer settings
+regfiles_user += "enable-search-for-hidden-files.reg"
+regfiles_user += "enable-viewing-of-barricaded-folders.reg"
+regfiles_user += "enable-classic-view-controlpanel.reg"
+regfiles_user += "show-hidden-files.reg"
+regfiles_user += "show-file-extensions.reg"
+regfiles_user += "show-operating-system-files.reg"
+regfiles_user += "window-effects-and-alt-underline.reg"
+
+# Windows settings
+regfiles_user += "disable-desktop-cleanup-wizard.reg"
+
+# Internet Explorer settings
+regfiles_user += "internet-explorer-google-search.reg"
+regfiles_user += "internet-explorer-disable-autosearch.reg"
+regfiles_user += "internet-explorer-disable-smooth-scrolling.reg"
+regfiles_user += "internet-explorer-disable-friendly-http-errors.reg"
+
+shares = dict()
+
+shares["sikkerhedorg"] = dict(
+    comment     = "Sikkerhed.org",
+    path        = "/data/samba/sikkerhedorg",
+    browseable  = "yes",
+    read_only   = "yes",
+    public      = "yes",
+    write_list  = "samba-admin",
+    create_mask = "0644")
+
+shares["share"] = dict(
+    comment = "Shared files",
+    path = "/data/samba/share",
+    public = "no",
+    writeable = "yes",
+    force_user = "samba-share",
+    force_group = "samba-share",
+    create_mask = "0644",
+    directory_mask = "0755")
+
+shares["backup"] = dict(
+    comment = "Backup files",
+    path = "/data/samba/backup",
+    public = "no",
+    writeable = "yes",
+    force_user = "samba-backup",
+    force_group = "samba-backup",
+    create_mask = "0644",
+    directory_mask = "0755")
+
+[sambauser]
+[unixuser]
+
+[root]
+foreach x in range(1, 20)
+  name = "pc" + str(x) + "$"
+  unixuser[name] = unixuser(name)
+  unixuser[name]["uid"]   = 11000 + x
+  unixuser[name]["gid"]   = 516
+  unixuser[name]["gecos"] = "Samba machine account for pc" + str(x)
+  unixuser[name]["home"]  = "/var/empty"
+  unixuser[name]["shell"] = "/bin/false"
+  unixuser[name]["groups_include"] = []
+  unixuser[name]["groups_exclude"] = []
+
+  sambauser[name] = sambauser(name)
+  sambauser[name]["machine"] = True
+end

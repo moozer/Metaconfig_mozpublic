@@ -1,0 +1,42 @@
+%header("##")
+ssl_cert_file = %(ssl_cert)
+ssl_key_file = %(ssl_key)
+
+mail_location = maildir:/data/mail/virtual/%%d/%%n
+mmap_disable = %(mmap_disable)
+mail_privileged_group = mail
+verbose_proctitle = yes
+shutdown_clients = no
+auth_verbose = yes
+###if "imap" in protocols
+##  disable_plaintext_auth = no
+###end
+
+first_valid_uid = 8
+last_valid_uid = 8
+first_valid_gid = 8
+last_valid_gid = 8
+
+protocols = %(" ".join(protocols))
+
+protocol imap {
+  ssl_listen = *
+}
+
+protocol pop3 {
+  pop3_uidl_format = %%08Xu%%08Xv
+}
+
+auth default {
+  mechanisms = plain
+
+  passdb sql {
+    args = /etc/dovecot/dovecot-pgsql.conf
+  }
+
+  userdb sql {
+    args = /etc/dovecot/dovecot-pgsql.conf
+  }
+
+  user = root
+}

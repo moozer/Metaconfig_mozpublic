@@ -1,0 +1,18 @@
+%header("##")
+## Options
+logfacility     local7
+keepalive       200ms
+warntime        500ms
+deadtime        4000ms
+bcast           %(" ".join(bcast))
+auto_failback   off
+
+## Nodes
+#foreach node in nodes
+  node    %(node)
+#end
+
+#if ping_group
+  respawn         hacluster /usr/lib/heartbeat/ipfail
+  ping_group      net0 %(" ".join(ping_group))
+#end

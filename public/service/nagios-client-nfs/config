@@ -1,0 +1,9 @@
+##
+## Configuration for public/service/nagios-client-nfs
+##
+import "public/service/nagios-client"
+
+[settings]
+mounts = []
+
+

@@ -1,0 +1,76 @@
+%header("##")
+*** Targets ***
+
+#method f_section(name, menu="", title="", host="", probe="", urlformat="", subsections=[], level=0)
+  #if name
+    #foreach x in range(level)
+      +##
+    #end
+     %(name)
+  #end
+  #if menu
+    menu = %(menu)
+  #end
+  #if title
+    title = %(title)
+  #end
+  #if host
+    host = %(host)
+  #end
+  #if probe
+    probe = %(probe)
+  #end
+  #if urlformat
+    %(urlformat)
+  #end
+  #foreach subsection in subsections
+    #if subsection
+      %f_section(subsection, **subsections[subsection])
+    #end
+  #end
+#end
+
+#method f_region(name, menu, title)
+  + %(name)
+  menu = %(menu)
+  title = %(title)
+#end
+
+#method f_target(name, menu, title, host, level=0)
+  ++ %(name)
+  menu = %(menu)
+  title = %(title)
+  host = %(host)
+#end
+
+probe = FPing
+
+## You have to edit and uncomment all what you want below this.
+## Please, refer to smokeping_config man page for more info
+## The given adresses aren't real to avoid DoS.
+
+menu = Top
+title = Network Latency Grapher
+remark = %(remark)
+
+###foreach r in region
+##  f_region(**region[r])
+###end
++ Local
+
+menu = Local
+title = Local Network
+
+###foreach t in target
+##  %f_target(name = t, **target[t])##
+##
+###end
+##++ LocalMachine
+##
+##menu = Local Machine
+##title = This host
+##host = localhost
+
+#foreach s in section
+  %f_section(s, **section[s])
+#end

@@ -1,0 +1,2 @@
+%header("##")
+20 4    * * *   root    /usr/sbin/tmpreaper --mtime 30d %(quarantinedir)

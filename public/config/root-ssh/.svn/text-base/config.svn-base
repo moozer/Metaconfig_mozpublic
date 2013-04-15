@@ -1,0 +1,9 @@
+##
+## Configuration for public/config/root-ssh
+##
+
+[apt]
+install += "openssh-server"
+
+[settings]
+keys = []

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/config/!svn/ver/5696/projects/metaconfig/public/service/ssh/files/etc/ssh
+END
+ssh_config
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/config/!svn/ver/4883/projects/metaconfig/public/service/ssh/files/etc/ssh/ssh_config
+END
+sshd_config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/config/!svn/ver/5696/projects/metaconfig/public/service/ssh/files/etc/ssh/sshd_config
+END

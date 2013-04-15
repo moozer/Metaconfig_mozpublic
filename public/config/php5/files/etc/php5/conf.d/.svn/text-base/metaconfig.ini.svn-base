@@ -1,0 +1,4 @@
+%header(";;")
+#foreach key in values
+  %(key) = %(values[key])
+#end

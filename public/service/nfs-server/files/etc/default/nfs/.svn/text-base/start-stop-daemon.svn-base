@@ -1,0 +1,12 @@
+%#!/bin/sh
+%header("##")
+
+REALSTARTSTOP=/sbin/start-stop-daemon
+
+if [[ $1 == "--stop" && $5 == "nfsd" ]]; then
+  $REALSTARTSTOP $*
+  sleep 5
+  exec $REALSTARTSTOP --stop --oknodo --quiet --name nfsd --user 0 --signal 9
+else
+  exec $REALSTARTSTOP $*
+fi

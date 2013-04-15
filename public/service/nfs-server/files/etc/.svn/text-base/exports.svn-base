@@ -1,0 +1,11 @@
+#method fs(src, dst, mode="ro,async", opts="no_root_squash,subtree_check")
+  #if src
+    #foreach d in dst
+      %(src)      %(d)(%(mode),%(opts))
+    #end
+  #end
+#end
+%header("##")
+#foreach x in share
+  %fs(**share[x])##
+#end

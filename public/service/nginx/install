@@ -1,0 +1,17 @@
+##
+## Configuration for service/nginx
+##
+
+[apt]
+install += ["nginx"]
+
+[files]
+foreach x in $settings["public/service/nginx"]["sites_disable"]
+  rm += ("/etc/nginx/sites-enabled/%s" % x)
+end
+
+foreach x in $settings["public/service/nginx"]["sites_enable"]
+  name = "/etc/nginx/sites-enabled/" + x
+  symlink += name
+  symlink[name]["target"] = "../sites-available/" + x
+end

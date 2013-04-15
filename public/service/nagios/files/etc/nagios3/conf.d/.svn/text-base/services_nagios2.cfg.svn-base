@@ -1,0 +1,23 @@
+%header("##")
+
+#method hg_list(hgs)
+  #hg_names = [] ##
+  #foreach hg in hgs
+    #if (s in groups) and groups[s]["members"]
+     #hg_names.append(s) ##
+    #end
+  #end
+  #if hg_names
+    hostgroup_name                  %(",".join(hg_names))##
+  #end
+#end
+
+#foreach s in services
+  define service {
+    %hg_list(services[s].get("groups", [s]))
+    service_description             %(services[s]["desc"])
+    check_command                   %(services[s]["check"])
+    use                             %(services[s].get("use", "generic-service"))
+    notification_interval           %(services[s].get("notification_interval", "0"))
+  }
+#end

@@ -1,0 +1,15 @@
+##
+## Configuration for public/service/mailman
+##
+
+modify "public/service/postfix"
+
+[apt]
+install += "mailman"
+
+[trigger.reload-mailman]
+files += "/etc/mailman/mm_cfg.py"
+command = ["invoke-rc.d", "mailman", "reload"]
+
+[settings.public/service/postfix]
+mydestination -= "$myhostname"

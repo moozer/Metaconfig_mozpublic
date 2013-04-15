@@ -1,0 +1,20 @@
+%#!/bin/bash
+## Create the block table
+iptables -N block 2> /dev/null
+
+## Be strict about traffic for gid torrents
+iptables -I OUTPUT  -m owner --gid-owner torrents -j block
+
+## If classified as rejected, reject
+iptables -A block -m mark --mark 10 -j REJECT
+## If classified as accepted, accept
+iptables -A block -m mark --mark 20 -j ACCEPT
+## Accept local traffic
+iptables -A block --dest 10.0.0.0/24 -j ACCEPT
+iptables -A block --dest 127.0.0.0/8 -j ACCEPT
+## Whitelisted destinations
+#foreach dest in whitelist_dest
+  iptables -A block --dest %(dest) -j ACCEPT
+#end
+## Classify all other traffic
+iptables -A block -j NFQUEUE --queue-num 92

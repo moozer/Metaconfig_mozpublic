@@ -1,0 +1,11 @@
+##
+## Configuration for public/config/inittab
+##
+
+[trigger.reload-inittab]
+files += "/etc/inittab"
+command = ["init", "q"]
+
+[settings]
+serial_consoles = []
+tty_consoles = 1

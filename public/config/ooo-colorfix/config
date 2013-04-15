@@ -1,0 +1,8 @@
+##
+## Configuration for public/config/ooo-colorfix
+##
+
+if PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "11"
+  [files]
+  remap["/etc/openoffice/soffice.sh"] = "/etc/libreoffice/soffice.sh"
+end

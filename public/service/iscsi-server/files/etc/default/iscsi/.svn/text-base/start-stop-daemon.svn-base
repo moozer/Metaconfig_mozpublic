@@ -1,0 +1,14 @@
+%#!/bin/bash
+%header("##")
+
+REALSTARTSTOP=/sbin/start-stop-daemon
+
+#if bind_address
+  if [[ $1 == "--start" ]]; then
+    exec $REALSTARTSTOP $* -- --address=%(bind_address)
+  else
+    exec $REALSTARTSTOP $*
+  fi
+#else
+  exec $REALSTARTSTOP $*
+#end

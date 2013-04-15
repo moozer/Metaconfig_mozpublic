@@ -1,0 +1,18 @@
+%header("##")
+name pptpd
+domain %(pptp_domain)
+ms-dns %(pptp_dns)
+
+refuse-pap
+refuse-chap
+refuse-mschap
+require-mschap-v2
+require-mppe-128
+
+proxyarp
+nodefaultroute
+
+lock
+nobsdcomp 
+
+%# debug

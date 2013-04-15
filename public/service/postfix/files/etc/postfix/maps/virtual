@@ -1,0 +1,5 @@
+%header("##")
+#foreach v in virtual_aliases
+  %(v.split("|")[0])    %(v.split("|")[1])
+#end
+

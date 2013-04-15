@@ -1,0 +1,52 @@
+##
+## Configuration for public/service/smokeping
+##
+
+[files]
+
+[settings]
+# General
+owner       = "Example Company"
+contact     = "support@example.org"
+cgiurl      = "http://localhost/cgi-bin/smokeping.cgi"
+mailhost    = "localhost"
+## specify this to get syslog logging
+syslogfacility   = "local0"
+concurrentprobes = "no"
+
+## pathnames
+path_sendmail   = "/usr/sbin/sendmail"
+path_imgcache   = "/var/cache/smokeping/images"
+path_imgurl     = "../smokeping/images"
+path_datadir    = "/var/lib/smokeping"
+path_dyndir     = "/var/lib/smokeping/__cgi"
+path_piddir     = "/var/run/smokeping"
+path_smokemail  = "/etc/smokeping/smokemail"
+path_tmail      = "/etc/smokeping/tmail"
+path_precreateperms = "2775"
+
+remark = "Welcome to the SmokePing"
+
+# Alerts
+alert_to    = "root@localhost"
+alert_from  = "root@localhost"
+
+# Database
+db_step     = "300"
+db_pings    = "20"
+
+# Targets
+region = dict()
+region["local"] = dict(name="Local", menu="Local", title="Local Network")
+target = dict()
+target["LocalMachine"]  = dict(level=2, menu="Local Machine", title="This host", host="localhost")
+section = dict()
+
+[apt]
+install += "smokeping"
+
+[trigger.restart-smokeping]
+files += "/etc/smokeping/metaconfig.d/*"
+files += "/etc/smokeping/*"
+command = ["invoke-rc.d", "smokeping", "restart"]
+

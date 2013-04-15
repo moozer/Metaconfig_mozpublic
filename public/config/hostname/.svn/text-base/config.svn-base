@@ -1,0 +1,17 @@
+##
+## Configuration for public/config/hostname
+##
+
+if not PLATFORM_OS_YUM_BASED
+  [files]
+  block += "/etc/sysconfig"
+  block += "/etc/sysconfig/network"
+end
+
+if not PLATFORM_OS_APT_BASED
+  [files]
+  block += "/etc/hostname"
+end
+
+[settings]
+#hostname = 

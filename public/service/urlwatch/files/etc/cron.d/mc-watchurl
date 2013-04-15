@@ -1,0 +1,7 @@
+%header("##")
+## Remember to escape % in crontab: http://www.hcidata.info/crontab.htm
+#foreach x in checks
+  #if checks[x]["enabled"]
+    %(checks[x]["minute"]) %(checks[x]["hour"]) %(checks[x]["day"]) %(checks[x]["month"]) %(checks[x]["weekday"]) %(checks[x]["user"]) /usr/local/bin/urlwatch '%(checks[x]["url"].replace("%", "\\%"))' '%(checks[x]["sum"])'  '%(checks[x]["pattern"])' '%(checks[x]["rcpt"])' '%(checks[x]["subject"])'
+  #end
+#end

@@ -1,0 +1,182 @@
+##
+## Configuration for public/config/standard-users
+##
+
+[unixuser.www-data]
+groups_include += "nagios"
+
+[unixgroup.postgres]
+gid = 500
+[unixgroup.mysql]
+gid = 501
+[unixgroup.clamav]
+gid = 502
+[unixgroup.amavis]
+gid = 503
+[unixgroup.bind]
+gid = 504
+# gid 505 unallocated
+[unixgroup.ntp]
+gid = 506
+# gid 507 unallocated
+[unixgroup.postfix]
+gid = 508
+[unixgroup.dovecot]
+gid = 509
+[unixgroup.haclient]
+gid = 510
+[unixgroup.software]
+gid = 511
+[unixgroup.sogo]
+gid = 512
+[unixgroup.samba-share]
+gid = 513
+[unixgroup.samba-backup]
+gid = 514
+[unixgroup.samba-users]
+gid = 515
+[unixgroup.samba-machines]
+gid = 516
+# gid 517 unallocated
+# gid 518 unallocated
+[unixgroup.ssl-cert]
+gid = 519
+[unixgroup.nagios]
+gid = 520
+
+[unixuser.postgres]
+uid = 500
+gid = 500
+home = "/data/postgresql"
+shell = "/bin/zsh"
+gecos = "PostgreSQL user"
+groups_include += "ssl-cert"
+
+[unixuser.mysql]
+uid = 501
+gid = 501
+home = "/data/mysql"
+shell = "/bin/zsh"
+gecos = "MySQL user"
+
+[unixuser.clamav]
+uid = 502
+gid = 502
+home = "/var/lib/clamav"
+shell = "/bin/false"
+gecos = "ClamAV user"
+groups_include += "amavis"
+
+[unixuser.amavis]
+uid = 503
+gid = 503
+home = "/data/amavis"
+shell = "/bin/zsh"
+gecos = "AmavisD user"
+
+[unixuser.bind]
+uid = 504
+gid = 504
+home = "/var/cache/bind"
+shell = "/bin/false"
+gecos = "Bind user"
+
+[unixuser.statd]
+uid = 505
+gid = 65534
+home = "/var/lib/nfs"
+gecos = "statd user"
+shell = "/bin/false"
+
+[unixuser.ntp]
+uid = 506
+gid = 506
+gecos = "ntp user"
+home = "/var/lib/ntp"
+shell = "/bin/false"
+
+[unixuser.sshd]
+uid = 507
+gid = 65534
+gecos = "sshd user"
+home = "/var/run/sshd"
+shell = "/usr/sbin/nologin"
+
+[unixuser.postfix]
+uid = 508
+gid = 508
+gecos = "postfix user"
+home = "/var/spool/postfix"
+shell = "/bin/false"
+
+[unixuser.dovecot]
+uid = 509
+gid = 509
+gecos = "dovecot user"
+home = "/usr/lib/dovecot"
+shell = "/bin/false"
+
+[unixuser.hacluster]
+uid = 510
+gid = 510
+gecos = "Heartbeat System Account,,,"
+home = "/usr/lib/heartbeat"
+shell = "/bin/false"
+
+[unixuser.software]
+uid = 511
+gid = 511
+gecos = "Software Builder Account,,,"
+home = "/home/software"
+shell = "/bin/zsh"
+
+[files]
+owner["/home/software/**"] = "software:software"
+
+[unixuser.sogo]
+uid = 512
+gid = 512
+gecos = "SOGo system account,,,"
+home = "/data/sogo"
+shell = "/bin/zsh"
+
+[unixuser.samba-share]
+uid = 513
+gid = 513
+gecos = "Samba shared data account,,,"
+home = "/data/samba/share"
+shell = "/bin/false"
+
+[unixuser.samba-backup]
+uid = 514
+gid = 514
+gecos = "Samba backup data account,,,"
+home = "/data/samba/backup"
+shell = "/bin/false"
+
+# uid 515 unallocated
+
+# uid 516 unallocated
+
+[unixuser.samba-admin]
+uid = 517
+gid = 515
+gecos = "Samba administrator account,,,"
+home = "/data/samba"
+shell = "/bin/false"
+
+[unixuser.fetchmail]
+uid = 518
+gid = 65534
+gecos = "Fetchmail account,,,"
+home = "/data/fetchmail"
+shell = "/bin/false"
+
+# uid 519 unallocated
+
+[unixuser.nagios]
+uid = 520
+gid = 520
+gecos = "Nagios monitoring account,,,"
+home = "/var/run/nagios3"
+shell = "/bin/false"

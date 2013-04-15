@@ -1,0 +1,49 @@
+$TTL   1D
+@   IN SOA %(zone_10_ns).%(zone_10_name). %(zone_10_hostmaster.replace("@", ".")) (
+					2012040201 ; serial number
+					60000      ; refresh (1 day)
+					3600       ; retry (1 hour)
+					2600000    ; expire (1 month)
+					60000      ; minimum (1 day)
+)
+
+
+		IN	NS	%(zone_10_ns).%(zone_10_name).
+
+#method ptr(idx, offset, group)
+  #define num idx + offset
+  #define name group + str(idx)
+  #if name in alias
+    %(num)	IN	PTR	%(alias[name][0]).%(zone_10_name).
+  #else
+    %(num)	IN	PTR	%(name).%(zone_10_name).
+  #end
+#end
+
+#foreach x in range(1, 20)
+  %ptr(x, 0, "pc")##
+#end
+
+#foreach x in range(10)
+  %ptr(x, 20, "printer")##
+#end
+
+#foreach x in range(10)
+  %ptr(x, 30, "scanner")##
+#end
+
+#foreach x in range(10)
+  %ptr(x, 40, "device")##
+#end
+
+#foreach x in range(30)
+  %ptr(x, 50, "server")##
+#end
+
+$GENERATE 100-200 $	IN	PTR	dhcp$.%(zone_10_name).
+
+#foreach x in range(4)
+  %ptr(x, 250, "switch")##
+#end
+
+254		IN	PTR	fw0.%(zone_10_name).

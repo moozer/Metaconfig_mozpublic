@@ -1,0 +1,4 @@
+%header("##")
+#foreach profile in zsh_profiles
+  soz-add-profile %(profile)
+#end

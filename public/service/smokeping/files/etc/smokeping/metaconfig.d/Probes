@@ -1,0 +1,12 @@
+%header("##")
+*** Probes ***
+
++ FPing
+binary = /usr/bin/fping
+
++ Curl
+binary = /usr/bin/curl
+##step = 60
+urlformat = http://%%host/
+
+

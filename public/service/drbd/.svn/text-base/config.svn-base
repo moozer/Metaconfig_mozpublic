@@ -1,0 +1,43 @@
+##
+## Configuration for public/service/drbd
+##
+
+[apt]
+install += "drbd8-utils"
+
+[settings]
+syncer_rate = "5M"
+al_extents  = 127
+
+r0_name = ""
+r0_host0_name = ""
+r0_host0_address = ""
+r0_host0_disk = ""
+r0_host0_device = "/dev/drbd0"
+r0_host0_meta_disk = "internal"
+r0_host0_meta_index = ""
+
+r0_host1_name = ""
+r0_host1_address = ""
+r0_host1_disk = ""
+r0_host1_device = "/dev/drbd0"
+r0_host1_meta_disk = "internal"
+r0_host1_meta_index = ""
+
+r1_name = ""
+r1_host0_name = ""
+r1_host0_address = ""
+r1_host0_disk = ""
+r1_host0_device = "/dev/drbd1"
+r1_host0_meta_disk = "internal"
+r1_host0_meta_index = ""
+
+r1_host1_name = ""
+r1_host1_address = ""
+r1_host1_disk = ""
+r1_host1_device = "/dev/drbd1"
+r1_host1_meta_disk = "internal"
+r1_host1_meta_index = ""
+
+[files]
+permission["/etc/default/drbdadm-command"] = "755"

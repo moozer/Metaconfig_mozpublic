@@ -1,0 +1,15 @@
+%header("##")
+body     JOB_SPAM  /totaljoblists.net|europe-cv.net|europe-hire.net|europe-joblist.net|totaljob-eu.com/
+describe JOB_SPAM  Job offer spam
+score    JOB_SPAM  4
+
+body     SKANDINEWS_SPAM  /skandinews.es|mailer1.mailinglisteurope.com/
+describe SKANDINEWS_SPAM  Danish spam
+score    SKANDINEWS_SPAM  4
+
+header   NETS_SPAM  From =~ /Nordea Bank Danmark/
+describe NETS_SPAM  Nets spam
+score    NETS_SPAM  4
+
+## This gave some false positives, reduce score
+score    FRT_SOMA         1

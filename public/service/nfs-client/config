@@ -1,0 +1,51 @@
+##
+## Configuration for public/service/nfs-client
+##
+import "public/config/modprobe"
+import "public/config/tcpwrapper"
+
+[apt]
+install += ["nfs-common"]
+if PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION == "11.10" or PLATFORM_OS_VERSION >= "12")
+  install += "rpcbind"
+else
+  install += "portmap"
+end
+
+# On Debian, the nfs-common service must be restarted when config files are changed
+# On Ubuntu, nfs-common has been split into individual services:
+# nfs-common: /etc/init.d/statd-mounting
+# nfs-common: /etc/init.d/statd
+# nfs-common: /etc/init.d/gssd
+# nfs-common: /etc/init.d/idmapd 
+
+if PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "12"
+  [trigger.restart-nfs-common-statd-mounting]
+  files += "/etc/default/nfs-common"
+  command = ["service", "statd-mounting", "restart"]
+  [trigger.restart-nfs-common-statd]
+  files += "/etc/default/nfs-common"
+  command = ["service", "statd", "restart"]
+  [trigger.restart-nfs-common-gssd]
+  files += "/etc/default/nfs-common"
+  command = ["service", "gssd", "restart"]
+  [trigger.restart-nfs-common-idmapd]
+  files += "/etc/default/nfs-common"
+  command = ["service", "idmapd", "restart"]
+else
+  [trigger.restart-nfs-common]
+  files += "/etc/default/nfs-common"
+  command = ["invoke-rc.d", "nfs-common", "restart"]
+end
+
+[files]
+rm += "/etc/modprobe.d/lockd"
+
+[settings]
+statd_hostname = ""
+
+[settings.public/config/modprobe]
+options += "lockd nlm_udpport=4003 nlm_tcpport=4003"
+
+[settings.public/config/tcpwrapper]
+allow_hosts_nfs += "127.0.0.1/8"

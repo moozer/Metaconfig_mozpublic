@@ -1,0 +1,6 @@
+##
+## Configuration for public/config/networkmanager-fqdn-fix
+##
+
+[files]
+permission["/etc/NetworkManager/dispatcher.d/*"] = "0755"

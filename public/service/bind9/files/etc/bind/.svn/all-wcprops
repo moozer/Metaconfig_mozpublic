@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/config/!svn/ver/5156/projects/metaconfig/public/service/bind9/files/etc/bind
+END
+db.127
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/config/!svn/ver/4869/projects/metaconfig/public/service/bind9/files/etc/bind/db.127
+END
+db.local
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/config/!svn/ver/4869/projects/metaconfig/public/service/bind9/files/etc/bind/db.local
+END
+db.empty
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/config/!svn/ver/4869/projects/metaconfig/public/service/bind9/files/etc/bind/db.empty
+END
+db.root
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/config/!svn/ver/4869/projects/metaconfig/public/service/bind9/files/etc/bind/db.root
+END
+named.conf
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/config/!svn/ver/5156/projects/metaconfig/public/service/bind9/files/etc/bind/named.conf
+END

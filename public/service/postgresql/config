@@ -1,0 +1,77 @@
+##
+## Configuration for public/service/postgresql
+##
+
+if PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "6.0"
+  pg_version = "8.4"
+elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION == "11.04"
+  pg_version = "8.4"
+elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "11"
+  pg_version = "9.1"
+else
+  print_error("Unsupported OS version [%s]", PLATFORM_OS_VERSION)
+end
+
+[apt]
+install += "postgresql-" + pg_version
+install += "postgresql-contrib-" + pg_version
+
+[files]
+remap["/etc/postgresql/8.3"] = "/etc/postgresql/" + pg_version
+owner["/etc/postgresql/**"] = "postgres:postgres"
+
+permission["/etc/postgresql/" + pg_version + "/main/pg_hba.conf"] = "0640"
+permission["/etc/postgresql/" + pg_version + "/main/pg_ident.conf"] = "0640"
+
+[settings]
+## CONNECTIONS AND AUTHENTICATION
+listen_address  = "localhost"
+listen_port     = "5432"
+max_connections = "100"
+enable_ssl      = "false"
+
+## CLIENT CONNECTION DEFAULTS
+locale          = "en_DK.UTF-8"
+datestyle       = "iso, mdy"
+default_text_search_config = "pg_catalog.english"
+
+## ERROR REPORTING AND LOGGING
+# Log-level: none, ddl, mod, all
+log_statement   = "mod"
+log_connections = "off"
+log_disconnections = "off"
+log_duration    = "off"
+log_hostname    = "off"
+log_checkpoints = "off"
+
+allow_ssl       = []
+allow_nossl     = []
+
+
+## FILE LOCATIONS
+data_directory  = "/var/lib/postgresql/" + pg_version + "/main"                
+hba_file        = "/etc/postgresql/" + pg_version + "/main/pg_hba.conf"
+ident_file      = "/etc/postgresql/" + pg_version + "/main/pg_ident.conf"
+external_pid_file = "/var/run/postgresql/" + pg_version + "-main.pid"
+
+## RESOURCE USAGE (except WAL)
+shared_buffers  = "24MB"
+max_fsm_pages   = "153600"
+
+## Automatic startup configuration
+# auto: automatically start/stop the cluster in the init script
+# manual: do not start/stop in init scripts, but allow manual startup with
+#         pg_ctlcluster
+# disabled: do not allow manual startup with pg_ctlcluster (this can be easily
+#           circumvented and is only meant to be a small protection for
+#           accidents).
+pg_start        = "auto"
+
+
+[trigger.restart-postgresql]
+  files += "/etc/postgresql/*/main/pg_hba.conf"
+if pg_version == "8.3"
+  command = ["invoke-rc.d", "postgresql-" + pg_version, "reload"]
+else
+  command = ["invoke-rc.d", "postgresql", "reload"]
+end

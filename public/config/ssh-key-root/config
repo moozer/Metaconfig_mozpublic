@@ -1,0 +1,12 @@
+##
+## Configuration for public/config/ssh-key-root
+##
+[files]
+owner["/root/.ssh/*"] = "root:root"
+owner["/root/.ssh"] = "root:root"
+permission["/root/.ssh"] = "0600"
+permission["/root/.ssh/authorized_keys"] = "0600"
+
+[settings]
+authorized_keys = []
+

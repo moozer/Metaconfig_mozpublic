@@ -1,0 +1,7 @@
+%header("##")
+#foreach mod in block
+  alias %(mod) off
+#end
+#foreach opt in options
+  options %(opt)
+#end

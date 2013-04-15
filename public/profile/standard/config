@@ -1,0 +1,85 @@
+##
+## Configuration for public/profile/standard
+##
+
+# Always build on profile/minimal
+import "public/profile/minimal"
+
+if PLATFORM_OS_NAME in ["debian", "ubuntu"]
+  import "public/config/debian-logrotate"
+  import "public/config/kernel-img"
+  import "public/config/hostname"
+  import "public/config/locale"
+end
+
+import "public/config/nanorc"
+import "public/config/rclocal"
+import "public/config/screenrc"
+import "public/config/toprc"
+import "public/config/vimrc"
+import "public/config/sudo"
+import "public/config/htoprc"
+import "public/config/modprobe"
+import "public/config/motd"
+import "public/config/root-ssh"
+import "public/config/scheduled-reboot"
+import "public/config/subversion"
+import "public/config/tcpwrapper"
+import "public/config/updatedb"
+import "public/service/ntp"
+import "public/service/ssh"
+
+[apt]
+# admin
+install += ["lsof", "whois", "ltrace", "psmisc", "symlinks", "gpw", "pwgen", "screen", "debootstrap", "at", "time", "iotop", "htop"]
+# base
+install += ["zsh", "strace", "pciutils", "usbutils"]
+# editing
+install += ["emacs", "vim", "hexedit", "colordiff"]
+# devel
+install += ["make", "patch", "devscripts", "build-essential", "wdiff"]
+# file
+install += ["tofrodos", "unrar-free", "unzip", "wget", "bzip2", "convmv", "fdupes", "rsync", "less", "hdparm"]
+#if PLATFORM_OS_UBUNTU >= "12.10"
+  install += "gddrescue"
+#else
+#  install += "ddrescue"
+#end
+# net
+install += ["nmap", "lftp", "whois", "iptables", "iptraf", "irssi", "mtr-tiny", "netcat", "links", "tcpdump", "curl", "ngrep"]
+install += ["dsniff", "bind9-host", "dnsutils", "tcptraceroute", "ssh", "swaks", "telnet", "bwm-ng"]
+# package
+## dependencies on dh-make are broken on ubuntu 12.10, so it needs a little hlep
+if PLATFORM_OS_NAME in ["ubuntu"] and PLATFORM_OS_VERSION >= "12.10"
+  install += ["dpkg-repack", "dh-make", "dlocate"]
+  install += "debhelper"
+  install += "po-debconf"
+else
+  install += ["dpkg-repack", "dh-make", "dlocate"]
+end
+  
+
+[unixuser.root]
+shell = "/bin/zsh"
+
+if PLATFORM_OS_NAME in ["debian", "ubuntu"]
+  [trigger.zsh-as-default]
+  command = ["sed", "-i", "-re", "s|DSHELL=.*|DSHELL=/bin/zsh|", "/etc/adduser.conf"]
+  single = True
+
+  [trigger.tz-copenhagen]
+  command = ["sh", "-c", "cat /usr/share/zoneinfo/Europe/Copenhagen > /etc/localtime && echo 'Europe/Copenhagen' > /etc/timezone"]
+  single = True
+end
+
+[settings]
+zsh_profiles = []
+
+[settings.public/config/modprobe]
+block += "ipv6"
+block += "net-pf-10"
+
+if PLATFORM_OS_APT_BASED
+  [settings.public/config/subversion]
+  diff = "/usr/bin/colordiff"
+end

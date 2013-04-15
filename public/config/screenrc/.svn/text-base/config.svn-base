@@ -1,0 +1,5 @@
+##
+## Configuration for public/config/screenrc
+##
+[apt]
+install += "screen"

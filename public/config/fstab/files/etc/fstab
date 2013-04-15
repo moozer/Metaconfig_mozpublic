@@ -1,0 +1,11 @@
+#method fs(src, dst, type, opts=["defaults"], dump="0", pass="0")
+  #if src
+    %(src)	%(dst)	%(type)	%(",".join(opts))  %(dump)  %(pass)
+  #end
+#end
+%header("##")
+%# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+#foreach m in mount
+  %# %(m)
+  %fs(**mount[m])##
+#end

@@ -1,0 +1,6 @@
+##
+## Install file for config/firewall
+##
+
+[apt]
+install += "spye-firewall"

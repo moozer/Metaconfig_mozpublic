@@ -1,0 +1,9 @@
+##
+## Configuration for public/service/apt-proxy
+##
+[apt]
+install += "apt-proxy"
+
+[trigger.disable-telnet-in-aptproxy]
+command = ["sed", "-ire", "s|^\\(from twisted.manhole.telnet import ShellFactory\\)$|#\\1 ## disabled by metaconfig|", "/usr/sbin/apt-proxy"]
+single = True

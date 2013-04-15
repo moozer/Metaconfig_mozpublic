@@ -1,0 +1,8 @@
+%header("##")
+/var/log/aptitude {
+  rotate 30
+  monthly
+  compress
+  missingok
+  notifempty
+}

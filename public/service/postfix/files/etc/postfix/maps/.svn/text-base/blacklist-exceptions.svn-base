@@ -1,0 +1,4 @@
+%header("##")
+#foreach host in blacklist_exceptions
+  %(host) OK
+#end

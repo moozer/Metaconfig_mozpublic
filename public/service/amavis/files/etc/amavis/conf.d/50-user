@@ -1,0 +1,36 @@
+%header("##")
+use strict;
+
+$TEMPBASE = "/data/amavis";
+$db_home = "/data/amavis/db";
+
+$forward_method = '%(forward_host)';
+$notify_method = $forward_method;
+
+$inet_socket_bind = '%(bind_address)';
+@inet_acl = qw(%(allowed_host));
+
+$sa_tag_level_deflt  = -100;
+$sa_tag2_level_deflt = 4;
+$sa_kill_level_deflt = 6;
+$sa_dsn_cutoff_level = 10;
+
+@bypass_virus_checks_maps = (\%%bypass_virus_checks, \@bypass_virus_checks_acl, \$bypass_virus_checks_re);
+@bypass_spam_checks_maps = (\%%bypass_spam_checks, \@bypass_spam_checks_acl, \$bypass_spam_checks_re);
+
+@local_domains_acl = qw( . );
+
+$remove_existing_x_scanned_headers = 1;
+$remove_existing_spam_headers = 1;
+
+$virus_admin = undef;
+
+## Do not quarantine bad-header mails
+$final_bad_header_destiny = D_PASS;
+$bad_header_quarantine_to = undef;
+
+$QUARANTINEDIR = "%(quarantinedir)";
+
+$max_servers = %(max_servers);
+
+1;

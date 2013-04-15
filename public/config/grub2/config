@@ -1,0 +1,16 @@
+##
+## Configuration for public/config/grub2
+##
+[apt]
+install += "grub"
+
+[settings]
+disable_prober = True
+serial_command = ""
+terminal = ["console"]
+cmdline_linux = "quiet"
+cmdline_xen = ""
+
+[trigger.update-grub]
+files += "/etc/default/grub"
+command = ["/usr/sbin/update-grub"]

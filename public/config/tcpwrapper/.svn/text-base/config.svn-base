@@ -1,0 +1,18 @@
+##
+## Configuration for public/config/tcpwrapper
+##
+
+[settings]
+allow_private_class_a = 0
+allow_private_class_b = 0
+allow_private_class_c = 0
+allow_hosts_proftpd = []
+allow_hosts_nfs = []
+allow_hosts_sshd = []
+allow_hosts_mysqld = []
+allow_hosts_all = ["127.0.0.0/8"]
+allow_lines = []
+deny_all_type = ""
+
+allow_hosts_sshd = []
+allow_hosts_sshd_secondary = []

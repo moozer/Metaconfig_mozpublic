@@ -1,0 +1,10 @@
+##
+## Configuration for public/config/chrome
+##
+
+[apt.source.chrome]
+url = "http://dl.google.com/linux/chrome/deb"
+keys += "7FAC5991"
+
+[apt]
+install += "google-chrome-stable"

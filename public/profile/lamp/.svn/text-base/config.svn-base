@@ -1,0 +1,10 @@
+##
+## Configuration for public/profile/lamp
+##
+import "public/service/apache2"
+import "public/service/mysql"
+import "public/config/php5"
+
+[settings.service-mysql]
+maint_passwd = "foo"
+

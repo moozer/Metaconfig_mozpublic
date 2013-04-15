@@ -1,0 +1,11 @@
+%header("##")
+RPCNFSDCOUNT="%(nfsd_options) %(server_count)"
+RPCNFSDPRIORITY=0
+RPCMOUNTDOPTS="-p 4002"
+
+NEED_SVCGSSD=no
+RPCSVCGSSDOPTS=
+
+#if force_shutdown
+  export PATH=/etc/default/nfs:$PATH
+#end

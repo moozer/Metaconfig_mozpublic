@@ -1,0 +1,6 @@
+%header("##")
+PRUNE_BIND_MOUNTS="yes"
+## PRUNENAMES=".git .bzr .hg .svn"
+PRUNENAMES="%(" ".join(prunenames))"
+PRUNEPATHS="%(" ".join(prunepaths))"
+PRUNEFS="%(" ".join(prunefs))"

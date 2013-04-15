@@ -1,0 +1,5 @@
+##
+## Configuration for public/config/zsh-profile
+##
+[settings]
+zsh_profiles = []

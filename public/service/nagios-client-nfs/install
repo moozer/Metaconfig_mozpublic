@@ -1,0 +1,3 @@
+[settings.public/service/nagios-client]
+commands["check_nfs"] = "/usr/local/nagios/plugins/check_nfs %s" % (" ".join(settings["public/service/nagios-client-nfs"]["mounts"]))
+

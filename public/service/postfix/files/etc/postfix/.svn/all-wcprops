@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/config/!svn/ver/5596/projects/metaconfig/public/service/postfix/files/etc/postfix
+END
+main.cf
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/config/!svn/ver/5544/projects/metaconfig/public/service/postfix/files/etc/postfix/main.cf
+END
+master.cf
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/config/!svn/ver/5596/projects/metaconfig/public/service/postfix/files/etc/postfix/master.cf
+END

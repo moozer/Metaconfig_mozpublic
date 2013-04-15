@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/config/!svn/ver/4839/projects/metaconfig/public/service/nfs-server/files/etc/default/nfs
+END
+start-stop-daemon
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/config/!svn/ver/4839/projects/metaconfig/public/service/nfs-server/files/etc/default/nfs/start-stop-daemon
+END

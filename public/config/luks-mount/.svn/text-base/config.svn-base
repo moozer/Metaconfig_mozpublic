@@ -1,0 +1,11 @@
+##
+## Configuration for public/config/luks-mount
+##
+
+[apt]
+install += "cryptsetup"
+
+[files]
+symlink["/sbin/mount.luks"]        = "/usr/local/bin/mount.luks"
+symlink["/sbin/mount.crypto_LUKS"] = "/usr/local/bin/mount.luks"
+permission["/usr/local/bin/mount.luks"] = "0755"

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/config/!svn/ver/5782/projects/metaconfig/public/service/nagios-client-nfs
+END
+config
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/config/!svn/ver/5782/projects/metaconfig/public/service/nagios-client-nfs/config
+END
+install
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/config/!svn/ver/5463/projects/metaconfig/public/service/nagios-client-nfs/install
+END

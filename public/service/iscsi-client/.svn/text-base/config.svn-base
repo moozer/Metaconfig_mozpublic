@@ -1,0 +1,18 @@
+##
+## Configuration for public/service/iscsi-client
+##
+
+[apt]
+install += "open-iscsi"
+
+[files]
+permission["/etc/iscsi/**/*"] = "0600"
+
+[settings]
+node_startup = "manual"
+node_session_auth_authmethod = "CHAP"
+node_session_auth_username = ""
+node_session_auth_password = ""
+discovery_sendtargets_auth_authmethod = "CHAP"
+discovery_sendtargets_auth_username = ""
+discovery_sendtargets_auth_password = ""

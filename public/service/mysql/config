@@ -1,0 +1,78 @@
+##
+## Configuration for public/service/mysql
+##
+
+[files]
+rm += "/etc/logrotate.d/mysql-server"
+
+[settings]
+bind_address = "0.0.0.0"
+
+ssl_enabled   = False
+# Specify ssl certificates
+#ssl_ca       = "/data/certs/authority/example.org.crt"
+#ssl_cert     = "/data/certs/local/mysql.example.org.crt"
+#ssl_key      = "/data/certs/local/mysql.example.org.key"
+
+datadir      = "/var/lib/mysql"
+
+mysqld = dict()
+
+mysqld["key_buffer_size"] = "16M"
+mysqld["max_allowed_packet"] = "16M"
+mysqld["thread_stack"] = "128K"
+mysqld["thread_cache_size"] = "8"
+mysqld["query_cache_limit"] = "1M"
+mysqld["query_cache_size"] = "16M"
+
+isamchk = dict()
+isamchk["key_buffer"] = "16M"
+
+myisamchk = dict()
+myisamchk["key_buffer"] = "16M"
+
+character_set = "utf8"
+
+[root]
+if PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "6"
+  version = "5.1"
+elif PLATFORM_OS_NAME == "centos" and PLATFORM_OS_VERSION >= "6"
+  version = "5.1"
+else
+  print_error("mysql: Unsupported OS version [%s %s]", PLATFORM_OS_NAME, PLATFORM_OS_VERSION)
+end
+
+if PLATFORM_OS_APT_BASED
+  [apt]
+  if version == "5.1"
+    install += "mysql-server-5.1"
+  else
+    install += "mysql-server-5.0"
+  end
+elif PLATFORM_OS_YUM_BASED
+  [yum]
+  install += "mysql-server"
+
+  [files]
+  remap["/etc/mysql"] = "/etc"
+end
+
+[files]
+permission["/etc/mysql/debian.cnf"] = "0600"
+
+#block deployment of debian specific config (debian-sys-maint user)
+block += "/etc/mysql/debian.cnf"
+
+if PLATFORM_OS_NAME in ["debian", "ubuntu"]
+  [trigger.remove-mysql-ndb]
+  command = ["update-rc.d", "-f", "mysql-ndb", "remove"]
+  single = True
+
+  [trigger.remove-mysql-ndb-mgm]
+  command = ["update-rc.d", "-f", "mysql-ndb-mgm", "remove"]
+  single = True
+end
+
+[trigger.restart-mysql]
+files += "/etc/mysql/*"
+command = ["/etc/init.d/mysql", "restart"]

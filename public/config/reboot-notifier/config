@@ -1,0 +1,6 @@
+##
+## Configuration for public/config/reboot-notifier
+##
+
+[files]
+rm += "/etc/initramfs-tools/hooks/sikkerhedorg"

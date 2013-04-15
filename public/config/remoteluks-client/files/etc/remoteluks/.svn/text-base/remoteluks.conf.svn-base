@@ -1,0 +1,8 @@
+%header("##")
+private_key="%(private_key)"
+remote_user="%(remote_user)"
+remote_host="%(remote_host)"
+remote_path="%(remote_path)"
+luks_device="%(luks_device)"
+dm_device="%(dm_device)"
+mount_point="%(mount_point)"

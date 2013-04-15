@@ -1,0 +1,5 @@
+[trigger.reload-hostname]
+files += "/etc/hostname"
+files += "/etc/sysconfig/network"
+command = ["hostname", $settings["public/config/hostname"]["hostname"]]
+

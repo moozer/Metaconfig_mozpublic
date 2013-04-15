@@ -1,0 +1,3 @@
+%#!/bin/zsh
+%header("##")
+read -rs 'key?Press enter to exit> '

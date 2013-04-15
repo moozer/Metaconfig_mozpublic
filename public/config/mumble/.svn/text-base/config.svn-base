@@ -1,0 +1,12 @@
+##
+## Configuration for public/config/mumble
+##
+
+[apt.source.mumble]
+url = "http://ppa.launchpad.net/slicer/ppa/ubuntu"
+dist = "maverick"
+keys += "165B2836"
+debsrc = True
+
+[apt]
+install += "mumble"

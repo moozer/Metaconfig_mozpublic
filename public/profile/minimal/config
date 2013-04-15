@@ -1,0 +1,37 @@
+##
+## Configuration for public/profile/minimal
+##
+
+# Add the Sikkerhed.org debian archive. Without this, MetaConfig
+# cannot be updated
+[apt.source.sikkerhedorg]
+url = "http://debian.sikkerhed.org"
+dist = "stable"
+keys += "2C565D33"
+
+[files]
+# Reasonable default exclusions:
+#   Generic temporary files (*~)
+#   Editor (vim, emacs) temp files (.#*, .*.swp)
+#   NFS temporary files (.nfs*)
+exclude["files"] = ["*~", ".#*", ".*.swp", ".nfs*"]
+# Exclude subversion directories. This enables you to have 
+# config repositories in subversion
+exclude["dirs"] = [".svn"]
+
+[files]
+# Set executable permission for standard dirs for binaries
+permission["/etc/initramfs-tools/hooks/*"] = "0755"
+permission["/etc/init.d/*"] = "0755"
+permission["/etc/cron.hourly/*"] = "0755"
+permission["/etc/cron.daily/*"] = "0755"
+permission["/etc/cron.weekly/*"] = "0755"
+permission["/etc/cron.monthly/*"] = "0755"
+permission["/usr/local/bin/*"] = "0755"
+permission["/root"] = "0700"
+
+# It is Bad Style to touch these, but let's have correct permissions
+permission["/bin/*"] = "0755"
+permission["/usr/bin/*"] = "0755"
+permission["/sbin/*"] = "0755"
+permission["/usr/sbin/*"] = "0755"

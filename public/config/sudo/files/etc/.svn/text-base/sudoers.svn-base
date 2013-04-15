@@ -1,0 +1,21 @@
+%header("##")
+## This file MUST be edited with the 'visudo' command as root.
+## See the man page for details on how to write a sudoers file.
+#foreach d in defaults
+  Defaults	%(d)
+#end
+
+## Host alias specification
+## User alias specification
+## Cmnd alias specification
+## User privilege specification
+root		ALL=(ALL) ALL
+
+## Uncomment to allow members of group sudo to not need a password
+## (Note that later entries override this, so you might need to move
+## it further down)
+## %sudo ALL=NOPASSWD: ALL
+## Members of the admin group may gain root privileges
+#foreach s in sudoers
+  %(s.split("|")[0])		%(s.split("|")[1])=(%(s.split("|")[2])) %(s.split("|")[3]) %(s.split("|")[4])
+#end

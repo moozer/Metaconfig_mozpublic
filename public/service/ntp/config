@@ -1,0 +1,20 @@
+##
+## Configuration for public/service/ntp
+##
+
+modify "public/config/firewall"
+
+[apt]
+install += "ntp"
+
+[trigger.restart-ntp]
+files += "/etc/ntp.conf"
+command = ["invoke-rc.d", "ntp", "restart"]
+
+[settings]
+servers = []
+servers += "ntp1.sikkerhed.org"
+servers += "ntp2.sikkerhed.org"
+
+[settings.public/config/firewall]
+udp_ports += ["123"]

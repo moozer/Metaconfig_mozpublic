@@ -1,0 +1,4 @@
+%header("##")
+#foreach addr in inbound_accept
+  %(addr)  OK
+#end

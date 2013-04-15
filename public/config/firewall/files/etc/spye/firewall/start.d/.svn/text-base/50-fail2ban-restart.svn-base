@@ -1,0 +1,5 @@
+%#!/bin/zsh
+%header("##")
+if [[ -x /etc/init.d/fail2ban ]]; then
+  invoke-rc.d --quiet fail2ban restart
+fi

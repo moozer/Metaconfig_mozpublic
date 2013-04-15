@@ -1,0 +1,42 @@
+%header("##")
+reset %(" ".join(reset))
+for input
+
+## Allow non-syn traffic
+on tcp not syn accept
+
+## Allow all traffic on lo
+on in-int lo accept
+
+## Allow ping
+on icmp any accept
+
+#foreach port in whitelist_ssh_ports
+  on tcp dport %(port) syn check whitelist ssh
+#end
+#foreach port in tcp_ports
+  #if not (port in whitelist_ssh_ports)
+    on tcp dport %(port) syn accept
+  #end
+#end
+
+#foreach port in udp_ports
+  on udp dport %(port) accept
+#end
+
+#foreach ip in ip_allow
+  on src %(ip) accept
+#end
+
+## Allow DNS
+on udp dport 1024: sport 53 accept
+
+#foreach line in custom_lines
+  %(line)
+#end
+
+## Reject incoming connections
+on tcp syn reject
+
+## Reject remaining udp
+on udp drop

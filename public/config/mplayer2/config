@@ -1,0 +1,12 @@
+##
+## Configuration for public/config/mplayer2
+##
+
+[apt.source.mplayer2]
+url = "http://ppa.launchpad.net/ripps818/coreavc/ubuntu"
+dist = PLATFORM_OS_NICKNAME
+debsrc = True
+keys += "EEB23232"
+
+[apt]
+install += "mplayer2"

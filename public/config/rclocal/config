@@ -1,0 +1,17 @@
+##
+## Configuration for public/config/rclocal
+##
+
+[settings]
+lines = []
+shell = "/bin/zsh -e"
+
+if PLATFORM_OS_YUM_BASED
+  [settings]
+  lines += "touch /var/lock/subsys/local"
+  [files]
+  remap["/etc/rc.local"] = "/etc/rc.d/rc.local"
+end
+
+[files]
+permission["/etc/rc.local"] = "0755"

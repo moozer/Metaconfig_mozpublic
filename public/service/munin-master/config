@@ -1,0 +1,46 @@
+##
+## Configuration for public/service/munin-master
+##
+
+[files]
+mkdir += "/data/munin"
+mkdir += "/data/munin/db"
+mkdir += "/data/munin/html"
+mkdir += "/data/munin/log"
+mkdir += "/data/munin/run"
+mkdir += "/data/munin/templates"
+
+[settings]
+# RRD Databases
+#dbdir   = "/data/munin/db"
+dbdir   = "/var/lib/munin"
+# HTML output
+htmldir = "/data/munin/html"
+# Logs
+#logdir  = "/data/munin/log"
+logdir  = "/var/log/munin"
+# Lock/PID files
+#rundir  = "/data/munin/run"
+rundir  = "/var/run/munin"
+# HTML templates
+tmpldir = "/data/munin/templates"
+
+# (Exactly one) directory to include all files from.
+includedir = "/etc/munin/munin-conf.d"
+
+# munin-graph runs in parallel, the number of concurrent processes is
+# 6.  If you want munin-graph to not be parallel set to 0.  If set too
+# high it will slow down munin-graph.  Some experiments are needed to
+# determine how many are optimal on your system.  On a multi-core
+# system with good SCSI disks the number can probably be quite high.
+max_graph_jobs = "6"
+
+
+# Drop somejuser@fnord.comm and anotheruser@blibb.comm an email everytime 
+# something changes (OK -> WARNING, CRITICAL -> OK, etc)
+contact_someuser = "tdn@sikkerhed.org"
+contact_anotheruser = "me@thomasdamgaard.dk"
+
+[apt]
+install += "munin"
+

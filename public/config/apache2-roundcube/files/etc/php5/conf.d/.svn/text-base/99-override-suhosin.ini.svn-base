@@ -1,0 +1,3 @@
+%header("//")
+[suhosin]
+suhosin.session.encrypt = off

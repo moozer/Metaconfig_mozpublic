@@ -1,0 +1,71 @@
+%header("##")
+unset backup
+set cut
+set historylog
+set nowrap
+set regexp
+set smooth
+set suspend
+
+## Nanorc files
+include "/usr/share/nano/nanorc.nanorc"
+## C/C++
+include "/usr/share/nano/c.nanorc"
+#if include_new
+  ## CSS
+  include "/usr/share/nano/css.nanorc"
+  ## Debian
+  include "/usr/share/nano/debian.nanorc"
+  ## Gentoo
+  include "/usr/share/nano/gentoo.nanorc"
+#end
+## HTML
+include "/usr/share/nano/html.nanorc"
+#if include_new
+  ## PHP
+  include "/usr/share/nano/php.nanorc"
+  ## TCL
+  include "/usr/share/nano/tcl.nanorc"
+#end
+## TeX
+include "/usr/share/nano/tex.nanorc"
+## Quoted emails (under e.g. mutt)
+include "/usr/share/nano/mutt.nanorc"
+## Patch files
+include "/usr/share/nano/patch.nanorc"
+## Manpages
+include "/usr/share/nano/man.nanorc"
+## Groff
+include "/usr/share/nano/groff.nanorc"
+## Perl
+include "/usr/share/nano/perl.nanorc"
+## Python
+include "/usr/share/nano/python.nanorc"
+## Ruby
+include "/usr/share/nano/ruby.nanorc"
+## Java
+include "/usr/share/nano/java.nanorc"
+#if include_new
+  ## AWK
+  include "/usr/share/nano/awk.nanorc"
+#end
+## Assembler
+include "/usr/share/nano/asm.nanorc"
+## Bourne shell scripts
+include "/usr/share/nano/sh.nanorc"
+## POV-Ray
+include "/usr/share/nano/pov.nanorc"
+#if include_new
+  ## XML
+  include "/usr/share/nano/xml.nanorc"
+#end
+
+syntax "default"
+icolor brightgreen "^[0-9A-Z_]+\(\)"
+color green "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|=|&|\|)"
+color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+color green "-[Ldefgruwx]\>"
+color green "-(eq|ne|gt|lt|ge|le|s|n|z)\>"
+icolor brightred "\$\{?[0-9A-Z_!@%#$*?-]+\}?"
+color cyan "(^|[[:space:]])%#.*$"
+color cyan "^[[:space:]]*;.*$"

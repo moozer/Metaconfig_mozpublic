@@ -1,0 +1,15 @@
+##
+## Configuration for public/service/proftpd
+##
+[apt]
+install += "proftpd-basic"
+
+[settings]
+servername = "default"
+port = 21
+default_root = ""
+includes = []
+ipv6_support = "off"
+use_reverse_dns = "on"
+ident_lookups = "off"
+auth_pam = "on"

@@ -1,0 +1,11 @@
+##
+## Configuration for public/config/xpra
+##
+
+[apt.source.xpra]
+url = "http://winswitch.org"
+dist = PLATFORM_OS_NICKNAME
+keys += "F18AD6BB"
+
+[apt]
+install += "xpra"

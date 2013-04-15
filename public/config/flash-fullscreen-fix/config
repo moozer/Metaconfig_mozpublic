@@ -1,0 +1,9 @@
+##
+## Configuration for public/config/flash-fullscreen-fix
+##
+
+## This change to libflashplayer.so makes flash stay full screen even
+## when other windows are selected. Great for multi-monitor!
+[trigger.fullscreen-flash-fix]
+conditions += "grep -qF _NET_ACTIVE_WINDOW /usr/lib/flashplugin-installer/libflashplayer.so"
+command += ["sed", "-ir", "-e", "s/_NET_ACTIVE_WINDOW/XNET_ACTIVE_WINDOW/", "/usr/lib/flashplugin-installer/libflashplayer.so"]

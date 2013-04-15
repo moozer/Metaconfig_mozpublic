@@ -1,0 +1,31 @@
+##
+## Configuration for public/config/tsocks
+##
+
+# Not many programs support SOCKS proxy forwarding natively (hardly any CLI 
+# programs). But there is a workaround for that: tsocks. It enables arbitrary 
+# programs which don't support the SOCKS protocol natively to establish 
+# connections via a SOCKS server.
+
+[apt]
+install += "tsocks"
+
+[settings]
+## Local networks
+## For this example this machine can directly access 192.168.0.0/255.255.255.0 
+## (192.168.0.*) and 10.0.0.0/255.0.0.0 (10.*)
+local = []
+local += "192.168.0.0/255.255.255.0"
+local += "10.0.0.0/255.0.0.0"
+
+
+## Default server
+## For connections that aren't to the local subnets or to 150.0.0.0/255.255.0.0
+## the server at 192.168.0.1 should be used (again, hostnames could be used
+## too, see note above)
+server = "127.0.0.1"
+## Server type defaults to 4 so we need to specify it as 5 for this one
+server_type = "5"
+## The port defaults to 1080 but I've stated it here for clarity 
+server_port = "3080"
+

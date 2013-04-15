@@ -1,0 +1,4 @@
+%header("##")
+#foreach ip in lists_ssh_allow
+  %(ip)
+#end

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/config/!svn/ver/5974/projects/metaconfig/public/service/fail2ban/files/etc/fail2ban
+END
+fail2ban.conf
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/config/!svn/ver/4399/projects/metaconfig/public/service/fail2ban/files/etc/fail2ban/fail2ban.conf
+END
+jail.conf
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/config/!svn/ver/5974/projects/metaconfig/public/service/fail2ban/files/etc/fail2ban/jail.conf
+END

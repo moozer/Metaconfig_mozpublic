@@ -1,0 +1,12 @@
+%#!/bin/zsh
+
+CRYPTDEV=$1
+MAPPERDEV=${CRYPTDEV%#%#*/}
+MAPPERFILE=/dev/mapper/$MAPPERDEV
+TARGET=$2
+shift 2
+
+if [[ ! -f $MAPPERFILE ]]; then
+  cryptsetup luksOpen $CRYPTDEV $MAPPERDEV
+fi
+mount $MAPPERFILE $TARGET $*

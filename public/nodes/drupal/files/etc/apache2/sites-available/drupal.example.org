@@ -1,0 +1,20 @@
+#import "public/service/apache2/logging"
+%header("##")
+#define vname "drupal.example.org"
+#define vhost_dir "/data/www/virtual"
+<VirtualHost *:80>
+  ServerName %(vname)
+  ServerAdmin webmaster@%(vname)
+  DocumentRoot /usr/share/drupal7
+  %apache2_log(vname)
+  AccessFileName .htaccess
+  <IfModule mod_rewrite.c>
+    <Directory /usr/share/drupal7>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %%{REQUEST_FILENAME} !-f
+    RewriteCond %%{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+    </Directory>
+  </IfModule>
+</VirtualHost>

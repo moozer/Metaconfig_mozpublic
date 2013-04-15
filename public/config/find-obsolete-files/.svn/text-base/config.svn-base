@@ -1,0 +1,55 @@
+##
+## Configuration for public/config/find-obsolete-files
+##
+
+## This component creates a cron job to locate obsolete files like Windows' Thumbs.db, desktop.ini, etc.
+
+[settings]
+paths       = "/"
+delete      = 0
+mailto      = "root"
+patterns    = []
+ipatterns   = []
+prunepaths  = []
+prunepaths += "/tmp"
+#prunepaths += "/home/*/tmp"
+
+
+# Common OS files
+patterns += "[Tt]humbs.db"
+patterns += ".DS_Store"
+ipatterns += "desktop.ini"
+ipatterns += "picasa.ini"
+
+# Annoying warez files
+ipatterns += "a?breezin?dutchman?release.gif"
+ipatterns += "ahashare.com.txt"
+ipatterns += "filmfix.jpeg.jpg"
+ipatterns += "orrent?downloaded?from?kat.ph.txt"
+ipatterns += "pastafari-release.png"
+ipatterns += "torrent?downloaded?from?1337x.org.txt"
+ipatterns += "torrent?downloaded?from?ahashare.com.txt"
+ipatterns += "torrent?downloaded?from?btarena.org.txt"
+ipatterns += "torrent?downloaded?from?darkbay.org.txt"
+ipatterns += "torrent?downloaded?from?demonoid.com - copy.txt"
+ipatterns += "torrent?downloaded?from?demonoid.com.txt"
+ipatterns += "torrent?downloaded?from?demonoid.me (?).txt"
+ipatterns += "torrent?downloaded?from?demonoid.me.txt"
+ipatterns += "torrent?downloaded?from?demonoid.txt"
+ipatterns += "torrent?downloaded?from?extratorrent.com.txt"
+ipatterns += "torrent?downloaded?from?h33t.com.txt"
+ipatterns += "torrent?downloaded?from?isohunt.com.txt"
+ipatterns += "torrent?downloaded?from?kingdom-kvcd.net.txt"
+ipatterns += "torrent?downloaded?from?rarbg.com.txt"
+ipatterns += "torrent?downloaded?from?thepiratebay.org.txt"
+ipatterns += "torrent?downloaded?from?thepiratebay.se.txt"
+ipatterns += "torrent?have?been?downloaded?from?scenetime.com.txt"
+ipatterns += "torrent?verified?and?recommended?by?vertor.com.txt"
+ipatterns += "tracked?by?h33t?com.txt"
+ipatterns += "tracked?by?pedro?s?btmusic?only?tracker.txt"
+ipatterns += "www.tankaner.com.nfo"
+ipatterns += "www.torrentday.com.txt"
+ipatterns += "www.torrenting.com.txt"
+ipatterns += "www.usabit.com.txt"
+ipatterns += "www.yify-torrents.com.jpg"
+

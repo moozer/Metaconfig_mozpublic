@@ -1,0 +1,9 @@
+##
+## Configuration for public/config/nanorc
+##
+
+[apt]
+install += "nano"
+
+[settings]
+include_new = 0

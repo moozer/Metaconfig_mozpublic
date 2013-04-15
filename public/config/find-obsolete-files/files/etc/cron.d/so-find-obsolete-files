@@ -1,0 +1,11 @@
+%header("##")
+#if mailto
+  MAILTO=%(mailto)
+#end
+
+##m h     d w m   user    command
+#if delete
+  00  2     * * *   root    /usr/local/bin/so-delete-obsolete-files %(paths)
+#else
+  00  2     * * *   root    /usr/local/bin/so-find-obsolete-files %(paths)
+#end

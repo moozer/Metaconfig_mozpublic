@@ -1,0 +1,281 @@
+%header("\"")
+" Configuration file for VI iMproved.
+"
+" Author: Thomas Damgaard <tdn@sikkerhed.org>
+" Maintainer: Thomas Damgaard <tdn@sikkerhed.org>
+" Copyright: Thomas Damgaard <tdn@sikkerhed.org>
+
+
+" All system-wide defaults are set in $VIMRUNTIME/debian.vim (usually just
+" /usr/share/vim/vimcurrent/debian.vim) and sourced by the call to :runtime
+" you can find below.  If you wish to change any of those settings, you should
+" do it in this file (/etc/vim/vimrc), since debian.vim will be overwritten
+" everytime an upgrade of the vim packages is performed.  It is recommended to
+" make changes after sourcing debian.vim since it alters the value of the
+" 'compatible' option.
+
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages available in Debian.
+runtime! debian.vim
+
+" Enable syntax highlighting
+syntax on
+
+" If using a dark background within the editing area and syntax highlighting
+" turn on this option as well
+set background=dark
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" Set 'nocompatible' to ward off unexpected things that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+set backspace=indent,eol,start	" more powerful backspacing
+
+" modelines have historically been a source of security/resource
+" vulnerabilities -- disable by default, even when 'nocompatible' is set
+set nomodeline
+
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents.  Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+"filetype indent plugin on
+if has("autocmd")
+  filetype plugin indent on
+endif
+
+" One of the most important options to activate. Allows you to switch from an
+" unsaved buffer without saving it first. Also allows you to keep an undo
+" history for multiple files. Vim will complain if you try to quit without
+" saving, and swap files will keep you safe if your computer crashes.
+set hidden
+
+" Better command-line completion
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" do incremental searching
+set incsearch
+
+" keep 5000 lines of command line history
+set history=5000
+
+" show the cursor position all the time
+set ruler
+
+" Set a fancy color scheme
+"colorscheme murphy
+"colorscheme adaryn
+colorscheme koehler
+
+if has("terminfo")
+    let &t_Co=8
+    let &t_Sf="[3%%p1%%dm"
+    let &t_Sb="[4%%p1%%dm"
+else
+    let &t_Co=8
+    let &t_Sf="[3%%dm"
+    let &t_Sb="[4%%dm"
+endif
+
+" Enable digraph: shortcuts to enter non-ascii chars
+"set digraph
+set nodigraph
+set ai nocp ek hid ru sc vb wmnu noeb noet nosol 
+set bs=2 fo=cqrt ls=2 shm=at ww=<,>,h,l ts=4
+"set bs=2 fo=cqrt ls=2 shm=at tw=255 ww=<,>,h,l ts=4
+set comments=sl:/*,mb:**,elx:*
+set viminfo=%%,'50,\"100,:100,n~/.viminfo
+set history=500
+set undolevels=1000
+
+
+" Make the beeps go away
+set t_vb=
+set noerrorbells        " no freaking error bells
+set visualbell
+
+" Set the title of the terminal
+set title
+
+" Lets put the ruler on
+set ruler
+
+"set verbose=9
+
+set showmatch
+
+
+
+" Abbrevations
+"
+" HTML4.1 template
+
+abbr htmlTemplate <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><CR><html><CR><head><CR><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><CR><meta name="author" content="Thomas Damgaard Nielsen"><CR><link rel="stylesheet" href="/css/style.css" title="Default style" ><CR><title></title><CR></head><CR><body><CR><h1>Hello world</h1><CR></body><CR></html>
+
+
+abbr doctypehtml <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+abbr doctypexhtml <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" <CR>    "http://www.w3.org/TR/2002/REC-xhtml1-20020801/DTD/xhtml1-strict.dtd">
+
+
+"set smarttab
+set nosmarttab
+
+
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+  " The below options are disabled as they do not work in Vim on newer versions of Ubuntu
+  "au BufNewFile,BufRead *.m set syntax=matlab
+  "au BufNewFile,BufRead /etc/apache2/* :setf apache
+  "au BufNewFile,BufRead /etc/metaconfig/* :setf config
+  "au BufNewFile,BufRead /etc/metaconfig/node/files/etc/apache2/* :setf apache
+  au BufEnter /etc/metaconfig/* setlocal filetype=config
+  au BufEnter /etc/apache2/* setlocal filetype=apache
+  au BufEnter /etc/*/apache2/* setlocal filetype=apache
+endif
+
+" Set tab width to 4 spaces for python 
+au Filetype python set sts=4 sw=4
+" Set tab width to 2 spaces for XML, HTML and CSS
+au Filetype xml,html,css set sts=2 sw=2
+
+
+" The following are commented out as they cause vim to behave a lot
+" differently from regular Vi. They are highly recommended though.
+set showcmd            " Show (partial) command in status line.
+set showmatch          " Show matching brackets.
+"set autowrite          " Automatically save before commands like :next and :make
+"set hidden             " Hide buffers when they are abandoned
+"set mouse=a            " Enable mouse usage (all modes)
+
+" Source a global configuration file if available
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
+
+
+" Have syntax highlighting on gtd files
+autocmd BufNewFile,BufRead *.gtd :setl ft=gtd
+autocmd BufNewFile,BufRead todo.txt :setl ft=gtd
+
+
+
+" Let F11 toggle paste mode
+set pastetoggle=<F11>
+
+" Mappings:
+" Generate pretty HTML pages presenting the current file
+"nmap ,g /^@
+nn ,g /^@<CR>
+"nmap ,h :runtime! syntax/2html.vim<CR>:wq<CR>
+" convert feature
+nmap ,t2h :run! syntax/2html.vim<CR>:w! %%<CR>:q<CR>
+
+nmap ,q :%%s/\t/  /g<CR>
+
+" Run Python program
+map <f2> :w\|!python %%<cr>
+
+" Write current time
+imap ,t <C-r>=strftime('%%H:%%M')<CR>
+imap ,T <C-r>=strftime('%%T')<CR>
+
+" Write current date
+imap ,d <C-r>=strftime('%%Y-%%m-%%d')<CR>
+imap ;d <C-r>=strftime('%%Y%%m%%d')<CR>
+imap ,D <C-r>=strftime('%%Y-%%m-%%d %%T')<CR>
+
+
+" -------------------
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
+set autoindent
+
+" Stop certain movements from always going to the first character of a line.
+" While this behaviour deviates from that of Vi, it does what most users
+" coming from other editors would expect.
+set nostartofline
+
+" Display the cursor position on the last line of the screen or in the status
+" line of a window
+set ruler
+
+" Always display the status line, even if only one window is displayed
+set laststatus=2
+
+" Instead of failing a command because of unsaved changes, instead raise a
+" dialogue asking if you wish to save changed files.
+"set confirm
+
+" Use visual bell instead of beeping when doing something wrong
+set visualbell
+
+
+" And reset the terminal code for the visual bell.  If visualbell is set, and
+" this line is also included, vim will neither flash nor beep.  If visualbell
+" is unset, this does nothing.
+set t_vb=
+
+" Set the command window height to 2 lines, to avoid many cases of having to
+" "press <Enter> to continue"
+set cmdheight=2
+
+" Display line numbers on the left
+"set number
+
+" Quickly time out on keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=200
+
+" Use <F11> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F11>
+
+
+" Indentation settings for using 4 spaces instead of tabs.
+" Do not change 'tabstop' from its default value of 8 with this setup.
+set shiftwidth=4 " shiftwidth:  Number of spaces to use for each insertion of (auto)indent.
+set softtabstop=4
+set expandtab " insert spaces when hitting <tab>
+
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" make * search for the selected string (no matter what characters it
+" contains)
+" In other words: let * behave in visual mode like it does in command mode
+vmap * :<C-U>let old_reg=@"<cr>gvy/<C-R><C-R>=substitute(escape(@",'\/.*$^~[]'),"\n$","","")<CR><CR>:let @"=old_reg<cr>
+
+" Set terminfo to 256 colors
+set t_Co=256
+
+"" Filetypes:
+autocmd BufRead,BufNewFile *vimrc set filetype=vim
+
+" Filetypes for zencoding:
+" Let *.tpl be treated as HTML files
+autocmd BufRead,BufNewFile *.tpl set filetype=html
+

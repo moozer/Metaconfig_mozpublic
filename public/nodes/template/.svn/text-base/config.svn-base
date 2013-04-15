@@ -1,0 +1,66 @@
+##
+## Configuration for public/nodes/template
+##
+import "public/profile/standard"
+import "public/config/screenrc"
+import "public/config/rclocal"
+import "public/config/toprc"
+import "public/config/network"
+
+import "public/config/vimrc"
+
+import "public/config/hostname"
+import "public/service/postgresql"
+
+import "public/service/ssh"
+import "public/config/ssh-key-root"
+import "public/service/postfix"
+import "public/service/disk-space-monitor"
+
+import "public/service/fail2ban"
+import "public/config/fstab"
+
+#import "public/service/thttpd"
+
+[settings.public/service/disk-space-monitor]
+check += "/|50"
+
+[settings.public/config/hostname]
+hostname = "template"
+
+[settings.public/config/ssh-key-root]
+authorized_keys += "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6FqDQUZmSs4VC6EhMzLtZIjrSH5cIDKcKN/zJmtd7iIx8MluqqaGi/opq2sD+H0nNWtuWUhfmBhgEA7BYzZvAsJFQ3ArdegGu1HMj2sI13t8x9fCYrstbK9VxcC5d9TDgn7bTtkTtdB6Svhjk1Agpl6sGtyTV3IIDklaNOTKR75NSZOzdAtdwSTAQluws7Ohkpb1fqJ1LtThPCpQMTX3MLjRY48n3sIHthquUOaeXBpVMsgXxAIUxQsTJ3RkE5rf+JkXJrbrW1cTrs3DrpwFgGD6tJuInO4+t04USoMJJG9ydxcT6fKm9XVDNcfmtnd3gWEKKLhqcnm90h+GveYZzQ== tdn"
+
+[settings.public/service/postfix]
+myhostname = "template.vineyard.sikkerhed.org"
+root_destination = "foo@vineyard.sikkerhed.org"
+
+[settings.public/config/fstab]
+mount["proc"] = dict(
+    src ="proc",
+    dst ="/proc",
+    type="proc",
+    opts=["defaults"],
+    dump="0",
+    pass="0")
+mount["root"] = dict(
+    src ="/dev/hda1",
+    dst ="/",
+    type="ext3",
+    opts=["errors=remount-ro"],
+    dump="0",
+    pass="1")
+
+[settings.public/config/network]
+#iface["eth0"] = dict(
+#    address = "10.0.0.6", 
+#    netmask = "255.255.255.0", 
+#    gateway     = "10.0.0.254"
+#    )
+iface["eth0"] = dict(type="dhcp")
+resolvconf_nameservers = []
+resolvconf_domain      = "vineyard.sikkerhed.org"
+resolvconf_search      = "vineyard.sikkerhed.org"
+
+resolvconf_nameservers += "10.0.0.50"
+

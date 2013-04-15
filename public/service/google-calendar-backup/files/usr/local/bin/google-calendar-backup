@@ -1,0 +1,32 @@
+%#!/usr/bin/python
+%#encoding=utf8
+%header("##")
+
+import urllib
+import datetime
+import os
+
+data_path = "%(data_path)"
+
+def fail(reason="Unknown error", code=1):
+    import sys
+    print "Error(%%s): %%s" %% (code, reason)
+    sys.exit(code)
+
+isodate = datetime.date.today().isoformat()
+calendar_path = os.path.join(data_path, "calendars", isodate)
+calendars = {}
+
+for c in open(os.path.join(data_path, "calendar-urls")).readlines():
+    c = c.strip()
+    if len(c):
+        if not c.startswith("%#"):
+            t = c.split(": ")
+            calendars[t[0]] = "".join(t[1:])
+try:
+    os.mkdir(calendar_path)
+except Exception, e:
+    print e
+    fail("Could not create dir")
+for name, url in calendars.items():
+    body, header = urllib.urlretrieve(url, calendar_path + "/" + name + "-" + isodate + ".ics")

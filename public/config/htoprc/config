@@ -1,0 +1,9 @@
+##
+## Configuration for public/config/htoprc
+##
+
+
+[files]
+if PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "12.04"
+  remap["/root/.htoprc"] = "/root/.config/htop/htoprc"
+end

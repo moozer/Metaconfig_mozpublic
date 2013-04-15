@@ -1,0 +1,18 @@
+##
+## Configuration for public/service/nginx
+##
+[settings]
+user = "www-data"
+worker_procs = 1
+worker_connections = 1024
+
+error_log = "/var/log/nginx/error.log"
+access_log = "/var/log/nginx/access.log"
+sites_enable = []
+sites_disable = []
+
+[trigger.restart-nginx]
+files += "/etc/nginx/nginx.conf"
+files += "/etc/nginx/sites-enabled/*"
+files += "/etc/nginx/sites-available/*"
+command = ["/etc/init.d/nginx", "restart"]

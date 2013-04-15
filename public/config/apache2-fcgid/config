@@ -1,0 +1,14 @@
+[apt]
+install += "libapache2-mod-fcgid"
+
+[settings]
+config = dict()
+config["MaxRequestLen"] = 20971520
+config["MinProcessesPerClass"] = 0
+config["MaxProcessesPerClass"] = 5
+config["MaxProcesses"] = 50
+config["IdleTimeout"] = 10
+config["ProcessLifeTime"] = 1200
+config["IdleScanInterval"] = 2
+
+extensions = [".php5", ".php4", ".php", ".php3", ".php2", ".phtml"]

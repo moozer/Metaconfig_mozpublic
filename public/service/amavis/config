@@ -1,0 +1,30 @@
+##
+## Configuration for public/service/amavis
+##
+
+[apt]
+install += "amavisd-new"
+install += "tmpreaper"
+# Required archive tool
+install += "pax"
+install += "ripole"
+
+[files]
+rm += "/etc/cron.daily/tmpreaper"
+mkdir += "/data/amavis"
+mkdir += "/data/amavis/db"
+mkdir += "/data/amavis/tmp"
+
+owner["/data/amavis"] = "amavis:amavis"
+owner["/data/amavis/*"] = "amavis:amavis"
+
+[trigger.restart-amavis]
+files += "/etc/amavis/conf.d/*"
+command = ["invoke-rc.d", "amavis", "restart"]
+
+[settings]
+#forward_host =
+bind_address = "0.0.0.0"
+#allowed_host =
+quarantinedir = "/data/virusmails/"
+max_servers = "4"

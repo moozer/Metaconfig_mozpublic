@@ -1,0 +1,4 @@
+%header("##")
+#foreach line in includes
+  %(line)
+#end

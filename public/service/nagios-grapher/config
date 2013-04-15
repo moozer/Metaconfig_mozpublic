@@ -1,0 +1,14 @@
+##
+## Configuration for public/service/nagios-grapher
+##
+import "public/service/nagios"
+
+[apt]
+install += "nagiosgrapher"
+
+[settings.public/service/nagios]
+service_perfdata_command = "ngraph-process-service-perfdata-pipe"
+
+[trigger.restart-nagiosgrapher]
+files += "/etc/nagiosgrapher/ngraph.d/*/*"
+command = ["/etc/init.d/nagiosgrapher", "restart"]

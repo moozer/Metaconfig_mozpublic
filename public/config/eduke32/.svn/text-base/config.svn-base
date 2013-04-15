@@ -1,0 +1,12 @@
+##
+## Configuration for public/config/eduke32
+##
+
+[apt.source.eduke32]
+url = "http://apt.duke4.net"
+dist = PLATFORM_OS_NICKNAME
+keys += "6C12344E"
+debsrc = True
+
+[apt]
+install += "eduke32"

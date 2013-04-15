@@ -1,0 +1,16 @@
+##
+## Configuration for public/config/handbrake
+##
+
+[settings]
+
+[apt.source.handbrake]
+url = "http://ppa.launchpad.net/stebbins/handbrake-releases/ubuntu"
+dist = PLATFORM_OS_NICKNAME
+components = ["main"]
+#keys += "1024R/816950D8"
+keys += "816950D8"
+
+[apt]
+install += "handbrake-cli"
+install += "handbrake-gtk"

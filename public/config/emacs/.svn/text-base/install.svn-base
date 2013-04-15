@@ -1,0 +1,20 @@
+[settings.public/config/emacs]
+if PLATFORM_OS_APT_BASED
+  if x_support
+    [apt]
+    install += "emacs23"
+  else
+    [apt]
+    install += "emacs23-nox"
+  end
+elif PLATFORM_OS_YUM_BASED
+  if x_support
+    [yum]
+    install += "emacs"
+  else
+    [yum]
+    install += "emacs-nox"
+  end
+else
+  unsupported()
+end

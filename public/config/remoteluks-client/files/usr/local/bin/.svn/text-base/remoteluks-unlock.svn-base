@@ -1,0 +1,17 @@
+%#!/bin/zsh
+%header("##")
+set -e
+LOG="%(logfile)"
+#if debug
+  set -x
+  date >> $LOG
+  echo "STARTED REMOTELUKS" >> $LOG
+  ls -al /dev/disk/by-id >> $LOG
+#end
+source /etc/remoteluks/remoteluks.conf
+ssh -i $private_key $remote_user@$remote_host "cat $remote_path" | cryptsetup luksOpen --key-file=- $luks_device $dm_device && mount /dev/mapper/$dm_device $mount_point
+#if debug
+  date >> $LOG
+  ls -al /dev/disk/by-id >> $LOG
+#end
+echo "END OF REMOTELUKS" >> $LOG

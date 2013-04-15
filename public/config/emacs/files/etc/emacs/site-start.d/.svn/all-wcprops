@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/config/!svn/ver/5550/projects/metaconfig/public/config/emacs/files/etc/emacs/site-start.d
+END
+60-basic-settings.el
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/config/!svn/ver/5550/projects/metaconfig/public/config/emacs/files/etc/emacs/site-start.d/60-basic-settings.el
+END
+64-options.el
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/config/!svn/ver/5550/projects/metaconfig/public/config/emacs/files/etc/emacs/site-start.d/64-options.el
+END
+63-colors.el
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/config/!svn/ver/5549/projects/metaconfig/public/config/emacs/files/etc/emacs/site-start.d/63-colors.el
+END
+62-modes.el
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/config/!svn/ver/5549/projects/metaconfig/public/config/emacs/files/etc/emacs/site-start.d/62-modes.el
+END
+61-keys.el
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/config/!svn/ver/5357/projects/metaconfig/public/config/emacs/files/etc/emacs/site-start.d/61-keys.el
+END

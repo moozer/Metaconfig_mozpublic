@@ -1,0 +1,125 @@
+##
+## Configuration for public/service/syslog-ng
+##
+
+[apt]
+install += "syslog-ng"
+install += "spye-sikkerhedorg"
+
+[trigger.restart-syslog-ng]
+files += "/etc/syslog-ng/syslog-ng.conf"
+files += "/etc/spye/config/50-logwatch.conf"
+command = ["/etc/init.d/syslog-ng", "reload"]
+
+[files]
+permission["/etc/cron.weekly/syslog-ng"] = "0755"
+
+[settings]
+if PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "6"
+  version = "3.0"
+elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION == "10.04"
+  version = "2.0"
+elif PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION >= "10.10" and PLATFORM_OS_VERSION <= "11.04")
+  version = "3.0"
+elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION == "11.10"
+  version = "3.2"
+elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "12"
+  version = "3.3"
+elif PLATFORM_OS_NAME == "centos" and PLATFORM_OS_VERSION >= "6"
+  version = "3.2"
+else
+  print_error("syslog-ng: Unsupported OS version [%s %s]", PLATFORM_OS_NAME, PLATFORM_OS_VERSION)
+end
+
+network_client       = 0
+network_server       = 0
+logwatchers          = []
+logwatch_mailfrom    = ""
+logwatch_mailto      = ""
+#network_destination =
+logcompress_time     = "4:40"
+logcompress_paths    = ["/data/log/virtual", "/var/log"]
+mailstats            = 0
+
+patterns = []
+
+## Generic application and kernel problems
+patterns += "invoked oom-killer:"
+patterns += "segfault at "
+patterns += "Oops: "
+patterns += "blocked for more than [0-9]+ seconds"
+patterns += "general protection "
+## Rsyncsh
+patterns += "rsyncsh: \\[Warning\\]"
+patterns += "rsyncsh: \\[Error\\]"
+## Generic I/O errors
+patterns += "end_request: I/O error, dev"
+patterns += "Buffer I/O error on device"
+patterns += "lost page write due to I/O error"
+patterns += "EXT[2-4]-fs error"
+patterns += "lost page write"
+
+## RAID issues
+patterns += "raid.: Disk failure on "
+## DRBD problems
+patterns += "drbd[0-9]+: PingAck did not arrive in time."
+## Odd memory problem
+patterns += "swapper: page allocation failure"
+## Time stamp counter problem observed on Fit-PC
+patterns += "Clocksource tsc unstable"
+
+patterns += "Traceback"
+
+## failed sudo attempts
+patterns += "pam_unix\\(sudo:auth\\): authentication failure"
+patterns += "pam_unix\\(sudo:auth\\): conversation failed"
+patterns += "pam_unix\\(sudo:auth\\): auth could not identify password for"
+patterns += "user NOT in sudoers"
+
+# Failed authentication
+patterns += "authentication failure"
+patterns += "FAILED su for"
+
+# Alert when something is overheating
+patterns += "THERMAL EMERGENCY"
+patterns += "Critical temperature reached"
+patterns += "acpi: temperatures"
+
+# catch roundcube db errors
+patterns += "MDB2 Error"
+patterns += "DB Error"
+
+# Give sound if we run out of disk space
+patterns += "No space left on device"
+patterns += "cannot create tmp lockfile"
+patterns += "I/O error occurred while writing"
+
+# Amavis/clamav errors
+patterns += "Requesting process rundown after fatal error"
+patterns += "ClamAV-clamd av-scanner FAILED"
+
+# Roundcube errors
+patterns += "roundcube: MDB2 Error"
+patterns += "roundcube: DB Error"
+
+# Bind zone errors
+patterns += "not loaded due to errors"
+
+# Cron job failures
+patterns += "grandchild #[0-9]+ failed with exit status"
+
+# iSCSI/DRBD errors
+patterns += "Kernel reported iSCSI connection"
+patterns +="detected conn error"
+patterns +="iscsid: conn [0-9]+ login rejected"
+patterns +="block drbd[0-9]+: write: error"
+
+# spye errors
+patterns += "spye\\[[0-9]+\\]: \\[E\\]"
+
+# SQL errors
+patterns +="You have an error in your SQL syntax"
+
+
+
+exclude_patterns = []

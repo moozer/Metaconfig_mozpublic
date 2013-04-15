@@ -1,0 +1,48 @@
+##
+## Configuration for public/config/backup
+##
+
+[apt]
+install += "rsync"
+
+[files]
+permission["/etc/spye/backup/*/ssh/private.key"] = "0600"
+
+mkdir += "/etc/spye"
+mkdir += "/etc/spye/backup"
+mkdir += "/etc/spye/backup/main"
+mkdir += "/etc/spye/backup/main/ssh"
+
+rm += "/usr/local/bin/spye-backup"
+
+[settings]
+# username =
+
+jobs = "0 5 * * *|root|main"
+
+host = "backup.sikkerhed.org"
+rsync_opts = []
+rsync_opts += "-q"
+rsync_opts += "-zrlpt"
+rsync_opts += "--specials"
+rsync_opts += "--partial"
+rsync_opts += "--chmod=Du+rwx"
+rsync_opts += "--chmod=Fu+r"
+includes    = ["/data"]
+excludes    = []
+
+ssh_port    = "42000"
+ssh_options = []
+
+known_hosts = []
+known_hosts += "|1|0MocnYj2/9Fgp6M1L9yllXQCKMA=|OQI/IMwnDWVaP46TmdFVwnshF8c= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsP0slapqvzb0DaGihJH8i9eH7tDE7lPS+UeEZczZZX/O25sr4S2HmHduEStQrRXtVjQK7yoHRfrHCqhBLcqQNNW4sdFEUSH2F4O/3OtUZYx4z5rbhHuDwNhFbAHWt/+hrnUwWNyN0l8wXdQGNfOlMye3kHthqmZWAJ32jVLB8nfDZaHw2k7NHAoM4/hoNaxHeqqmz0Q/doP4zay3BUBadOEd1R8aJlCRFkbJyGU/ArQced8ZyMS9iDDZ9PCvsj7KqypNSDIYFc8IRvjLhAfS6KwInDlpqfGUP/CChm6q2P/XNuluFLqACMx/YMB5TnDnkvpQWInDzOYccX8ryWCz2Q=="
+known_hosts += "|1|+9RKHIrzlnaQcLAuTwfeB9MUyJc=|4pTpnDpbp+3ar1nAC1bebkTmRBs= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsP0slapqvzb0DaGihJH8i9eH7tDE7lPS+UeEZczZZX/O25sr4S2HmHduEStQrRXtVjQK7yoHRfrHCqhBLcqQNNW4sdFEUSH2F4O/3OtUZYx4z5rbhHuDwNhFbAHWt/+hrnUwWNyN0l8wXdQGNfOlMye3kHthqmZWAJ32jVLB8nfDZaHw2k7NHAoM4/hoNaxHeqqmz0Q/doP4zay3BUBadOEd1R8aJlCRFkbJyGU/ArQced8ZyMS9iDDZ9PCvsj7KqypNSDIYFc8IRvjLhAfS6KwInDlpqfGUP/CChm6q2P/XNuluFLqACMx/YMB5TnDnkvpQWInDzOYccX8ryWCz2Q=="
+known_hosts += "|1|ijF1QSLZ7X+fp+Bnlcox91YGQvc=|hvuMsIWUWhtNOL+LyLRrhmRDC2Q= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7hTHl30WKur1nVAjfhiN9o9G5Y4GCbwdayRuCFh0FVMJXyh1OwM8fgvr4igJt/6phRiYhhY+k03bh07KZoIWrU17Mv+6imsYAbN5D4h1zMeB/imIORJkPX+3H/uLB4Oh7YPsA8ySOKCUTZS6gYzSZnbcL90NSbd0f0pz0OXEuYs28Nc+Lqt6gpz1m2IjH2Vfm9T54yoyVOIVF/PdLKJxTTk4/1HLNhsiN2rGlvIxipq4ML03TZ4R4CQpftsJwMC3W1gRQVUyTuM+n9FJ/xH2pUXTi1T3F0+CZb/o7CmvCRUFnqlr0lhy8VTBdRNZjvrau/6NEhT+wEssIzVh5QVydQ=="
+known_hosts += "|1|XPnfGwM+KSTJkGgwMmc7U6Wo19w=|QITWD5bvYMxvmeB1xvMePAsUS1Q= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7hTHl30WKur1nVAjfhiN9o9G5Y4GCbwdayRuCFh0FVMJXyh1OwM8fgvr4igJt/6phRiYhhY+k03bh07KZoIWrU17Mv+6imsYAbN5D4h1zMeB/imIORJkPX+3H/uLB4Oh7YPsA8ySOKCUTZS6gYzSZnbcL90NSbd0f0pz0OXEuYs28Nc+Lqt6gpz1m2IjH2Vfm9T54yoyVOIVF/PdLKJxTTk4/1HLNhsiN2rGlvIxipq4ML03TZ4R4CQpftsJwMC3W1gRQVUyTuM+n9FJ/xH2pUXTi1T3F0+CZb/o7CmvCRUFnqlr0lhy8VTBdRNZjvrau/6NEhT+wEssIzVh5QVydQ=="
+known_hosts += "|1|JnxV/+ryvP9bd0tdwLHACLbKmck=|BisIIJCggh5u9iPS7KmUElAlrGg= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxXXxg+Ah2YHjZ2IrcUzAKGSIaT36rqtjba58Hfm4/HdH87Ed3ZGBrfjUCJcpooa4MkmSG4Z0NxacYZmIwshNiwnIYBsqNvyEWVGlyhWgXfYL9Wawiu1+I1kds/Y2m1uqxCrAxWpyKlFwJylX1e+LaEIp0sH/VX59aOiTwVEv2PTN4KsRHjrUSOqU9KRrpXiAqI35V+gXh+i+QJjjxzJ3foehsGAzDKTOpbur6Wd6jl0G/fPa4Lzugx6BEXyteu6C+LpopORpG4/cB5tLmfnrwrXCnsO0TC7xxeqtdBldXtGbBrPejIRwD2SeYSTtrvw836135Z0y6Uagxfz9962zqw=="
+known_hosts += "|1|FoKd5GpOFCGDIvppaqx828qQlsc=|hh/6rasbz2KTkxPQXP52+WVobdo= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsP0slapqvzb0DaGihJH8i9eH7tDE7lPS+UeEZczZZX/O25sr4S2HmHduEStQrRXtVjQK7yoHRfrHCqhBLcqQNNW4sdFEUSH2F4O/3OtUZYx4z5rbhHuDwNhFbAHWt/+hrnUwWNyN0l8wXdQGNfOlMye3kHthqmZWAJ32jVLB8nfDZaHw2k7NHAoM4/hoNaxHeqqmz0Q/doP4zay3BUBadOEd1R8aJlCRFkbJyGU/ArQced8ZyMS9iDDZ9PCvsj7KqypNSDIYFc8IRvjLhAfS6KwInDlpqfGUP/CChm6q2P/XNuluFLqACMx/YMB5TnDnkvpQWInDzOYccX8ryWCz2Q=="
+
+
+[trigger.generate-backup-keys]
+command = "DIR=/etc/spye/backup/main/ssh; PRIV=$DIR/private.key; PUB=$DIR/public.key; mkdir -p $DIR; [[ ! -r $PRIV ]] && (echo -e \"\\nGenerating backup keys\" && ssh-keygen -P \"\" -C \"$(hostname -f)-backup-$(isodate)\" -t rsa -b 2048 -f $PRIV && mv $PRIV.pub $PUB) || true"
+single = True
