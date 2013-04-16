@@ -1,0 +1,6 @@
+# installs dovecot imap 
+# localhost only 
+# for backup purposes
+
+[apt]
+install += "dovecot-imapd"
