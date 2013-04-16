@@ -1,6 +1,11 @@
+import "mozrepo/config/sysuser"
+
 # basic libvirt non-gui tools
 [apt]
 install += "qemu-kvm"
 install += "virtinst"
 install += "python-libvirt"
 
+# allow sysuser to use libvirt
+[unixuser.sysuser]
+groups_include += "libvirt"

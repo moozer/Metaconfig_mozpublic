@@ -1,0 +1,6 @@
+# installs relevant xfce4 stuff
+
+[apt]
+install += "task-xfce-desktop"
+install += "gdm3"
+

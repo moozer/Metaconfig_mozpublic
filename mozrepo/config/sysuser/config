@@ -1,0 +1,14 @@
+# add the recurrent system user.
+
+[unixuser.sysuser]
+uid = 1000
+gid = 1000
+gecos = ",,,"
+home = "/home/sysuser"
+shell = "/bin/bash"
+
+groups_include += "adm"
+groups_include += "sudo"
+
+[unixgroup.sysuser]
+gid=1000
