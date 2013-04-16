@@ -1,0 +1,6 @@
+# basic libvirt non-gui tools
+[apt]
+install += "qemu-kvm"
+install += "virtinst"
+install += "python-libvirt"
+
