@@ -1,0 +1,22 @@
+# default stuff for all workstations
+
+import "mozrepo/service/eclipse"
+import "mozrepo/service/xfce4"
+
+[apt]
+install += "evince"
+install += "zim"
+install += "keepassx"
+install += "eclipse"
+#install += ["davmail", "libswt-gtk-3-java", "libswt-gtk-3-jni"]
+install += "wireshark"
+install += ["icedove", "iceowl-extension"]
+install += "chromium-browser"
+install += "liferea"
+install += "tkdiff"
+install += "virt-manager"
+install += "filezilla"
+install += "dia"
+install += "xournal"
+install += ["icedtea-plugin", "openjdk-7-jre"]
+
