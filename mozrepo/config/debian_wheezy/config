@@ -1,0 +1,15 @@
+# add default debian repos
+# wheezy/main
+
+[apt.source.debian-wheezy]
+url = "http://ftp.dk.debian.org/debian"
+dist = "wheezy"
+components = ["main"]
+
+[apt.source.debian-wheezy-security]
+url = "http://security.debian.org"
+dist = "wheezy/updates"
+components = ["main"]
+
+
+
