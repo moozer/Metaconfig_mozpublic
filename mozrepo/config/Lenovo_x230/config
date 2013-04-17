@@ -1,0 +1,5 @@
+# installing lenovo x230 specific stuff
+
+[apt]
+install += "firmware-iwlwifi"
+

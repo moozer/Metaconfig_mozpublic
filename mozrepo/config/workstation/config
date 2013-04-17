@@ -13,10 +13,11 @@ install += "wireshark"
 install += ["icedove", "iceowl-extension"]
 install += "chromium-browser"
 install += "liferea"
-install += "tkdiff"
+install += "tkcvs"
 install += "virt-manager"
 install += "filezilla"
 install += "dia"
 install += "xournal"
 install += ["icedtea-plugin", "openjdk-7-jre"]
+install += "mc"
 
