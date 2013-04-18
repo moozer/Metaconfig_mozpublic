@@ -1,9 +1,9 @@
 # installing lenovo x230 specific stuff
 
-[apt.source.debian-wheezy-non-free]
-url = "http://ftp.dk.debian.org/debian"
-dist = "wheezy"
-components = ["non-free"]
+import "mozrepo/config/debian_wheezy"
+
+[settings.mozrepo/config/debian_wheezy]
+components += ["non-free"]
 
 [apt]
 install += "firmware-iwlwifi"
