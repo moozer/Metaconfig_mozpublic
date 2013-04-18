@@ -1,0 +1,8 @@
+%header("##")
+
+deb %(path) %(distribution) %(" ".join(components))
+deb http://security.debian.org %(distribution)/updates main
+
+
+
+
