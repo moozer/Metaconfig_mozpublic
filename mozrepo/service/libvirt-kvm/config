@@ -5,6 +5,7 @@ import "mozrepo/config/sysuser"
 install += "qemu-kvm"
 install += "virtinst"
 install += "python-libvirt"
+install += "libvirt-bin"
 
 # allow sysuser to use libvirt
 [unixuser.sysuser]

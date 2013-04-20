@@ -17,6 +17,7 @@ install += "tkcvs"
 install += "virt-manager"
 install += "filezilla"
 install += "dia"
+install += "pavucontrol"
 install += "xournal"
 install += ["icedtea-plugin", "openjdk-7-jre"]
 install += "mc"
