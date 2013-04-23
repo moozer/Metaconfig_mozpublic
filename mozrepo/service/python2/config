@@ -1,0 +1,6 @@
+# install python 2.x related stuff
+
+[apt]
+install += "python-pip"
+install += "python-flask"
+install += "python-dateutil"

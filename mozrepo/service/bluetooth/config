@@ -1,0 +1,4 @@
+# Install bluetooth related stuff
+
+[apt]
+install += "gnome-bluetooth"

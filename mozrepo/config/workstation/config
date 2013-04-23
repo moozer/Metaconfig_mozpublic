@@ -4,11 +4,14 @@ import "mozrepo/service/eclipse"
 import "mozrepo/service/xfce4"
 
 [apt]
+# difficult installs...
+#install += ["davmail", "libswt-gtk-3-java", "libswt-gtk-3-jni"]
+#install += "qucs"
+
 install += "evince"
 install += "zim"
 install += "keepassx"
 install += "eclipse"
-#install += ["davmail", "libswt-gtk-3-java", "libswt-gtk-3-jni"]
 install += "wireshark"
 install += ["icedove", "iceowl-extension"]
 install += "chromium-browser"
@@ -21,4 +24,5 @@ install += "pavucontrol"
 install += "xournal"
 install += ["icedtea-plugin", "openjdk-7-jre"]
 install += "mc"
+install += "gedit"
 
