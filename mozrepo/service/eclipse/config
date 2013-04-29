@@ -3,4 +3,5 @@
 [apt]
 install += "eclipse"
 install += "eclipse-egit"
+install += "eclipse-cdt"
 

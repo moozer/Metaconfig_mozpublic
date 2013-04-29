@@ -25,4 +25,5 @@ install += "xournal"
 install += ["icedtea-plugin", "openjdk-7-jre"]
 install += "mc"
 install += "gedit"
-
+install += "ncftp"
+install += "gstreamer0.10"
