@@ -1,0 +1,6 @@
+# installs exim4 and uses $home/mail/mailboxes/inbox as mbox spool
+
+[apt]
+install += "exim4"
+
+

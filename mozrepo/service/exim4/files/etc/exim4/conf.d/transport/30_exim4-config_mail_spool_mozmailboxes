@@ -1,0 +1,16 @@
+
+### transport/30_exim4-config_mail_spool_mozmailboxes
+###
+## deliveres to mbox in $home/mail/mailboxes/inbox
+
+mail_spool:
+  debug_print = "T: appendfile for $local_part@$domain"
+  driver = appendfile
+  file = $home/Mail/maildirbox/inbox
+  delivery_date_add
+  envelope_to_add
+  return_path_add
+  group = mail
+  mode = 0660
+  mode_fail_narrower = false
+
