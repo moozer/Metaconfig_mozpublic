@@ -3,7 +3,7 @@
 ###
 ## deliveres to mbox in $home/mail/mailboxes/inbox
 
-mail_spool:
+mail_spool_mozmailboxes:
   debug_print = "T: appendfile for $local_part@$domain"
   driver = appendfile
   file = $home/Mail/maildirbox/inbox

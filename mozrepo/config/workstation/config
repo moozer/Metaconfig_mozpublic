@@ -26,4 +26,4 @@ install += ["icedtea-plugin", "openjdk-7-jre"]
 install += "mc"
 install += "gedit"
 install += "ncftp"
-install += "gstreamer0.10"
+install += "gstreamer0.10-tools"
