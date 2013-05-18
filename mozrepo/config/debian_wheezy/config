@@ -15,6 +15,3 @@
 path = "http://ftp.dk.debian.org/debian"
 distribution = "wheezy"
 components = ["main"]
-
-
-

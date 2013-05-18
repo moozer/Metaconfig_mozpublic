@@ -4,5 +4,5 @@ import "mozrepo/config/debian_wheezy_contrib"
 
 [apt]
 install += "flashplugin-nonfree"
-
+remove += "browser-plugin-gnash"
 

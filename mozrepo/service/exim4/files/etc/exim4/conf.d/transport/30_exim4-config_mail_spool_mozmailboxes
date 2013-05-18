@@ -1,3 +1,4 @@
+%header("##")
 
 ### transport/30_exim4-config_mail_spool_mozmailboxes
 ###
@@ -6,7 +7,7 @@
 mail_spool_mozmailboxes:
   debug_print = "T: appendfile for $local_part@$domain"
   driver = appendfile
-  file = $home/Mail/maildirbox/inbox
+  file = $home/mail/maildirbox/inbox
   delivery_date_add
   envelope_to_add
   return_path_add
