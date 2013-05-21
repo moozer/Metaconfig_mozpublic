@@ -1,0 +1,10 @@
+%header("##")
+
+Package: *
+Pin: release o=Debian,a=testing
+Pin-Priority: 900
+
+Package: *
+Pin: release o=Debian
+Pin-Priority: -1
+

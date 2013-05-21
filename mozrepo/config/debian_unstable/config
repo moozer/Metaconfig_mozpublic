@@ -1,0 +1,12 @@
+#
+# adds the debian unstable repo
+# this is most likely not something you want to do...
+
+[apt.source.debian_unstable]
+url = "http://cdn.debian.net/debian"
+dist = "unstable"
+components = ["main"]
+
+
+
+
