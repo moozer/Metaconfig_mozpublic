@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/fail2ban/files/etc/fail2ban
 https://svn.sikkerhed.org/svn/config
 
@@ -26,16 +26,13 @@ chrivers
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
 
-filter.d
-dir
-
 fail2ban.conf
 file
 
 
 
 
-2013-04-14T10:15:22.191955Z
+2013-05-21T20:50:48.646184Z
 fc3eca56535e5e04f8241112890daea4
 2009-04-07T16:16:57.681608Z
 1535
@@ -69,7 +66,7 @@ file
 
 
 
-2013-04-14T10:15:22.191955Z
+2013-05-21T20:50:48.646184Z
 19fa7fcd7b2c74bcfc37895ef2aba12e
 2013-03-14T13:33:05.681347Z
 5974
@@ -96,4 +93,7 @@ chrivers
 
 
 3100
+
+filter.d
+dir
 

@@ -11,6 +11,7 @@ auth_verbose = yes
 ###if "imap" in protocols
 ##  disable_plaintext_auth = no
 ###end
+mail_max_userip_connections = 20
 
 first_valid_uid = 8
 last_valid_uid = 8

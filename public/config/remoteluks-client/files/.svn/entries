@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/config/remoteluks-client/files
 https://svn.sikkerhed.org/svn/config
 
@@ -26,9 +26,9 @@ tdn
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
 
-etc
+usr
 dir
 
-usr
+etc
 dir
 

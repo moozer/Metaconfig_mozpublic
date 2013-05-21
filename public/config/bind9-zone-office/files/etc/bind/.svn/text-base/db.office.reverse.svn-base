@@ -1,6 +1,6 @@
 $TTL   1D
 @   IN SOA %(zone_10_ns).%(zone_10_name). %(zone_10_hostmaster.replace("@", ".")) (
-					2012040201 ; serial number
+					2013050901 ; serial number
 					60000      ; refresh (1 day)
 					3600       ; retry (1 hour)
 					2600000    ; expire (1 month)

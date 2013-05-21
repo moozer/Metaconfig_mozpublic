@@ -1,14 +1,14 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/nfs-client
 https://svn.sikkerhed.org/svn/config
 
 
 
-2013-04-12T11:07:29.885937Z
-6000
+2013-05-09T09:49:13.447203Z
+6043
 tdn
 
 
@@ -35,10 +35,10 @@ file
 
 
 
-2013-04-14T10:15:17.771954Z
-82cf3550f45d5acbd70e9aac9ba2ab42
-2013-04-12T11:07:29.885937Z
-6000
+2013-05-21T20:50:46.626225Z
+0dab2db5e3d889a890452fd6eaf16f25
+2013-05-09T09:49:13.447203Z
+6043
 tdn
 
 
@@ -61,5 +61,5 @@ tdn
 
 
 
-1509
+1702
 

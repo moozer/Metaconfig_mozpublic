@@ -1,0 +1,11 @@
+# the automount system
+# file in the correct directory gets automounted.
+
+[apt]
+install += "autofs5"
+
+[settings]
+sqfs_src_dir="/mnt/storage/moz/sqfs"
+iso_src_dir="/mnt/storage/moz/iso"
+sqfs_mnt_dir="/media/sqfs/moz"
+iso_mnt_dir="/media/iso/moz"

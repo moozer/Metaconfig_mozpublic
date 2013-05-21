@@ -1,15 +1,15 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/postfix/files/etc
 https://svn.sikkerhed.org/svn/config
 
 
 
-2012-06-10T09:28:43.478589Z
-5596
-config_sikkerhedorg
+2013-04-29T08:56:13.948532Z
+6020
+chrivers
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2013-04-14T10:15:17.303954Z
+2013-05-21T20:50:46.386230Z
 eacb87e29870e6c479be51ca81a175e2
 2009-03-23T13:12:53.396714Z
 1437

@@ -3,12 +3,6 @@ svn:wc:ra_dav:version-url
 V 101
 /svn/config/!svn/ver/4418/projects/metaconfig/public/service/postgresql/files/etc/postgresql/8.3/main
 END
-pg_ident.conf
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/config/!svn/ver/4363/projects/metaconfig/public/service/postgresql/files/etc/postgresql/8.3/main/pg_ident.conf
-END
 start.conf
 K 25
 svn:wc:ra_dav:version-url
@@ -32,4 +26,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 117
 /svn/config/!svn/ver/4418/projects/metaconfig/public/service/postgresql/files/etc/postgresql/8.3/main/postgresql.conf
+END
+pg_ident.conf
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/config/!svn/ver/4363/projects/metaconfig/public/service/postgresql/files/etc/postgresql/8.3/main/pg_ident.conf
 END

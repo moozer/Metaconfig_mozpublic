@@ -12,6 +12,7 @@
 #components = ["main"]
 
 [settings]
+#[templates]
 path = "http://ftp.dk.debian.org/debian"
 distribution = "wheezy"
 components = ["main"]

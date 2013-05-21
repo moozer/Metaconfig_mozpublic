@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/config/networkmanager-fqdn-fix/files/etc/NetworkManager/dispatcher.d
 https://svn.sikkerhed.org/svn/config
 
@@ -32,7 +32,7 @@ file
 
 
 
-2013-04-14T10:15:28.779955Z
+2013-05-21T20:50:51.154132Z
 31c9a17b23fa475a88f2c26edcdcd7ef
 2012-03-16T15:52:46.045841Z
 5030

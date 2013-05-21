@@ -3,12 +3,6 @@ svn:wc:ra_dav:version-url
 V 91
 /svn/config/!svn/ver/4865/projects/metaconfig/public/service/nfblock/files/etc/blockcontrol
 END
-blocklists.list
-K 25
-svn:wc:ra_dav:version-url
-V 107
-/svn/config/!svn/ver/4865/projects/metaconfig/public/service/nfblock/files/etc/blockcontrol/blocklists.list
-END
 allow.p2p
 K 25
 svn:wc:ra_dav:version-url
@@ -20,4 +14,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/config/!svn/ver/4865/projects/metaconfig/public/service/nfblock/files/etc/blockcontrol/blockcontrol.conf
+END
+blocklists.list
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/config/!svn/ver/4865/projects/metaconfig/public/service/nfblock/files/etc/blockcontrol/blocklists.list
 END

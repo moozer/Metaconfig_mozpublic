@@ -40,11 +40,11 @@ install += ["emacs", "vim", "hexedit", "colordiff"]
 install += ["make", "patch", "devscripts", "build-essential", "wdiff"]
 # file
 install += ["tofrodos", "unrar-free", "unzip", "wget", "bzip2", "convmv", "fdupes", "rsync", "less", "hdparm"]
-#if PLATFORM_OS_UBUNTU >= "12.10"
+if PLATFORM_OS_UBUNTU >= "12.10" or PLATFORM_OS_DEBIAN >= "7.0"
   install += "gddrescue"
-#else
-#  install += "ddrescue"
-#end
+else
+  install += "ddrescue"
+end
 # net
 install += ["nmap", "lftp", "whois", "iptables", "iptraf", "irssi", "mtr-tiny", "netcat", "links", "tcpdump", "curl", "ngrep"]
 install += ["dsniff", "bind9-host", "dnsutils", "tcptraceroute", "ssh", "swaks", "telnet", "bwm-ng"]

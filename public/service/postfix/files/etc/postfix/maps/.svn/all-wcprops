@@ -1,13 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svn/config/!svn/ver/5475/projects/metaconfig/public/service/postfix/files/etc/postfix/maps
+/svn/config/!svn/ver/6006/projects/metaconfig/public/service/postfix/files/etc/postfix/maps
 END
 inbound-accept
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/config/!svn/ver/4390/projects/metaconfig/public/service/postfix/files/etc/postfix/maps/inbound-accept
+END
+inbound-sender-access
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/config/!svn/ver/6006/projects/metaconfig/public/service/postfix/files/etc/postfix/maps/inbound-sender-access
 END
 transport
 K 25

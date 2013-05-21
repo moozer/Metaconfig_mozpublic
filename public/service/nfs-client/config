@@ -6,7 +6,7 @@ import "public/config/tcpwrapper"
 
 [apt]
 install += ["nfs-common"]
-if PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION == "11.10" or PLATFORM_OS_VERSION >= "12")
+if PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION == "11.10" or PLATFORM_OS_VERSION >= "12") or PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "7.0"
   install += "rpcbind"
 else
   install += "portmap"
@@ -20,9 +20,12 @@ end
 # nfs-common: /etc/init.d/idmapd 
 
 if PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "12"
-  [trigger.restart-nfs-common-statd-mounting]
-  files += "/etc/default/nfs-common"
-  command = ["service", "statd-mounting", "restart"]
+  # statd-mounting fails on restart in ubuntu 13.4
+  if PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION < "13"
+    [trigger.restart-nfs-common-statd-mounting]
+    files += "/etc/default/nfs-common"
+    command = ["service", "statd-mounting", "restart"]
+  end
   [trigger.restart-nfs-common-statd]
   files += "/etc/default/nfs-common"
   command = ["service", "statd", "restart"]

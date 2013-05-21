@@ -44,5 +44,5 @@ known_hosts += "|1|FoKd5GpOFCGDIvppaqx828qQlsc=|hh/6rasbz2KTkxPQXP52+WVobdo= ssh
 
 
 [trigger.generate-backup-keys]
-command = "DIR=/etc/spye/backup/main/ssh; PRIV=$DIR/private.key; PUB=$DIR/public.key; mkdir -p $DIR; [[ ! -r $PRIV ]] && (echo -e \"\\nGenerating backup keys\" && ssh-keygen -P \"\" -C \"$(hostname -f)-backup-$(isodate)\" -t rsa -b 2048 -f $PRIV && mv $PRIV.pub $PUB) || true"
+command = "DIR=/etc/spye/backup/main/ssh; PRIV=$DIR/private.key; PUB=$DIR/public.key; mkdir -p $DIR; [ ! -r $PRIV ] && (echo \"Generating backup keys\" && ssh-keygen -P \"\" -C \"$(hostname -f)-backup-$(date +%Y-%m-%d)\" -t rsa -b 2048 -f $PRIV && mv $PRIV.pub $PUB) || true"
 single = True

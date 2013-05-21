@@ -58,3 +58,11 @@ PubkeyAuthentication yes
   X11Forwarding yes
   X11DisplayOffset 10
 #end
+
+#foreach m in sshd_match
+  Match %(m)
+  #foreach line in sshd_match[m]
+      %(line)
+  #end
+
+#end

@@ -1,0 +1,5 @@
+%header("##")
+
+%(sqfs_mnt_dir) /etc/auto.master.d/auto.squashfs.loop --timeout=30 --ghost
+%(iso_mnt_dir) /etc/auto.master.d/auto.iso.loop --timeout=30 --ghost
+

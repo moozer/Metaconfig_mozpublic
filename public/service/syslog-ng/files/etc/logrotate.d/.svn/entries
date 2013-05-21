@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/syslog-ng/files/etc/logrotate.d
 https://svn.sikkerhed.org/svn/config
 
@@ -32,7 +32,7 @@ file
 
 
 
-2013-04-14T10:15:19.991955Z
+2013-05-21T20:50:47.610205Z
 8b411e807b38c11fae51c0d779c17b54
 2012-03-15T14:26:17.842890Z
 4936

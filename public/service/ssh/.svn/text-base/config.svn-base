@@ -37,6 +37,7 @@ password_authentication = "no"
 listen                  = []
 ssh_hosts               = dict()
 address_family          = "any"
+sshd_match              = dict()
 
 [files]
 permission["/etc/ssh/ssh_host_[dr]sa_key"] = "0600"

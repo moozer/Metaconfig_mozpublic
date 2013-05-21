@@ -1,15 +1,15 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/nfs-server
 https://svn.sikkerhed.org/svn/config
 
 
 
-2012-09-20T19:59:32.053187Z
-5782
-chrivers
+2013-05-09T09:49:13.447203Z
+6043
+tdn
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2013-04-14T10:15:20.959955Z
-37423783e19a03112132eb34d48a2f1a
-2012-09-20T19:59:32.053187Z
-5782
-chrivers
+2013-05-21T20:50:48.094195Z
+90a7ff4fe02fdea2e6f3f05d654e23ab
+2013-05-09T09:49:13.447203Z
+6043
+tdn
 
 
 
@@ -61,5 +61,5 @@ chrivers
 
 
 
-675
+740
 

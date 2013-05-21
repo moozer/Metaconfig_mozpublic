@@ -9,6 +9,13 @@ mkdir   += "/etc/postfix/maps"
 rm      += "/etc/aliases"
 rm      += "/etc/aliases.db"
 
+if PLATFORM_OS_APT_BASED
+  [apt]
+  install += "postfix"
+else
+  unsupported()
+end
+
 [trigger.reload-postfix]
 files += "/etc/postfix/*.cf"
 files += "/etc/postfix/maps/default-forward"
@@ -38,6 +45,11 @@ command = ["postmap", "/etc/postfix/maps/ssl-passwords"]
 files += "/etc/postfix/maps/inbound-accept"
 conditions += "[[ ! -f /etc/postfix/maps/inbound-accept.db ]]"
 command = ["postmap", "/etc/postfix/maps/inbound-accept"]
+
+[trigger.postfix-maps-inbound-sender-access]
+files += "/etc/postfix/maps/inbound-sender-access"
+conditions += "[[ ! -f /etc/postfix/maps/inbound-sender-access.db ]]"
+command = ["postmap", "/etc/postfix/maps/inbound-sender-access"]
 
 [trigger.postfix-maps-virtual]
 files += "/etc/postfix/maps/virtual"
@@ -73,6 +85,7 @@ relay_password        = ""
 aliases               = []
 autoreply_support     = 0
 inbound_accept        = []
+inbound_sender_access = []
 alias_databases       = ["hash:/etc/postfix/maps/aliases"]
 default_forward       = "root"
 root_aliases          = []
@@ -87,6 +100,7 @@ if PLATFORM_OS_NAME in ["debian", "ubuntu"]
 else
   chroot_daemons      = "n"
 end
+settings              = dict()
 
 blacklist_exceptions = []
 blacklist_exceptions += "pasmtp.tele.dk"

@@ -1,14 +1,14 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/profile/standard
 https://svn.sikkerhed.org/svn/config
 
 
 
-2013-04-12T09:34:39.712960Z
-5998
+2013-05-09T09:49:13.447203Z
+6043
 tdn
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2013-04-14T10:15:15.767954Z
-6cbb0eeb89deff5bea06a53d10c78a0b
-2013-04-12T09:34:39.712960Z
-5998
+2013-05-21T20:50:45.662245Z
+9dd0d382df1bcac36ade4f63247aaf9c
+2013-05-09T09:49:13.447203Z
+6043
 tdn
 
 
@@ -58,5 +58,5 @@ tdn
 
 
 
-2514
+2545
 

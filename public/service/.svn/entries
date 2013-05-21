@@ -1,15 +1,15 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service
 https://svn.sikkerhed.org/svn/config
 
 
 
-2013-04-12T11:07:29.885937Z
-6000
-tdn
+2013-05-17T19:37:25.026337Z
+6057
+config_sikkerhedorg
 
 
 
@@ -26,7 +26,25 @@ tdn
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
 
-drbd
+ntp
+dir
+
+hostapd
+dir
+
+apache2
+dir
+
+apt-proxy
+dir
+
+dovecot
+dir
+
+memcached
+dir
+
+disk-space-monitor
 dir
 
 ssh-tunnel-client
@@ -35,13 +53,16 @@ dir
 mailman
 dir
 
-munin-master
+fail2ban
+dir
+
+iscsi-server
 dir
 
 nagios-client-nfs
 dir
 
-amavis
+nagios
 dir
 
 tftpd
@@ -50,16 +71,13 @@ dir
 syslog-ng
 dir
 
+pptp
+dir
+
 samba
 dir
 
-google-calendar-backup
-dir
-
-iscsi-client
-dir
-
-nfs-server
+urlwatch
 dir
 
 fetchmail
@@ -71,31 +89,46 @@ dir
 heartbeat
 dir
 
+nfs-client
+dir
+
+postgresql
+dir
+
+clamav
+dir
+
+upsidedownternet
+dir
+
 mysql
 dir
 
 bind9
 dir
 
-disk-space-monitor
+nagios-grapher
+dir
+
+thttpd
 dir
 
 varnish
 dir
 
+drbd
+dir
+
 nfblock
-dir
-
-fail2ban
-dir
-
-iscsi-server
 dir
 
 proftpd
 dir
 
-nagios
+munin-master
+dir
+
+amavis
 dir
 
 dhcpd
@@ -110,16 +143,19 @@ dir
 nginx
 dir
 
-pptp
+openvpn
 dir
 
-openvpn
+google-calendar-backup
+dir
+
+iscsi-client
 dir
 
 ssh-tunnelshell
 dir
 
-urlwatch
+nfs-server
 dir
 
 postfix
@@ -129,41 +165,5 @@ nagios-client
 dir
 
 smokeping
-dir
-
-ntp
-dir
-
-nfs-client
-dir
-
-hostapd
-dir
-
-postgresql
-dir
-
-apache2
-dir
-
-apt-proxy
-dir
-
-clamav
-dir
-
-dovecot
-dir
-
-upsidedownternet
-dir
-
-nagios-grapher
-dir
-
-memcached
-dir
-
-thttpd
 dir
 

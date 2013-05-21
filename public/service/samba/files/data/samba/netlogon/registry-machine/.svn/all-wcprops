@@ -3,24 +3,6 @@ svn:wc:ra_dav:version-url
 V 109
 /svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine
 END
-disable-simple-filesharing.reg
-K 25
-svn:wc:ra_dav:version-url
-V 140
-/svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/disable-simple-filesharing.reg
-END
-enable-remote-ts-connections.reg
-K 25
-svn:wc:ra_dav:version-url
-V 142
-/svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/enable-remote-ts-connections.reg
-END
-disable-indexing-service.reg
-K 25
-svn:wc:ra_dav:version-url
-V 138
-/svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/disable-indexing-service.reg
-END
 disable-system-restore.reg
 K 25
 svn:wc:ra_dav:version-url
@@ -44,4 +26,22 @@ K 25
 svn:wc:ra_dav:version-url
 V 148
 /svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/security-center-disable-av-warning.reg
+END
+disable-simple-filesharing.reg
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/disable-simple-filesharing.reg
+END
+enable-remote-ts-connections.reg
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/enable-remote-ts-connections.reg
+END
+disable-indexing-service.reg
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/config/!svn/ver/4900/projects/metaconfig/public/service/samba/files/data/samba/netlogon/registry-machine/disable-indexing-service.reg
 END

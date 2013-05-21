@@ -3,15 +3,15 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/config/!svn/ver/4595/projects/metaconfig/public/config/backup/files/etc/spye/backup/main
 END
-include.list
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/config/!svn/ver/4593/projects/metaconfig/public/config/backup/files/etc/spye/backup/main/include.list
-END
 exclude.list
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/config/!svn/ver/4593/projects/metaconfig/public/config/backup/files/etc/spye/backup/main/exclude.list
+END
+include.list
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/config/!svn/ver/4593/projects/metaconfig/public/config/backup/files/etc/spye/backup/main/include.list
 END

@@ -14,7 +14,7 @@ mkdir += "/etc/default/nfs"
 
 [apt]
 install += ["nfs-kernel-server", "nfs-common"]
-if PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION == "11.10" or PLATFORM_OS_VERSION >= "12")
+if PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION == "11.10" or PLATFORM_OS_VERSION >= "12") or PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "7.0"
   install += "rpcbind"
 else
   install += "portmap"

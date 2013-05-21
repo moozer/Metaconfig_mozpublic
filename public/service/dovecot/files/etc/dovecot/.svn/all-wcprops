@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/config/!svn/ver/5153/projects/metaconfig/public/service/dovecot/files/etc/dovecot
+/svn/config/!svn/ver/6057/projects/metaconfig/public/service/dovecot/files/etc/dovecot
 END
 dovecot.conf
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/config/!svn/ver/5153/projects/metaconfig/public/service/dovecot/files/etc/dovecot/dovecot.conf
+/svn/config/!svn/ver/6057/projects/metaconfig/public/service/dovecot/files/etc/dovecot/dovecot.conf
 END
 dovecot-pgsql.conf
 K 25

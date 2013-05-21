@@ -15,7 +15,7 @@ command = ["/etc/init.d/syslog-ng", "reload"]
 permission["/etc/cron.weekly/syslog-ng"] = "0755"
 
 [settings]
-if PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "6"
+if PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "6" and PLATFORM_OS_VERSION < "7"
   version = "3.0"
 elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION == "10.04"
   version = "2.0"
@@ -23,7 +23,7 @@ elif PLATFORM_OS_NAME == "ubuntu" and (PLATFORM_OS_VERSION >= "10.10" and PLATFO
   version = "3.0"
 elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION == "11.10"
   version = "3.2"
-elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "12"
+elif PLATFORM_OS_NAME == "ubuntu" and PLATFORM_OS_VERSION >= "12" or PLATFORM_OS_NAME == "debian" and PLATFORM_OS_VERSION >= "7.0"
   version = "3.3"
 elif PLATFORM_OS_NAME == "centos" and PLATFORM_OS_VERSION >= "6"
   version = "3.2"

@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/config/!svn/ver/5829/projects/metaconfig/public/service/amavis/files/etc/spamassassin
+/svn/config/!svn/ver/6056/projects/metaconfig/public/service/amavis/files/etc/spamassassin
 END
 70-custom.cf
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svn/config/!svn/ver/5829/projects/metaconfig/public/service/amavis/files/etc/spamassassin/70-custom.cf
+/svn/config/!svn/ver/6056/projects/metaconfig/public/service/amavis/files/etc/spamassassin/70-custom.cf
 END

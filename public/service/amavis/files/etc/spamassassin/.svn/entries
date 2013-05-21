@@ -1,14 +1,14 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/amavis/files/etc/spamassassin
 https://svn.sikkerhed.org/svn/config
 
 
 
-2012-11-06T08:25:52.996063Z
-5829
+2013-05-17T10:55:18.257541Z
+6056
 config_sikkerhedorg
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2013-04-14T10:15:19.527954Z
-f9dabdb57fc9d4ae6b16db2c42835565
-2012-11-06T08:25:52.996063Z
-5829
+2013-05-21T20:50:47.422209Z
+b14cb73e84bec592ac84de1f4b848b3b
+2013-05-17T10:55:18.257541Z
+6056
 config_sikkerhedorg
 
 
@@ -58,5 +58,5 @@ config_sikkerhedorg
 
 
 
-492
+842
 

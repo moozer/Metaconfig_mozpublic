@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/nfblock/files/etc/spye/firewall/stop.d
 https://svn.sikkerhed.org/svn/config
 
@@ -32,7 +32,7 @@ file
 
 
 
-2013-04-14T10:15:21.819955Z
+2013-05-21T20:50:48.490187Z
 35f8a1127d8fb8ec9dfb6d1ca9344a50
 2012-03-13T21:10:28.876641Z
 4865

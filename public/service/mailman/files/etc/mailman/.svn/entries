@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/mailman/files/etc/mailman
 https://svn.sikkerhed.org/svn/config
 
@@ -32,7 +32,7 @@ file
 
 
 
-2013-04-14T10:15:19.095954Z
+2013-05-21T20:50:47.258212Z
 58ae271cda9a16227435823a462e92cf
 2012-03-15T13:56:09.762483Z
 4933

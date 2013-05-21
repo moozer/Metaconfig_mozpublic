@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/syslog-ng/files/etc
 https://svn.sikkerhed.org/svn/config
 
@@ -26,6 +26,9 @@ chrivers
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
 
+cron.d
+dir
+
 cron.weekly
 dir
 
@@ -36,8 +39,5 @@ logrotate.d
 dir
 
 syslog-ng
-dir
-
-cron.d
 dir
 

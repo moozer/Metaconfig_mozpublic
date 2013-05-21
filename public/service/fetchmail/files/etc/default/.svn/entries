@@ -1,7 +1,7 @@
 10
 
 dir
-6001
+6059
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/fetchmail/files/etc/default
 https://svn.sikkerhed.org/svn/config
 
@@ -32,7 +32,7 @@ file
 
 
 
-2013-04-14T10:15:20.983954Z
+2013-05-21T20:50:48.122194Z
 b1c21b7c2d074005d42b3eeb481c3d1a
 2012-03-13T20:13:53.563177Z
 4845

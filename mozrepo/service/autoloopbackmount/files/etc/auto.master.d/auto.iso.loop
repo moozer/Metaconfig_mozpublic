@@ -1,0 +1,3 @@
+%header("##")
+
+* -fstype=iso9660,ro,loop :/mnt/storage/moz/iso/&.iso
