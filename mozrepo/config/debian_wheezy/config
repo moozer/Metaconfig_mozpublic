@@ -12,7 +12,12 @@
 #components = ["main"]
 
 [settings]
-#[templates]
-path = "http://ftp.dk.debian.org/debian"
+#path = "http://ftp.dk.debian.org/debian"
 distribution = "wheezy"
+#components = ["main"]
+
+[apt.source.debian_wheezy]
+url = "http://ftp.dk.debian.org/debian"
+dist = "wheezy"
 components = ["main"]
+#keys += "336064B5"

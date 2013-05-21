@@ -13,8 +13,11 @@ import "mozrepo/config/debian_wheezy"
 #dist = "wheezy/updates"
 #components = ["main"]
 
-[settings.mozrepo/config/debian_wheezy]
+#[settings.mozrepo/config/debian_wheezy]
+#components += ["contrib"]
+
+[apt.source.debian_wheezy]
+#url = "http://ftp.dk.debian.org/debian"
+#dist = "wheezy"
 components += ["contrib"]
-
-
 
