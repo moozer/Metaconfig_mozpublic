@@ -7,5 +7,9 @@ install += "autofs5"
 [settings]
 sqfs_src_dir="/mnt/storage/moz/sqfs"
 iso_src_dir="/mnt/storage/moz/iso"
-sqfs_mnt_dir="/media/sqfs/moz"
-iso_mnt_dir="/media/iso/moz"
+sqfs_mnt_dir="/mnt/sqfs/moz"
+iso_mnt_dir="/mnt/iso/moz"
+
+[trigger.restart-automount]
+command = ["service", "autofs", "restart"]
+files += "/etc/auto.master.d/*"
