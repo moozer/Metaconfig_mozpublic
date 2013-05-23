@@ -1,9 +1,0 @@
-%header("##")
-
-## for the longer story go here
-## http://mozilla.debian.net/
-
-deb http://mozilla.debian.net/ wheezy-backports iceweasel-esr
-deb http://cdn.debian.net/debian unstable main
-
-

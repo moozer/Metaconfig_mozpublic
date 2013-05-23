@@ -1,7 +1,7 @@
 10
 
 dir
-6059
+6061
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public
 https://svn.sikkerhed.org/svn/config
 
@@ -26,6 +26,12 @@ config_sikkerhedorg
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
 
+config
+dir
+
+nodes
+dir
+
 profile
 dir
 
@@ -33,11 +39,5 @@ service
 dir
 
 apps
-dir
-
-config
-dir
-
-nodes
 dir
 

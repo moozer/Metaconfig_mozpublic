@@ -1,7 +1,7 @@
 10
 
 dir
-6059
+6061
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/config/debian-logrotate/files/etc/logrotate.d
 https://svn.sikkerhed.org/svn/config
 
@@ -25,6 +25,40 @@ chrivers
 
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
+
+aptitude
+file
+
+
+
+
+2013-05-21T20:50:49.990156Z
+99a07b4c436d4e458a8167f0ab57fa78
+2012-03-16T13:58:19.486095Z
+4991
+chrivers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+94
 
 apt
 file
@@ -93,38 +127,4 @@ chrivers
 
 
 544
-
-aptitude
-file
-
-
-
-
-2013-05-21T20:50:49.990156Z
-99a07b4c436d4e458a8167f0ab57fa78
-2012-03-16T13:58:19.486095Z
-4991
-chrivers
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-94
 

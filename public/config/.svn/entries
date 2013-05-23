@@ -1,7 +1,7 @@
 10
 
 dir
-6059
+6061
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/config
 https://svn.sikkerhed.org/svn/config
 
@@ -26,67 +26,10 @@ tdn
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
 
-reboot-notifier
-dir
-
-modprobe
-dir
-
-debian-aptsources
-dir
-
-emacs-xcl
-dir
-
-luks-mount
-dir
-
-rclocal
-dir
-
-debian-logrotate
-dir
-
-flash-fullscreen-fix
-dir
-
-disper
-dir
-
-xbmc
-dir
-
-network
-dir
-
-virtualbox
-dir
-
-subversion
-dir
-
-fstab
-dir
-
-locale
-dir
-
-motd
-dir
-
-tsocks
-dir
-
-bind9-zone-office
-dir
-
-apache2-fcgid
-dir
-
 ooo-colorfix
 dir
 
-handbrake
+grub2
 dir
 
 sysctl
@@ -95,16 +38,10 @@ dir
 tcpwrapper
 dir
 
-apache2-roundcube
-dir
-
 updatedb
 dir
 
 scheduled-reboot
-dir
-
-find-obsolete-files
 dir
 
 kernel-img
@@ -113,19 +50,13 @@ dir
 mplayer2
 dir
 
-networkmanager-fqdn-fix
-dir
-
-standard-users
+medibuntu
 dir
 
 htoprc
 dir
 
-eduke32
-dir
-
-zsh-profile
+standard-users
 dir
 
 ssh-key-root
@@ -134,19 +65,28 @@ dir
 firewall
 dir
 
-xpra
+disable-bluetooth
 dir
 
-debian-multimedia
+reboot-notifier
+dir
+
+debian-aptsources
+dir
+
+xpra
 dir
 
 php5
 dir
 
+emacs-xcl
+dir
+
 chrome
 dir
 
-vimrc
+rclocal
 dir
 
 nanorc
@@ -158,55 +98,55 @@ dir
 varnish-simple-vcl
 dir
 
-toprc
+network
 dir
 
-emacs
-dir
-
-inittab
-dir
-
-lvm
-dir
-
-ubuntu-disable-bootsplash
+fstab
 dir
 
 screenrc
 dir
 
-debian-sun-java
-dir
-
-remoteluks-client
-dir
-
-opera
+bind9-zone-office
 dir
 
 sudo
 dir
 
-hostname
+apache2-fcgid
 dir
 
 root-ssh
 dir
 
-grub2
+hostname
 dir
 
-medibuntu
+handbrake
+dir
+
+apache2-roundcube
+dir
+
+find-obsolete-files
 dir
 
 john
+dir
+
+networkmanager-fqdn-fix
 dir
 
 clusterssh
 dir
 
 cron
+dir
+
+zsh-profile
+dir
+
+eduke32
 dir
 
 initscreen
@@ -218,6 +158,66 @@ dir
 extrausers
 dir
 
-disable-bluetooth
+modprobe
+dir
+
+debian-multimedia
+dir
+
+luks-mount
+dir
+
+vimrc
+dir
+
+debian-logrotate
+dir
+
+flash-fullscreen-fix
+dir
+
+disper
+dir
+
+toprc
+dir
+
+emacs
+dir
+
+xbmc
+dir
+
+inittab
+dir
+
+lvm
+dir
+
+ubuntu-disable-bootsplash
+dir
+
+locale
+dir
+
+subversion
+dir
+
+virtualbox
+dir
+
+motd
+dir
+
+debian-sun-java
+dir
+
+opera
+dir
+
+remoteluks-client
+dir
+
+tsocks
 dir
 

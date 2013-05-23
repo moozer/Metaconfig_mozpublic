@@ -1,7 +1,7 @@
 10
 
 dir
-6059
+6061
 https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service/nagios/files/etc/nagios3
 https://svn.sikkerhed.org/svn/config
 
@@ -25,9 +25,6 @@ chrivers
 
 
 a4db9ff8-6f13-0410-9264-f2a0331a21f3
-
-conf.d
-dir
 
 stylesheets
 dir
@@ -101,5 +98,8 @@ chrivers
 44184
 
 hosts.d
+dir
+
+conf.d
 dir
 
