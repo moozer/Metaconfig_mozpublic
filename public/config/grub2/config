@@ -2,7 +2,7 @@
 ## Configuration for public/config/grub2
 ##
 [apt]
-install += "grub"
+install += "grub2"
 
 [settings]
 disable_prober = True

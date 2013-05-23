@@ -1,0 +1,6 @@
+# installing lenovo ideapad s12 specific stuff
+
+import "public/config/grub2"
+
+[settings.public/config/grub2]
+cmdline_linux = "acpi_skip_timer_override"
