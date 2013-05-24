@@ -1,0 +1,11 @@
+# installing lenovo ideapad s12 specific stuff
+
+import "public/config/grub2"
+import "mozrepo/service/bluetooth"
+
+## we have an issue with the machine just stops, and mouse/keyboard/whatever 
+## event is need to make it continue working
+## https://bugzilla.kernel.org/show_bug.cgi?id=12118
+
+[settings.public/config/grub2]
+cmdline_linux = "acpi_skip_timer_override"

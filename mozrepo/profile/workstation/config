@@ -1,0 +1,54 @@
+##
+## default stuff for all workstations
+##
+
+## set up the apt repos
+import "mozrepo/config/debian_wheezy"
+import "mozrepo/config/debian_wheezy_contrib"
+
+# config
+import "public/config/hostname"
+import "public/config/standard-users"
+import "public/config/rclocal"
+import "public/config/sudo"
+import "public/profile/standard"
+
+# specialized automount for loopback
+import "mozrepo/service/autoloopbackmount"
+
+# non-trivial software
+import "public/service/ssh"
+import "public/config/subversion"
+import "mozrepo/service/eclipse"
+import "mozrepo/service/xfce4"
+import "mozrepo/service/adobeflash"
+import "mozrepo/service/python2"
+import "mozrepo/config/iceweasel_latest_esr"
+
+## pc speaker is disabled by file
+
+## the list of packages to be installed always
+[apt]
+# difficult installs...
+#install += ["davmail", "libswt-gtk-3-java", "libswt-gtk-3-jni"]
+#install += "qucs"
+
+install += "evince"
+install += "zim"
+install += "keepassx"
+install += "eclipse"
+install += "wireshark"
+install += ["icedove", "iceowl-extension"]
+install += "chromium-browser"
+install += "liferea"
+install += "tkcvs"
+install += "virt-manager"
+install += "filezilla"
+install += "dia"
+install += "pavucontrol"
+install += "xournal"
+install += ["icedtea-plugin", "openjdk-7-jre"]
+install += "mc"
+install += "gedit"
+install += "ncftp"
+install += "gstreamer0.10-tools"
