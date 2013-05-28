@@ -1,0 +1,12 @@
+# installs exim4 and uses $home/mail/mailboxes/inbox as mbox spool
+
+[apt]
+install += "exim4"
+
+[trigger.restart-exim]
+command = ["service", "exim4", "restart"]
+files += "/etc/exim4/*"
+files += "/etc/exim4/conf.d/*/*"
+
+
+
