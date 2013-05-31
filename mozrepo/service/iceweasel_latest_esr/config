@@ -15,5 +15,5 @@ keys += "A6AA8C72"
 [apt]
 install += "icedove/unstable"
 install += "iceweasel/wheezy-backports"
-
+install += "pkg-mozilla-archive-keyring"
 

@@ -3,7 +3,8 @@
 import "mozrepo/config/debian_wheezy"
 import "mozrepo/service/bluetooth"
 
-[settings.mozrepo/config/debian_wheezy]
+[apt.source.debian_wheezy]
+#[settings.mozrepo/config/debian_wheezy]
 components += ["non-free"]
 
 [apt]

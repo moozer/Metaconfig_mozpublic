@@ -23,7 +23,7 @@ import "mozrepo/service/eclipse"
 import "mozrepo/service/xfce4"
 import "mozrepo/service/adobeflash"
 import "mozrepo/service/python2"
-import "mozrepo/config/iceweasel_latest_esr"
+import "mozrepo/service/iceweasel_latest_esr"
 
 ## pc speaker is disabled by file
 
