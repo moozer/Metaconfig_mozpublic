@@ -8,7 +8,7 @@ import "public/config/sudo"
 import "public/profile/standard"
 
 [settings.public/config/hostname]
-#hostname = "setme"
+hostname = "MetaconfigBase"
 
 [settings.public/config/rclocal]
 
