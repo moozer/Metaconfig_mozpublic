@@ -1,0 +1,13 @@
+#
+# apt-cacher - used in caching pkg server...
+# 
+
+[apt]
+install += "apt-cacher-ng"
+
+[trigger.restart-apt-cacher]
+command = ["/etc/init.d/apt-cacher-ng", "restart"]
+files += "/etc/apt-cacher-ng/acng.conf"
+
+[settings]
+port = 9999
