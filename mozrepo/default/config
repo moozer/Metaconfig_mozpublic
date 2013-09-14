@@ -6,6 +6,8 @@ import "public/config/rclocal"
 import "public/service/ssh"
 import "public/config/sudo"
 import "public/profile/standard"
+import "mozrepo/config/sysuser"
+import "mozrepo/config/apt-proxy-client"
 
 [settings.public/config/hostname]
 hostname = "MetaconfigBase"
