@@ -1,0 +1,6 @@
+#
+# profile for server to cache packages
+#
+
+import "mozrepo/service/apt-cacher"
+
