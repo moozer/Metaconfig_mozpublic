@@ -14,13 +14,14 @@ if [ ! -f $PASSWDFILE ]; then
 	date | md5sum | cut -f 1 -d " " > $PASSWDFILE
 fi
 
-PASSWD=$(cat $PASSWDFILE)
+PASSWD=$(slappasswd -h {SHA} -T $PASSWDFILE)
 SUFFIX="dc=%(",dc=".join(dn))"
 BACKEND="hdb"
 BACKENDOBJECTCLASS="olcHdbConfig"
 
-echo "using base slapd init config file from package"
-cat /usr/share/slapd/slapd.init.ldif | \
+##echo "using base slapd init config file from package"
+##cat /usr/share/slapd/slapd.init.ldif | \
+cat minimal.init.ldif | \
 	sed "s/\(.*\)@PASSWORD@\(.*\)/\1$PASSWD\2/" | \
 	sed "s/\(.*\)@SUFFIX@\(.*\)/\1$SUFFIX\2/" | \
 	sed "s/\(.*\)@BACKEND@\(.*\)/\1$BACKEND\2/" | \
