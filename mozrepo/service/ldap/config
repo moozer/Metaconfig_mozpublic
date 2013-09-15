@@ -1,0 +1,17 @@
+#
+# enable ldap user handling (for PAM authentication by clients)
+# - install ldap server
+# - adds the "people" organisational unit
+# - adds a first dummy user
+# 
+
+[apt]
+install += "slapd"
+install += "ldap-utils"
+
+[settings]
+#dn = ["somedomain", "com"]
+
+[files]
+permission["/etc/ldap/local"] = "700"
+permission["/etc/ldap/local/*"] = "700"

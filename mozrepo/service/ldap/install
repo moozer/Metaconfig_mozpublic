@@ -1,0 +1,7 @@
+#
+# run-once stuff
+#
+
+[trigger.new_dn]
+files += "/etc/ldap/local/CreateBaseDomain.ldif"
+command = ["sh", "/etc/ldap/local/AddAllLdifs.sh"]
