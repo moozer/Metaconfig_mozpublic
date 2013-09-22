@@ -1,0 +1,8 @@
+#
+# configures the system to use an http proxy for apt handling
+#
+
+[settings]
+server = "pkgserver"
+port = 9999
+
