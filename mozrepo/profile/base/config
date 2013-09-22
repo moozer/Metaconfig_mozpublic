@@ -25,4 +25,6 @@ password_authentication = "yes"
 sudoers += "%admin|ALL|ALL||ALL"
 sudoers += "%sudo|ALL|ALL||ALL"
 
-
+# just another default group
+[unixgroup.libvirt]
+gid = 700
