@@ -1,40 +1,21 @@
 #
 # set up of networks
 # 
-#
-
-#import "public/config/network"
-#
-#[settings]
-# "true" or "false", dhcp dictates resolv conf
-#DhcpOverwriteResolvConf = "true"
-
-#vlans 
-#auto eth0.222
-#iface eth0.222 inet static
-#        address 10.10.10.1
-#        netmask 255.255.255.0
-#        network 10.10.10.0
-#        broadcast 10.10.10.255
-#        vlan-raw-device eth0
-
-## Example usage:
-# iface["eth0"] = dict(address = IP, netmask = "255.255.255.192", gateway = "93$
 
 [settings]
 iface = dict()
 loopback = dict(type="loopback", address="", netmask="")
 
-iface["eth0"] = dict( type="dhcp" )
-#iface["eth0.20"] = dict( type="dhcp" )
-#iface["eth0.30"] = dict( type="dhcp" )
-#iface["eth0.100"] = dict( type="static", address = "192.168.100.123", netmask = "255.255.255.0", gateway = "192.168.100.2" )
+#iface["eth0"] = dict( type="static", address = "192.168.1.123", netmask = "255.255.255.0", gateway = "192.168.1.1" )
+#iface["eth0"] = dict( type="dhcp" )
 
-#resolvconf_domain = ""
-#resolvconf_search = []
-#resolvconf_nameservers = []
-#resolvconf_nameservers += "8.8.8.8"
-#resolvconf_nameservers += "8.8.4.4"
+# enable and use vlans like this
+# import "mozrepo/config/enable-vlans"
+# 
+# [settings.mozrepo/config/network] 
+# iface["eth0.20"] = dict( type="dhcp" )
+
+
 
 
 
