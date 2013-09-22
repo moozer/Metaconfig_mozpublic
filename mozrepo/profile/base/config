@@ -1,0 +1,28 @@
+# profile for base installation
+# excludes all kind of stuff that requires
+# external servers.
+import "public/profile/standard"
+
+# just the default metaconfig file to be tweaked
+import "public/config/hostname"
+import "public/config/standard-users"
+import "public/config/rclocal"
+import "public/service/ssh"
+import "public/config/sudo"
+import "public/profile/standard"
+import "mozrepo/config/sysuser"
+
+# set hostname in /etc/metaconfig/node/config
+#[settings.public/config/hostname]
+#hostname = "metaconfigdev"
+
+[settings.public/config/rclocal]
+
+[settings.public/service/ssh]
+password_authentication = "yes"
+
+[settings.public/config/sudo]
+sudoers += "%admin|ALL|ALL||ALL"
+sudoers += "%sudo|ALL|ALL||ALL"
+
+
