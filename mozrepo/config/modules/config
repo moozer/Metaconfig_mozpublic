@@ -3,5 +3,5 @@
 #
 
 [settings]
-modules = ["loop"]
+modulelist = ["loop"]
 # modules += "other module"

@@ -6,7 +6,7 @@
 %# at boot time, one per line. Lines beginning with "%#" are ignored.
 %# Parameters can be specified after the module name.
 
-#foreach mod in modules
+#foreach mod in modulelist
 %(mod)
 #end
 
