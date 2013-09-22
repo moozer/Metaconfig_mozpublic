@@ -1,0 +1,8 @@
+# baseserver
+# base profile for server that may rely on
+# named config/package/whatever servers
+
+import "mozrepo/profile/base"
+
+import "mozrepo/config/apt-proxy-client"
+
