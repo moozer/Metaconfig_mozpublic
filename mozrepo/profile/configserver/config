@@ -1,0 +1,38 @@
+#
+# configserver
+# - server for maintaining centralized git repo of all server configs
+#
+
+[apt]
+install += "git"
+install += "openssh-server"
+
+[files]
+mkdir += ["/etc/metaconfig/scripts/"]
+permission["/etc/metaconfig/scripts/InitConfigServer.sh"] = "0755"
+
+mkdir += ["/home/gitconfig"]
+mkdir += ["/home/gitconfig/.ssh"]
+permission["/home/gitconfig"] = "0755"
+permission["/home/gitconfig/.ssh"] = "0700"
+permission["/home/gitconfig/.ssh/authorized_keys"] = "0600"
+owner["/home/gitconfig"] = "gitconfig:gitconfig"
+owner["/home/gitconfig/**"] = "gitconfig:gitconfig"
+
+[trigger.configserver]
+files += "/etc/metaconfig/triggers/ConfigScript"
+command = ["/etc/metaconfig/scripts/InitConfigServer.sh"]
+
+
+[unixuser.gitconfig]
+uid = 1501
+gid = 1501
+gecos = ",,,"
+home = "/home/gitconfig"
+shell = "/bin/false"
+
+[unixgroup.gitconfig]
+gid=1501
+
+
+
