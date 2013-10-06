@@ -1,0 +1,7 @@
+#
+# adds modules to /etc/modules
+#
+
+[settings]
+modulelist = ["loop"]
+# modules += "other module"

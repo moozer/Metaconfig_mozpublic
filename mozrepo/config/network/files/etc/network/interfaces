@@ -1,0 +1,33 @@
+%header("##")
+#method interface(name, address = "", netmask = "", type = "static", auto = 1, gateway = "", mtu = "", lines = [])
+  #if type
+    #if auto
+      auto %(name)
+    #end
+    iface %(name) inet %(type)
+    #if type == "static"
+              address %(address)
+              netmask %(netmask)
+    #end
+    #if gateway
+              gateway %(gateway)
+    #end
+    #if mtu
+              mtu %(mtu)
+    #end
+    #foreach line in lines
+              %(line)
+    #end
+
+  #end
+#end
+##
+##
+
+#if loopback
+  %interface(name = "lo", **loopback)##
+#end
+#foreach nic in iface
+  %interface(name = nic, **iface[nic])##
+#end
+

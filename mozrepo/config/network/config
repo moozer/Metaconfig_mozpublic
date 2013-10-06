@@ -1,0 +1,21 @@
+#
+# set up of networks
+# 
+
+[settings]
+iface = dict()
+loopback = dict(type="loopback", address="", netmask="")
+
+#iface["eth0"] = dict( type="static", address = "192.168.1.123", netmask = "255.255.255.0", gateway = "192.168.1.1" )
+#iface["eth0"] = dict( type="dhcp" )
+
+# enable and use vlans like this
+# import "mozrepo/config/enable-vlans"
+# 
+# [settings.mozrepo/config/network] 
+# iface["eth0.20"] = dict( type="dhcp" )
+
+
+
+
+

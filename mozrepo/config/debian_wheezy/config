@@ -7,7 +7,7 @@ dist = "wheezy/updates"
 components = ["main"]
 
 [apt.source.debian_wheezy]
-url = "http://ftp.dk.debian.org/debian"
+url = "http://cdn.debian.net/debian"
 dist = "wheezy"
 components = ["main"]
 #keys += "336064B5"

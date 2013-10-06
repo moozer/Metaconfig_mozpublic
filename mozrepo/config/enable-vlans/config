@@ -1,0 +1,12 @@
+#
+# enables vlans
+#
+
+import "mozrepo/config/modules"
+
+[apt]
+install += "vlan"
+
+[settings.mozrepo/config/modules]
+modulelist += "8021q"
+
