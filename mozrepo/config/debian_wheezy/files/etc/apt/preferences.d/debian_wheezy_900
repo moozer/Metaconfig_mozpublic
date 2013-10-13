@@ -1,7 +1,7 @@
 %header("##")
 
 Package: *
-Pin: release o=Debian,a=testing
+Pin: release o=Debian,a=%(distribution)
 Pin-Priority: 900
 
 Package: *
