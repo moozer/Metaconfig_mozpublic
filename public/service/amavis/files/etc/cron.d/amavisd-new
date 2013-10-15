@@ -1,2 +1,0 @@
-%header("##")
-18 */3	* * *	amavis	test -e /usr/sbin/amavisd-new-cronjob && /usr/sbin/amavisd-new-cronjob sa-sync

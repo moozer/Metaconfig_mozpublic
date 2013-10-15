@@ -1,6 +1,0 @@
-##
-## Configuration for public/config/toprc
-##
-
-[apt]
-install += "procps"

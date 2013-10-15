@@ -1,4 +1,0 @@
-%header("##")
-#if deny_all_type
-  %(deny_all_type): ALL
-#end

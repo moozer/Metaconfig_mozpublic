@@ -1,9 +1,0 @@
-%header("##")
-#foreach host in hosts
-  define host {
-    use       %(hosts[host].get("use", "generic-host"))
-    host_name %(host)
-    alias     %(hosts[host].get("alias", host))
-    address   %(hosts[host].get("address", host))
-  }
-#end

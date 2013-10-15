@@ -1,8 +1,0 @@
-%#!/bin/bash
-%header("##")
-REALADM="/sbin/drbdadm"
-
-if [[ $1 == "primary" ]]; then
-  $REALADM disconnect $2
-fi
-exec $REALADM $*

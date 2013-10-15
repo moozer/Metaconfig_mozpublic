@@ -1,8 +1,0 @@
-##
-## Configuration for public/service/disk-space-monitor
-##
-
-[settings]
-mailto = "root"
-lock_file = "/tmp/disk-space-monitor.lock"
-check = []

@@ -1,5 +1,0 @@
-%header("##")
-Port %(ssh_port)
-#foreach opt in ssh_options
-  %(opt)
-#end

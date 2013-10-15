@@ -1,7 +1,0 @@
-##
-## Configuration for public/config/modprobe
-##
-
-[settings]
-block = []
-options = []

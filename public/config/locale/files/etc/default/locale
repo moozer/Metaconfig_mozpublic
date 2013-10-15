@@ -1,3 +1,0 @@
-%header("##")
-LANG="%(default_locale)"
-LANGUAGE="%(default_language)"

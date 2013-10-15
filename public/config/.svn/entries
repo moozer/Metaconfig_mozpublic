@@ -1,223 +1,0 @@
-10
-
-dir
-6061
-https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/config
-https://svn.sikkerhed.org/svn/config
-
-
-
-2013-05-09T10:43:00.921781Z
-6045
-tdn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a4db9ff8-6f13-0410-9264-f2a0331a21f3
-
-ooo-colorfix
-dir
-
-grub2
-dir
-
-sysctl
-dir
-
-tcpwrapper
-dir
-
-updatedb
-dir
-
-scheduled-reboot
-dir
-
-kernel-img
-dir
-
-mplayer2
-dir
-
-medibuntu
-dir
-
-htoprc
-dir
-
-standard-users
-dir
-
-ssh-key-root
-dir
-
-firewall
-dir
-
-disable-bluetooth
-dir
-
-reboot-notifier
-dir
-
-debian-aptsources
-dir
-
-xpra
-dir
-
-php5
-dir
-
-emacs-xcl
-dir
-
-chrome
-dir
-
-rclocal
-dir
-
-nanorc
-dir
-
-mumble
-dir
-
-varnish-simple-vcl
-dir
-
-network
-dir
-
-fstab
-dir
-
-screenrc
-dir
-
-bind9-zone-office
-dir
-
-sudo
-dir
-
-apache2-fcgid
-dir
-
-root-ssh
-dir
-
-hostname
-dir
-
-handbrake
-dir
-
-apache2-roundcube
-dir
-
-find-obsolete-files
-dir
-
-john
-dir
-
-networkmanager-fqdn-fix
-dir
-
-clusterssh
-dir
-
-cron
-dir
-
-zsh-profile
-dir
-
-eduke32
-dir
-
-initscreen
-dir
-
-backup
-dir
-
-extrausers
-dir
-
-modprobe
-dir
-
-debian-multimedia
-dir
-
-luks-mount
-dir
-
-vimrc
-dir
-
-debian-logrotate
-dir
-
-flash-fullscreen-fix
-dir
-
-disper
-dir
-
-toprc
-dir
-
-emacs
-dir
-
-xbmc
-dir
-
-inittab
-dir
-
-lvm
-dir
-
-ubuntu-disable-bootsplash
-dir
-
-locale
-dir
-
-subversion
-dir
-
-virtualbox
-dir
-
-motd
-dir
-
-debian-sun-java
-dir
-
-opera
-dir
-
-remoteluks-client
-dir
-
-tsocks
-dir
-

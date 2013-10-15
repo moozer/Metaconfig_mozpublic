@@ -1,3 +1,0 @@
-%header("##")
-## m h d m w user   command
-* * * * * nobody /usr/local/bin/so-disk-space-monitor

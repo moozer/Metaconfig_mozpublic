@@ -1,2 +1,0 @@
-%header("##")
-%(resource_host)   %(" ".join(resource_list))

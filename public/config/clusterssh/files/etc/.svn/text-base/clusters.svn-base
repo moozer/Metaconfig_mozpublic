@@ -1,4 +1,0 @@
-%header("##")
-#foreach c in clusters
-  %(c) %(" ".join(clusters[c]))
-#end

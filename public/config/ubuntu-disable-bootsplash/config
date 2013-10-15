@@ -1,7 +1,0 @@
-##
-## Configuration for public/config/ubuntu-disable-bootsplash
-##
-
-[trigger.update-grub]
-files += "/etc/default/grub"
-command = "update-grub"

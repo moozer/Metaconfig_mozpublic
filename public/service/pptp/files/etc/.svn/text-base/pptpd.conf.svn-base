@@ -1,7 +1,0 @@
-%header("##")
-option /etc/ppp/pptpd-options
-logwtmp
-localip 10.0.2.1
-remoteip 10.0.2.100-200
-
-%# debug

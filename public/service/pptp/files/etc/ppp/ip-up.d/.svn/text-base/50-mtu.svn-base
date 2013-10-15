@@ -1,4 +1,0 @@
-%#!/bin/sh
-%header("##")
-/sbin/ifconfig $1 mtu 1400
-

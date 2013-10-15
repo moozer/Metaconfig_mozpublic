@@ -1,9 +1,0 @@
-%#!/bin/sh -e
-%header("##")
-HOST=$(hostname)
-DOMAIN=$(grep domain /etc/resolv.conf | cut -d' ' -f2)
-
-if ! grep -qE "^[^%#].*$HOST.$DOMAIN" /etc/hosts ; then
-  sed -i -e s/"$HOST.*%# Added by NetworkManager.*"/"$HOST.$DOMAIN &"/ /etc/hosts
-fi
-

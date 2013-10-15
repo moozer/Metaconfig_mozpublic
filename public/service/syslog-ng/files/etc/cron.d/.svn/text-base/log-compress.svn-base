@@ -1,2 +1,0 @@
-%header("##")
-%(logcompress_time.split(":")[1]) %(logcompress_time.split(":")[0])    * * *   root    /usr/bin/spye sikkerhedorg.log.compress.logs %(" ".join(logcompress_paths))

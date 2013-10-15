@@ -1,169 +1,0 @@
-10
-
-dir
-6061
-https://svn.sikkerhed.org/svn/config/projects/metaconfig/public/service
-https://svn.sikkerhed.org/svn/config
-
-
-
-2013-05-17T19:37:25.026337Z
-6057
-config_sikkerhedorg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a4db9ff8-6f13-0410-9264-f2a0331a21f3
-
-hostapd
-dir
-
-apache2
-dir
-
-apt-proxy
-dir
-
-dovecot
-dir
-
-memcached
-dir
-
-disk-space-monitor
-dir
-
-ssh-tunnel-client
-dir
-
-mailman
-dir
-
-fail2ban
-dir
-
-iscsi-server
-dir
-
-nagios-client-nfs
-dir
-
-nagios
-dir
-
-tftpd
-dir
-
-syslog-ng
-dir
-
-samba
-dir
-
-pptp
-dir
-
-urlwatch
-dir
-
-fetchmail
-dir
-
-ssh
-dir
-
-heartbeat
-dir
-
-nfs-client
-dir
-
-upsidedownternet
-dir
-
-clamav
-dir
-
-postgresql
-dir
-
-bind9
-dir
-
-mysql
-dir
-
-nagios-grapher
-dir
-
-thttpd
-dir
-
-varnish
-dir
-
-drbd
-dir
-
-nfblock
-dir
-
-proftpd
-dir
-
-munin-master
-dir
-
-amavis
-dir
-
-dhcpd
-dir
-
-ser2net
-dir
-
-ssh-secondary
-dir
-
-nginx
-dir
-
-openvpn
-dir
-
-google-calendar-backup
-dir
-
-iscsi-client
-dir
-
-ssh-tunnelshell
-dir
-
-nfs-server
-dir
-
-postfix
-dir
-
-nagios-client
-dir
-
-smokeping
-dir
-
-ntp
-dir
-

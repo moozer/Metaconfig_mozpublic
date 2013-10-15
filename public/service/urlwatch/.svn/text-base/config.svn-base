@@ -1,8 +1,0 @@
-##
-## Configuration for public/service/urlwatch
-##
-
-# Watches a given URL for changes and sends an e-mail when the URL changes
-[settings]
-checks = dict()
-

@@ -1,7 +1,0 @@
-##
-## Configuration for public/service/google-calendar-backup
-##
-
-[settings]
-user = "nobody"
-data_path = "/data/backup/google-calendar"

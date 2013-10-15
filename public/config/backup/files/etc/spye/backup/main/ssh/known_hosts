@@ -1,3 +1,0 @@
-#foreach line in known_hosts
-  %(line)
-#end

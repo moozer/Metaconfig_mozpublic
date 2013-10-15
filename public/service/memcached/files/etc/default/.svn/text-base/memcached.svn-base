@@ -1,2 +1,0 @@
-%header("##")
-ENABLE_MEMCACHED=%(enable_memcached)

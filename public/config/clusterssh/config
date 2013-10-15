@@ -1,9 +1,0 @@
-##
-## Configuration for public/config/clusterssh
-##
-
-[apt]
-install += "clusterssh"
-
-[settings]
-clusters = dict()
