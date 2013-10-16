@@ -2,7 +2,7 @@
 # excludes all kind of stuff that requires
 # external servers.
 import "public/profile/standard"
-import "mozrepo/config/debian_wheezy"
+import "mozrepo/config/debian_stable"
 
 import "public/config/hostname"
 import "public/config/standard-users"
