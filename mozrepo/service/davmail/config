@@ -1,0 +1,8 @@
+#
+# Downloads and installs davmail
+#
+
+[trigger.mozrepo/service/davmail]
+files += "/etc/metaconfig/triggers/davmail"
+command += ["sh", "/etc/davmail/InstallLatest.sh"]
+
