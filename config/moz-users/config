@@ -3,6 +3,10 @@
 # - for closed network NFS convinience
 # - use LDAP for users handling instead, if you have even the least security considerations
 #
+# Also note that these users are added without home dirs and passwords,
+# so for most practical purposes they exist only in /etc/passwd.
+#
+#
 
 import "mozrepo/config/pam-mkhomedir"
 
