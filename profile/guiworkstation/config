@@ -1,0 +1,22 @@
+#
+# guiworkstation
+# standard profile for gui enabled workstations
+#
+
+import "mozrepo/profile/base"
+
+import "mozrepo/service/xfce4"
+import "mozrepo/service/adobeflash"
+
+[apt]
+install += ["network-manager", "modemmanager", "network-manager-openvpn-gnome", "openvpn"]
+install += "gdm3"
+install += "zim"
+install += "pavucontrol"
+install += "keepassx"
+install += "evince"
+install += ["iceweasel", "icedove", "iceowl-extension"]
+
+# on for the admin :-)
+install += "mc"
+
