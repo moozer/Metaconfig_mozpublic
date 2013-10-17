@@ -1,7 +1,0 @@
-##
-## Configuration for public/config/kernel-img
-##
-if not (PLATFORM_OS_NAME in ["debian", "ubuntu"])
-  [files]
-  block += "/etc/kernel-img.conf"
-end

@@ -1,9 +1,0 @@
-##
-## Configuration for public/config/extrausers
-##
-
-[apt]
-install += "libnss-extrausers"
-
-[files]
-permission["/var/lib/extrausers/shadow"] = "0600"

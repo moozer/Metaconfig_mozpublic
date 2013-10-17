@@ -1,3 +1,0 @@
-%header("##")
-NETWORKING=yes
-HOSTNAME=%(hostname)

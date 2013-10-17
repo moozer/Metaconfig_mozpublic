@@ -1,4 +1,0 @@
-Windows Registry Editor Version 5.00
-
-[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
-"SmoothScroll"=dword:00000000

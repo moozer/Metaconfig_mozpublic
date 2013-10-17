@@ -1,3 +1,0 @@
-%header("##")
-zone %(zone_10_network_reverse).in-addr.arpa { type master; file "/etc/bind/db.office.reverse"; };
-zone %(zone_10_name) { type master; file "/etc/bind/db.office.forward"; };

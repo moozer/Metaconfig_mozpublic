@@ -1,3 +1,0 @@
-[apt]
-install += ["postfix", "mailutils", "pfqueue", "libsasl2-modules"]
-

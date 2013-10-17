@@ -1,5 +1,0 @@
-##
-## Configuration for public/service/ssh-tunnelshell
-##
-[files]
-permission["/usr/local/bin/waitsh"] = "555"

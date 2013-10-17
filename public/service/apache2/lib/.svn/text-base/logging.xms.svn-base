@@ -1,4 +1,0 @@
-#method apache2_log(vname)
-  CustomLog "|/usr/bin/cronolog %(vhost_dir)/%(vname)/log/%%Y-%%m-%%d-%(vname)-access.log" combined
-  ErrorLog  "|/usr/bin/cronolog %(vhost_dir)/%(vname)/log/%%Y-%%m-%%d-%(vname)-error.log"##
-#end

@@ -1,5 +1,0 @@
-%header("##")
-#foreach job in jobs
-  %(job.split("|")[0])   %(job.split("|")[1])   spye sikkerhedorg.backup.execute %(job.split("|")[2])
-#end
-

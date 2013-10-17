@@ -1,0 +1,43 @@
+#
+# recurrent system users on the local network
+# - for closed network NFS convinience
+# - use LDAP for users handling instead, if you have even the least security considerations
+#
+# Also note that these users are added without home dirs and passwords,
+# so for most practical purposes they exist only in /etc/passwd.
+#
+#
+
+import "mozrepo/config/pam-mkhomedir"
+
+[unixgroup.users]
+gid=5000
+
+[unixuser.moz]
+uid = 5000
+gid = 5000
+gecos = ",,,"
+home = "/home/moz"
+shell = "/bin/bash"
+
+groups_include += "adm"
+groups_include += "sudo"
+groups_include += "users"
+groups_include += "plugdev"
+groups_include += "floppy"
+groups_include += "dialout"
+groups_include += "libvirt"
+
+[unixuser.klx]
+uid = 5001
+gid = 5000
+gecos = ",,,"
+home = "/home/klx"
+shell = "/bin/bash"
+
+groups_include += "users"
+groups_include += "plugdev"
+groups_include += "floppy"
+groups_include += "dialout"
+
+

@@ -1,6 +1,0 @@
-##
-## Configuration for public/config/scheduled-reboot
-##
-
-[settings]
-time = "03:00"

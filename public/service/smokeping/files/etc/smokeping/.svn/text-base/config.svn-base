@@ -1,8 +1,0 @@
-%header("##")
-@include /etc/smokeping/metaconfig.d/General
-@include /etc/smokeping/metaconfig.d/Alerts
-@include /etc/smokeping/metaconfig.d/Database
-@include /etc/smokeping/metaconfig.d/Presentation
-@include /etc/smokeping/metaconfig.d/Probes
-@include /etc/smokeping/metaconfig.d/Slaves
-@include /etc/smokeping/metaconfig.d/Targets

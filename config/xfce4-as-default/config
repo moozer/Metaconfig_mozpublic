@@ -1,0 +1,10 @@
+#
+# changes the default X session handler to XFCE
+#
+
+import "mozrepo/service/xfce4"
+
+[trigger.set_xfce_as_defult]
+files += "/etc/metaconfig/triggers/xfceasdefault"
+command = ["update-alternatives", "--set", "x-session-manager", "/usr/bin/xfce4-session"]
+

@@ -1,7 +1,0 @@
-##
-## Configuration for public/config/debian-logrotate
-##
-if not (PLATFORM_OS_NAME in ["debian", "ubuntu"])
-  [files]
-  block += "/etc/logrotate.d/*"
-end

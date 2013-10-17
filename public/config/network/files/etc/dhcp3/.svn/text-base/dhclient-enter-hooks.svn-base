@@ -1,6 +1,0 @@
-%header("##")
-make_resolv_conf()
-{
-  %# Avoid overwriting /etc/resolv.conf
-  true
-}

@@ -1,0 +1,22 @@
+# add default debian repos
+# wheezy/main
+
+# Using wheezy in some places and stalbe in others
+# metaconfig does not have a "wheezy" distribution, so stable is used in stead.
+
+# TODO: handle wheezy vs. stable question
+
+[apt.source.debian-wheezy-security]
+url = "http://security.debian.org"
+dist = "wheezy/updates"
+components = ["main"]
+
+[apt.source.debian_wheezy]
+url = "http://cdn.debian.net/debian"
+dist = "wheezy"
+components = ["main"]
+#keys += "336064B5"
+
+[settings]
+distribution = "stable"
+

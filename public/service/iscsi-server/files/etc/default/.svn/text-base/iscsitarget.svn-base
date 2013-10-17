@@ -1,3 +1,0 @@
-%header("##")
-export PATH=/etc/default/iscsi:$PATH
-ISCSITARGET_ENABLE=true

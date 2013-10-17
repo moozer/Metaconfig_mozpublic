@@ -1,9 +1,0 @@
-##
-## Configuration for public/config/lvm
-##
-
-[apt]
-install += "lvm2"
-
-[settings]
-filter = []

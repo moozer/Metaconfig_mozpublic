@@ -1,7 +1,0 @@
-%header("##")
-#foreach cmd in commands
-  define command {
-    command_name %(cmd)
-    command_line %(commands[cmd]["command"])
-  }
-#end

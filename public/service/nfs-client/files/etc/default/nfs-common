@@ -1,8 +1,0 @@
-%header("##")
-NEED_IDMAPD=no
-NEED_GSSD=no
-#if statd_hostname
-  STATDOPTS="--port 4000 --outgoing-port 4001 -n %(statd_hostname)"
-#else
-  STATDOPTS="--port 4000 --outgoing-port 4001"
-#end

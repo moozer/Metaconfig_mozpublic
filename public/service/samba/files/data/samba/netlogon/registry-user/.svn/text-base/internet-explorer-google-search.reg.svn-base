@@ -1,8 +1,0 @@
-Windows Registry Editor Version 5.00
-
-[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes]
-"DefaultScope"="{957E70AD-0A0A-47F9-9ECC-FFDCEEFA102F}"
-
-[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{957E70AD-0A0A-47F9-9ECC-FFDCEEFA102F}]
-"DisplayName"="Google"
-"URL"="http://www.google.com/search?q={searchTerms}&rls=com.microsoft:{language}&ie={inputEncoding}&oe={outputEncoding}&startIndex={startIndex?}&startPage={startPage}"

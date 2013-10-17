@@ -1,5 +1,0 @@
-%header("##")
-caption always "%%{Yb} %%D %%Y-%%02m-%%02d %%c:%%s %%{G}|%%{Y} %%l %%{G}|%%{Y} %%t %%{G}|%%{Y} %%{R}%%?%%u%%{Y}%%w %%H"
-bind 'w' windowlist -b
-bind 'W' windows
-termcapinfo xterm*|rxvt* 'ti@:te@'
