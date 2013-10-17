@@ -6,6 +6,7 @@
 import "mozrepo/profile/base"
 
 import "mozrepo/service/xfce4"
+import "mozrepo/config/xfce4-as-default"
 import "mozrepo/service/adobeflash"
 
 [apt]
