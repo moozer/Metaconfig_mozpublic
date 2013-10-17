@@ -1,0 +1,12 @@
+# 
+# enables autocreation of homedirectories at login
+#
+
+[apt]
+# well, this one is always installed anyway
+install += "libpam-modules"
+
+[trigger.updatepam]
+files += "/etc/metaconfig/triggers/pam-mkhomedir"
+command = ["sh", "/etc/metaconfig/scripts/pam-mkhomedir/AppendToPam.sh"]
+
