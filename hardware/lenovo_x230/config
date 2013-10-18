@@ -1,10 +1,10 @@
 # installing lenovo x230 specific stuff
 
-import "mozrepo/config/debian_wheezy"
+import "mozrepo/config/debian_stable"
 import "mozrepo/service/bluetooth"
 
 [apt.source.debian_wheezy]
-#[settings.mozrepo/config/debian_wheezy]
+
 components += ["non-free"]
 
 [apt]
