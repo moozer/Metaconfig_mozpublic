@@ -1,0 +1,6 @@
+# installs cups server stuff
+
+[apt]
+install += "cups"
+
+
