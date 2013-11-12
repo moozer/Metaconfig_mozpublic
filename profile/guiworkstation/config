@@ -8,6 +8,7 @@ import "mozrepo/profile/base"
 import "mozrepo/service/xfce4"
 import "mozrepo/config/xfce4-as-default"
 import "mozrepo/service/adobeflash"
+import "mozrepo/hardware/killpcspeaker"
 
 [apt]
 install += ["network-manager", "modemmanager", "network-manager-openvpn-gnome", "openvpn"]
