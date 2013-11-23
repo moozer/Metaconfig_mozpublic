@@ -1,0 +1,10 @@
+#
+# dnsserver profile
+#
+
+import "mozrepo/config/network"
+
+[settings.mozrepo/config/network]
+# for static
+# iface["eth0"] = dict( type="static", address="10.0.20.200", netmask="255.255.255.0", gateway="10.0.20.1" )
+
