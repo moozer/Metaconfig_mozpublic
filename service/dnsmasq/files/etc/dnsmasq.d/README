@@ -1,0 +1,11 @@
+%header("##")
+
+%# All files in this directory will be read by dnsmasq as 
+%# configuration files, except if their names end in 
+%# ".dpkg-dist",".dpkg-old" or ".dpkg-new"
+%#
+
+%# metaconfig has monopolized some of them, but feel
+%# free to include your own 
+
+

@@ -3,6 +3,7 @@
 #
 
 import "mozrepo/config/network"
+import "mozrepo/service/dnsmasq"
 
 [settings.mozrepo/config/network]
 # for static

@@ -1,0 +1,9 @@
+%header("##")
+
+%# list of cnames
+%# for use with the internal DNS server
+
+#foreach srvname in cnames
+  cname=%(srvname),%(cnames[srvname])
+#end
+
