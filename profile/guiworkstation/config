@@ -18,6 +18,7 @@ install += "pavucontrol"
 install += "keepassx"
 install += "evince"
 install += ["iceweasel", "icedove", "iceowl-extension"]
+install += "filezilla"
 
 # on for the admin :-)
 install += "mc"
