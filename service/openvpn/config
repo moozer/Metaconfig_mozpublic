@@ -1,0 +1,9 @@
+#
+# openvpn
+# default is tun, 1194/Udp
+# 
+
+[apt]
+install += "openvpn"
+
+

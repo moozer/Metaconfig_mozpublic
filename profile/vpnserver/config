@@ -1,0 +1,7 @@
+#
+# vpn server
+#
+
+import "mozrepo/service/openvpn"
+
+
