@@ -1,0 +1,24 @@
+# install kolab groupware server
+# - ldap, webmail, smtp and imap
+#
+
+[apt.source.obs_kolabsys_com_debian]
+url = "http://obs.kolabsys.com:82/Kolab:/3.1/Debian_7.0/"
+dist = "./"
+keys += "B20AC18E"
+components = []
+
+[apt.source.obs_kolabsys_com_debian_updates]
+url = "http://obs.kolabsys.com:82/Kolab:/3.1:/Updates/Debian_7.0/"
+dist = "./"
+keys += "B20AC18E"
+components = []
+
+[apt]
+install += "kolab"
+remove += ["exim4", "exim4-base", "exim4-config", "exim4-daemon-light"]
+
+[settings]
+no_proxy_for_kolab = True # kolab repo is proxying already, 
+                          # and double proxying might be a problem.
+
