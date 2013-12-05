@@ -1,0 +1,20 @@
+#
+# Make this host authenticate users using an ldap server
+#
+#
+
+import "mozrepo/config/pam-mkhomedir"
+
+[apt]
+install += "libpam-ldapd"
+
+[settings] 
+# "user" with read right on LDAP
+# binddn = "" # disable
+#binddn = "cn=Manager"
+#bindpw = aPassword
+
+# ldapuri = "ldap://someserver/
+
+[files]
+permission["/etc/nslcd.conf"] = "0600"
