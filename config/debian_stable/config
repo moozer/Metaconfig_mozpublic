@@ -18,5 +18,8 @@ components = ["main"]
 #keys += "336064B5"
 
 [settings]
+# set or not the APT::default release param
+no_default_release = True
+# base release to use, e.g. stable
 distribution = "stable"
 
