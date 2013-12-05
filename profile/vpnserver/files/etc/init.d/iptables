@@ -1,0 +1,147 @@
+%#!/bin/sh
+
+%header("##")
+
+%# this is just a slighty modified version taken from
+%# http://www.debian.org/doc/manuals/securing-debian-howto/ch-sec-services.en.html%#s-firewall-setup
+
+%# Simple example firewall configuration.
+%#
+%# Caveats:
+%# - This configuration applies to all network interfaces
+%#   if you want to restrict this to only a given interface use
+%#   '-i INTERFACE' in the iptables calls.
+%# - Remote access for TCP/UDP services is granted to any host, 
+%#   you probably will want to restrict this using '--source'.
+%#
+%# chkconfig: 2345 9 91
+%# description: Activates/Deactivates the firewall at boot time
+%#
+%# You can test this script before applying with the following shell
+%# snippet, if you do not type anything in 10 seconds the firewall
+%# rules will be cleared.
+%#---------------------------------------------------------------
+%#  while true; do test=""; read  -t 20 -p "OK? " test ; \
+%#  [ -z "$test" ] && /etc/init.d/myfirewall clear ; done
+%#---------------------------------------------------------------
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+if ! [ -x /sbin/iptables ]; then  
+    exit 0
+fi
+
+fw_start () {
+
+  %# Input traffic:
+  /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+  %# TCP Services
+  #foreach port in tcp_services
+    /sbin/iptables -A INPUT -p tcp --dport %(tcp_services[port]) -j ACCEPT %# used for %(port)
+  #end
+
+  %# TCP Services
+  #foreach port in udp_services
+    /sbin/iptables -A INPUT -p udp --dport %(udp_services[port]) -j ACCEPT %# used for %(port)
+  #end
+
+  ## TODO: add stuff about remote management, ie. limit acces from certain networks
+
+  %# Remote testing
+  /sbin/iptables -A INPUT -p icmp -j ACCEPT
+  /sbin/iptables -A INPUT -i lo -j ACCEPT
+  /sbin/iptables -P INPUT DROP
+  /sbin/iptables -A INPUT -j LOG
+
+  %# Output:
+  /sbin/iptables -A OUTPUT -j ACCEPT -o lo 
+  /sbin/iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+  %# ICMP is permitted:
+  /sbin/iptables -A OUTPUT -p icmp -j ACCEPT
+
+  %# shortist allowed services online
+  #foreach port in remote_tcp_services
+    /sbin/iptables -A OUTPUT -p tcp --dport %(remote_tcp_services[port]) -j ACCEPT %# used for %(port)
+  #end
+
+  #foreach port in remote_udp_services
+    /sbin/iptables -A OUTPUT -p udp --dport %(remote_udp_services[port]) -j ACCEPT %# used for %(port)
+  #end
+
+  #if enable_forward
+    #foreach rule in forwardrules
+      %# forwarding rule: %(rule)
+      #define currule forwardrules[rule]
+      %# Allow traffic initiated from %(currule["from_int"]) to access %(currule["to_int"])
+      iptables -I FORWARD -i %(currule["from_int"]) -o %(currule["to_int"]) \
+           -s %(currule["from_ip"]) -d %(currule["to_ip"])  \
+           -m conntrack --ctstate NEW -j ACCEPT
+    #end
+    %# Allow established traffic to pass back and forth
+    iptables -I FORWARD -m conntrack --ctstate RELATED,ESTABLISHED \
+         -j ACCEPT
+  #end 
+
+  %# All other connections are registered in syslog
+  /sbin/iptables -A OUTPUT -j LOG
+  /sbin/iptables -A OUTPUT -j REJECT 
+  /sbin/iptables -P OUTPUT DROP
+
+  %# Other network protections
+  %# (some will only work with some kernel versions)
+  echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+  echo %(enable_forward) > /proc/sys/net/ipv4/ip_forward 
+  echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts 
+  echo 1 > /proc/sys/net/ipv4/conf/all/log_martians 
+  ##echo 1 > /proc/sys/net/ipv4/ip_always_defrag
+  echo 1 > /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses
+  echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
+  echo 0 > /proc/sys/net/ipv4/conf/all/send_redirects
+  echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route
+
+}
+
+fw_stop () {
+  /sbin/iptables -F
+  /sbin/iptables -t nat -F
+  /sbin/iptables -t mangle -F
+  /sbin/iptables -P INPUT DROP
+  /sbin/iptables -P FORWARD DROP
+  /sbin/iptables -P OUTPUT ACCEPT
+}
+
+fw_clear () {
+  /sbin/iptables -F
+  /sbin/iptables -t nat -F
+  /sbin/iptables -t mangle -F
+  /sbin/iptables -P INPUT ACCEPT
+  /sbin/iptables -P FORWARD ACCEPT
+  /sbin/iptables -P OUTPUT ACCEPT
+}
+
+
+case "$1" in
+  start|restart)
+    echo -n "Starting firewall.."
+    fw_stop 
+    fw_start
+    echo "done."
+    ;;
+  stop)
+    echo -n "Stopping firewall.."
+    fw_stop
+    echo "done."
+    ;;
+  clear)
+    echo -n "Clearing firewall rules.."
+    fw_clear
+    echo "done."
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|clear}"
+    exit 1
+    ;;
+  esac
+exit 0

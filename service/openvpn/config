@@ -1,0 +1,24 @@
+#
+# openvpn
+# default is tun, 1194/Udp
+# 
+# For hints on generating certificates
+#  https://wiki.debian.org/OpenVPN 
+
+[apt]
+install += "openvpn"
+
+[settings]
+#tun_int = "tun0"
+#tun_addr = "10.8.0.0 255.255.255.0"
+#tun_addr_cidr = "10.8.0.0/24"
+#lan_int = "eth0"
+#lan_addr = "10.0.0.0 255.255.255.0"
+#lan_addr_cidr = "10.0.0.0/24"
+port = 1194
+#ca_cert = "/etc/openvpn/easy-rsa/keys/ca.crt"
+#server_cert = "/etc/openvpn/easy-rsa/keys/server.crt"
+#server_private_key = "/etc/openvpn/easy-rsa/keys/server.key"
+#dh_pem = "/etc/openvpn/easy-rsa/keys/dh1024.pem"
+
+
