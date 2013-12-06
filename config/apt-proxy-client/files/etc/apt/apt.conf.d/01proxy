@@ -1,1 +1,3 @@
+%header("##")
+
 Acquire::http::Proxy "http://%(server):%(port)/";
