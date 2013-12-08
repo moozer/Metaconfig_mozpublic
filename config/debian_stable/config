@@ -22,4 +22,6 @@ components = ["main"]
 no_default_release = True
 # base release to use, e.g. stable
 distribution = "stable"
+# normal priority as per man apt_preferences
+distribution_priority = 500
 

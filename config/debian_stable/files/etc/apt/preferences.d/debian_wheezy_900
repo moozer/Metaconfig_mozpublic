@@ -2,7 +2,7 @@
 
 Package: *
 Pin: release o=Debian,a=%(distribution)
-Pin-Priority: 900
+Pin-Priority: %(distribution_priority)
 
 Package: *
 Pin: release o=Debian
