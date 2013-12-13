@@ -23,9 +23,9 @@ cnames = dict()
 #cnames["imap"] = "Bigserver"
 
 
-
-
-
-
+[trigger.restart_dnsmasq]
+command = ["service", "dnsmasq", "restart"]
+files += "/etc/dnsmasq.d/*"
+files += "/etc/dnsmasq.*"
 
 
