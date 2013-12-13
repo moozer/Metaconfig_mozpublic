@@ -9,11 +9,13 @@ install += "dnsmasq"
 dhcp = dict()
 cnames = dict()
 ptr = dict()
+hostlist = dict()
 
 #nameservers = ["192.168.1.1", "8.8.8.8"]
 #dhcp["LAN"] = dict( interface="eth0", from_ip="192.168.1.100", to_ip="192.168.1.150", netmask="255.255.255.0",
 #                    options=dict( router="192.168.1.1", dns-server="192.168.1.12,192.168.1.1" ) )
 
+#hostname="dnsserver"
 #domain="mydomain.dk"
 #default_gw="192.168.1.1"
 
@@ -23,7 +25,9 @@ ptr = dict()
 #cnames["imap"] = "Bigserver"
 
 ## ptr records "domain" is automaticly added
-#ptr["dnsserver"] = dict( ip=10.0.0.12, reverse_ip=12.0.0.10 )
+#ptr["someserver"] = dict( ip=1.2.3.4, reverse_ip=4.3.2.1 )
+
+# hostlist["1.2.3.4"] = ["nameA", "nameB"]
 
 [trigger.restart_dnsmasq]
 command = ["service", "dnsmasq", "restart"]
