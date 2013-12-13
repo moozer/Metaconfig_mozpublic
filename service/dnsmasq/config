@@ -22,7 +22,7 @@ ptr = dict()
 #cnames["smtp"] = "Bigserver"
 #cnames["imap"] = "Bigserver"
 
-## ptr records
+## ptr records "domain" is automaticly added
 #ptr["dnsserver"] = dict( ip=10.0.0.12, reverse_ip=12.0.0.10 )
 
 [trigger.restart_dnsmasq]
