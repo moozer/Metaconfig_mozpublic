@@ -1,0 +1,9 @@
+%header("##")
+
+%# dnsmasq uses this file instead of /etc/hosts
+
+%(hostaddress)	%(hostname)
+
+#foreach ip in hostlist
+  %(ip)	%(" ".join(hostlist[ip]))
+#end

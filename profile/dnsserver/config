@@ -9,3 +9,17 @@ import "mozrepo/service/dnsmasq"
 # for static
 # iface["eth0"] = dict( type="static", address="10.0.20.200", netmask="255.255.255.0", gateway="10.0.20.1" )
 
+# dns and dhcp stuff
+[settings.mozrepo/service/dnsmasq]
+
+#nameservers = ["192.168.1.1", "8.8.8.8"]
+#dhcp["LAN"] = dict( interface="eth0", from_ip="192.168.1.100", to_ip="192.168.1.150", netmask="255.255.255.0",
+#                    options=dict( router="192.168.1.1", dns-server="192.168.1.12,192.168.1.1" ) )
+
+#domain="mydomain.dk"
+#default_gw="192.168.1.1"
+
+## to add cnames
+#cnames["fileserver"] = "NAS01"
+#cnames["smtp"] = "Bigserver"
+#cnames["imap"] = "Bigserver"

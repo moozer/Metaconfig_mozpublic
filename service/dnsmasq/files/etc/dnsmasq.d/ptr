@@ -1,0 +1,10 @@
+%header("##")
+
+%# ptr records for reverse dns lookups
+
+#foreach host in ptr
+  #define record ptr[host]
+  ptr-record=%(record["reverse_ip"]).in-addr.arpa.,"%(host)" 
+  address=/%(host)/%(record["ip"]) 
+#end
+

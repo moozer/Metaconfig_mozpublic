@@ -2,8 +2,12 @@
 
 %# list of cnames
 %# for use with the internal DNS server
+%# this file only covers the domain: %(domain)
+%#
+%# for other domains, create your own file in /etc/dnsmasq.d
+
 
 #foreach srvname in cnames
-  cname=%(srvname),%(cnames[srvname])
+  cname=%(srvname).%(domain),%(cnames[srvname]).%(domain)
 #end
 

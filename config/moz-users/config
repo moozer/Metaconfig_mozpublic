@@ -27,6 +27,8 @@ groups_include += "plugdev"
 groups_include += "floppy"
 groups_include += "dialout"
 groups_include += "libvirt"
+groups_include += "wireshark"
+groups_include += "libvirt"
 
 [unixuser.klx]
 uid = 5001
