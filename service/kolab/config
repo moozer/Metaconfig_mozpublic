@@ -2,6 +2,10 @@
 # - ldap, webmail, smtp and imap
 #
 
+# 389 has some issues with the interface...
+import "mozrepo/config/disable-ipv6"
+
+
 [apt.source.obs_kolabsys_com_debian]
 url = "http://obs.kolabsys.com:82/Kolab:/3.1/Debian_7.0/"
 dist = "./"
