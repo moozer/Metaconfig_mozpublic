@@ -40,3 +40,5 @@ files += "/etc/default/exim4"
 command = ["service", "saslauthd", "restart"]
 files += "/etc/default/saslauthd"
 
+[unixuser.Debian-exim]
+groups_include += "sasl"
