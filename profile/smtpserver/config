@@ -3,8 +3,22 @@
 # - uses exim4
 #
 
+# the smtp service
 import "mozrepo/service/exim4"
+
+# to handle pam authentication from ldap
+import "mozrepo/service/pam-ldap-client"
 
 # to be included
 #import "mozrepo/config/disable-ipv6"
+
+[settings.mozrepo/service/pam-ldap-client]
+#basedc = "dc=somewhere,dc=com"
+
+# "user" with read right on LDAP
+# binddn = "" # disable
+#binddn = "cn=Manager"
+#binddnpasswd = aPassword
+
+# ldapuri = "ldap://someserver/
 

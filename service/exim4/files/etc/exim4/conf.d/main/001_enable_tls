@@ -1,0 +1,4 @@
+%header("##")
+
+%# macrodefinition to enable tls
+MAIN_TLS_ENABLE = yes

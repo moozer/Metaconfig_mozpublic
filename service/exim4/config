@@ -1,12 +1,15 @@
 #
 # installs exim4 and uses $home/mail/mailboxes/inbox as mbox spool
-#
+# - tls is enabled
+# - ports 25, 587 and 10025 are avaiable 
+# - only relaying allowed when using starttls
 
 # see here for background
 # https://wiki.debian.org/Exim
 
 [apt]
 install += "exim4"
+install += "sasl2-bin"
 
 [settings]
 # the domain to use
@@ -31,6 +34,9 @@ enable_int_smarthost = 0
 command = ["service", "exim4", "restart"]
 files += "/etc/exim4/*"
 files += "/etc/exim4/conf.d/*/*"
+files += "/etc/default/exim4"
 
-
+[trigger.restart-saslauthd]
+command = ["service", "saslauthd", "restart"]
+files += "/etc/default/saslauthd"
 
