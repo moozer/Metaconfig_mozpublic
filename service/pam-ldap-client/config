@@ -9,10 +9,12 @@ import "mozrepo/config/pam-mkhomedir"
 install += "libpam-ldapd"
 
 [settings] 
+#basedc = "dc=somewhere,dc=com"
+
 # "user" with read right on LDAP
 # binddn = "" # disable
 #binddn = "cn=Manager"
-#bindpw = aPassword
+#binddnpasswd = aPassword
 
 # ldapuri = "ldap://someserver/
 
