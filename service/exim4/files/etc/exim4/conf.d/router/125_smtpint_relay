@@ -1,0 +1,17 @@
+%header("##")
+
+#if enable_int_smarthost
+  %#
+  %# all traffic goinf to %(domain_to_relay) is accepted 
+  %# and forwarded to %(domain_smarthost)
+  %#
+
+  smart_route:
+    driver = manualroute
+    domains = %(domain_to_relay)
+    transport = remote_smtp
+    route_list = * %(domain_smarthost)
+
+#else
+  %# internal smarthost disabled
+#end

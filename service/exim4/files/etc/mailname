@@ -1,0 +1,8 @@
+##
+## different mailservers use this value differently
+## exim4 uses it as an extra localdomain and the default domain
+## when none is supplied  
+##
+## file most be a single line (hence the ## and no header)
+##
+%(domain)

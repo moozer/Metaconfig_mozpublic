@@ -1,7 +1,31 @@
+#
 # installs exim4 and uses $home/mail/mailboxes/inbox as mbox spool
+#
+
+# see here for background
+# https://wiki.debian.org/Exim
 
 [apt]
 install += "exim4"
+
+[settings]
+# the domain to use
+#domain = some domain
+
+# accept incomming request over LAN
+localhost_only = False
+
+# other domains besides local_domains
+relay_domains = [""]
+
+# the upstream server to use
+#smarthost = some smtp server providing access to the internet
+smarthost_port = 25
+
+# to forward stuff to internal smtp server
+enable_int_smarthost = 0
+#domain_to_relay = ""
+#domain_smarthost = "some internal smtp server"
 
 [trigger.restart-exim]
 command = ["service", "exim4", "restart"]

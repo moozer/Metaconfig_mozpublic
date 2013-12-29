@@ -1,0 +1,10 @@
+#
+# profile for smtp server
+# - uses exim4
+#
+
+import "mozrepo/service/exim4"
+
+# to be included
+#import "mozrepo/config/disable-ipv6"
+
