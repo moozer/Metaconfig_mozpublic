@@ -9,7 +9,7 @@ install += "iptables"
 
 [settings]
 tcp_services = dict( ssh = "22" )
-udp_services = dict( vpn = "1134")
+udp_services = dict( vpn = "1194")
 
 remote_tcp_services = dict( aptproxy = "9999" )
 remote_udp_services = dict( dns = "53", dhcp67 = "67", dhcp68 = "68")
