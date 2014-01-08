@@ -1,21 +1,45 @@
 #
-# vpn server
+# vpn server profile
+# uses openvpn
 #
 
 import "mozrepo/service/openvpn"
+import "mozrepo/config/network"
 
 [apt]
 install += "iptables"
 
 [settings]
-tcp_services = dict( ssh = "22" )
-udp_services = dict( vpn = "1194")
+forwardrules = dict()
+tcp_services = dict()
+udp_services = dict()
+remote_tcp_services = dict()
+remote_udp_services = dict()
 
-remote_tcp_services = dict( aptproxy = "9999" )
-remote_udp_services = dict( dns = "53", dhcp67 = "67", dhcp68 = "68")
-
+# forward packages from interface to subnet?
 enable_forward = 1
 
-forwardrules = dict()
-forwardrules["openvpn"] = dict( from_ip = "10.8.0.0/24", from_int = "tun0",
-                                to_ip = "192.168.1.0/24", to_int = "eth0" )
+# iptables rules: incoming and outgoing port to allow
+#tcp_services["ssh"] = "22"
+udp_services["vpn"] = "1194"
+
+#remote_tcp_services["aptproxy"] = "9999"
+remote_udp_services["dns"] = "53"
+remote_udp_services["dhcp67"] = "67"
+remote_udp_services["dhcp68"] = "68"
+
+#forwardrules["openvpn"] = dict( from_ip = "10.8.0.0/24", from_int = "tun0",
+#                                to_ip = "192.168.1.0/24", to_int = "eth0" )
+
+[settings.mozrepo/service/openvpn]
+#tun_int = "tun0"
+#tun_addr = "10.8.0.0 255.255.255.0"
+#tun_addr_cidr = "10.8.0.0/24"
+#lan_int = "eth0"
+#lan_addr = "10.0.0.0 255.255.255.0"
+#lan_addr_cidr = "10.0.0.0/24"
+port = 1194
+#ca_cert = "/etc/openvpn/easy-rsa/keys/ca.crt"
+#server_cert = "/etc/openvpn/easy-rsa/keys/server.crt"
+#server_private_key = "/etc/openvpn/easy-rsa/keys/server.key"
+#dh_pem = "/etc/openvpn/easy-rsa/keys/dh1024.pem"
