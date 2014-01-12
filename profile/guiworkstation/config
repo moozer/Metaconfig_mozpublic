@@ -10,6 +10,11 @@ import "mozrepo/config/xfce4-as-default"
 import "mozrepo/service/adobeflash"
 import "mozrepo/hardware/killpcspeaker"
 
+# default is to let network manager handle eth0
+import "mozrepo/config/network" 
+
+
+
 [apt]
 install += ["network-manager", "modemmanager", "network-manager-openvpn-gnome", "openvpn"]
 install += "gdm3"
@@ -22,4 +27,6 @@ install += "filezilla"
 
 # on for the admin :-)
 install += "mc"
+
+[settings.mozrepo/config/network]
 
