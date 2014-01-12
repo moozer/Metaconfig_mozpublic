@@ -5,6 +5,7 @@
 
 import "mozrepo/service/openvpn"
 import "mozrepo/config/network"
+import "public/config/rclocal"
 
 [apt]
 install += "iptables"
@@ -43,3 +44,9 @@ port = 1194
 #server_cert = "/etc/openvpn/easy-rsa/keys/server.crt"
 #server_private_key = "/etc/openvpn/easy-rsa/keys/server.key"
 #dh_pem = "/etc/openvpn/easy-rsa/keys/dh1024.pem"
+
+#
+# rc.local
+#
+[settings.public/config/rclocal]
+lines += "/etc/init.d/iptables"
