@@ -1,0 +1,27 @@
+%#
+%# This is the client file associated with the vpn server
+%#
+
+client		%# this is the client, not server
+dev tun		%# tunnel adapter (not tap)
+proto udp	%# use UDP
+
+ns-cert-type server	%# verify server certificate
+nobind		%# unprivilegd clinet ports only
+comp-lzo	%# use compression
+
+persist-key	%# key handling on signals
+persist-tun	%# tunnel handling on signals
+
+verb 3	
+
+remote server myserver.mydomain 1194 		%# verify this
+
+ca ca.crt	%# supply correct path
+cert client.crt	%# supply correct path
+key client.key	%# supply correct path
+
+tls-auth ta.key 1	%# verify filename
+
+
+
