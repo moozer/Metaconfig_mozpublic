@@ -28,6 +28,7 @@ hostlist = dict()
 #ptr["someserver"] = dict( ip=1.2.3.4, reverse_ip=4.3.2.1 )
 
 # hostlist["1.2.3.4"] = ["nameA", "nameB"]
+mailserver="mail"
 
 [trigger.restart_dnsmasq]
 command = ["service", "dnsmasq", "restart"]
