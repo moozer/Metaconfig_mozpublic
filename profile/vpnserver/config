@@ -20,6 +20,9 @@ remote_udp_services = dict()
 # forward packages from interface to subnet?
 enable_forward = 1
 
+# don't clog logs with multicasst stuff
+silent_drop_multicast = 1
+
 # iptables rules: incoming and outgoing port to allow
 #tcp_services["ssh"] = "22"
 udp_services["vpn"] = "1194"
@@ -44,9 +47,18 @@ port = 1194
 #server_cert = "/etc/openvpn/easy-rsa/keys/server.crt"
 #server_private_key = "/etc/openvpn/easy-rsa/keys/server.key"
 #dh_pem = "/etc/openvpn/easy-rsa/keys/dh1024.pem"
+#ta_key = "/etc/openvpn/easy-rsa/keys/ta_tls.key.pem"
 
 #
 # rc.local
 #
 [settings.public/config/rclocal]
 lines += "/etc/init.d/iptables"
+
+#
+# reload openvpn config when server configuration is changed
+#
+[trigger.openvpn-restart]
+command = ["service", "openvpn", "reload"]
+files += "/etc/openvpn/server.conf"
+

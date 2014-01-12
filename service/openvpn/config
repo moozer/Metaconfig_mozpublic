@@ -30,5 +30,6 @@ port = 1194
 #server_cert = "/etc/openvpn/easy-rsa/keys/server.crt"
 #server_private_key = "/etc/openvpn/easy-rsa/keys/server.key"
 #dh_pem = "/etc/openvpn/easy-rsa/keys/dh1024.pem"
+#ta_key = "/etc/openvpn/easy-rsa/keys/ta_tls.key.pem"
 
 

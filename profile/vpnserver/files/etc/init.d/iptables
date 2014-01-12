@@ -36,6 +36,11 @@ fw_start () {
   %# Input traffic:
   /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
+  %# drop incoming multicast (and don't log it)
+  #if silent_drop_multicast
+    /sbin/iptables -I INPUT -d 224.0.0.0/8 -j DROP
+  #end
+
   %# TCP Services
   #foreach port in tcp_services
     /sbin/iptables -A INPUT -p tcp --dport %(tcp_services[port]) -j ACCEPT %# used for %(port)
