@@ -1,0 +1,16 @@
+#
+# internal-ftpd
+# - internal ftpd server to be used by NAT'ed VMs to give access to host files.
+# - might be a security issue :-)
+#
+
+[settings]
+#listen-address = "192.168.122.1"
+
+[apt]
+install += "vsftpd"
+
+
+[trigger.restart-vsftpd]
+command = ["service", "vsftpd", "restart"]
+files += "/etc/vsftpd.conf"
