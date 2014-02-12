@@ -1,0 +1,21 @@
+#
+# installs dovecot imap 
+#
+
+[apt]
+install += "dovecot-imapd"
+
+[settings]
+# listen-interface = "localhost"
+
+[trigger.dovecot-restart]
+command = ["service", "dovecot", "restart"]
+files += "/etc/dovecot/*"
+files += "/etc/dovecot/conf.d/*/*"
+
+
+## # --- config
+##
+## [settings.mozrepo/service/dovecot]
+## listen-interface = "localhost" or "*" for everything or similar
+
