@@ -6,16 +6,17 @@
 install += "dovecot-imapd"
 
 [settings]
-# listen-interface = "localhost"
+# listen_interface = "localhost"
+# mailstore = "maildir" for maildir, everything else for mbox
 
 [trigger.dovecot-restart]
 command = ["service", "dovecot", "restart"]
 files += "/etc/dovecot/*"
-files += "/etc/dovecot/conf.d/*/*"
+files += "/etc/dovecot/conf.d/*"
 
 
 ## # --- config
 ##
 ## [settings.mozrepo/service/dovecot]
-## listen-interface = "localhost" or "*" for everything or similar
-
+## listen_interface = "localhost" or "*" for everything or similar
+## mailstore = "maildir" for maildir, everything else for mbox
