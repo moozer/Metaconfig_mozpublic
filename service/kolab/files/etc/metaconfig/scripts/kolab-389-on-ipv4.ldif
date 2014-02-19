@@ -1,0 +1,17 @@
+%header("##")
+
+%# 
+%# changed needed to move 389 service froim ipv6 to ipv4
+%#
+
+dn: cn=config
+changetype: modify
+replace: nsslapd-listenhost
+nsslapd-listenhost: 0.0.0.0
+
+dn: cn=config
+changetype: modify
+replace: nsslapd-securelistenhost
+nsslapd-securelistenhost: 0.0.0.0
+
+
