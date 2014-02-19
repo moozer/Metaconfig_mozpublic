@@ -1,0 +1,67 @@
+#
+# profile for imap server
+# - uses exim4 for localdelivery
+# - pam+ldap for users
+# - dovecot for imap
+#
+
+# the smtp service
+#import "mozrepo/service/exim4"
+
+# imap part
+import "mozrepo/service/dovecot"
+
+# to handle pam authentication from ldap
+import "mozrepo/service/pam-ldap-client"
+
+# to be included
+#import "mozrepo/config/disable-ipv6"
+
+[settings.mozrepo/service/pam-ldap-client]
+#basedc = "dc=somewhere,dc=com"
+
+# "user" with read right on LDAP
+# binddn = "" # disable
+#binddn = "cn=Manager"
+#binddnpasswd = aPassword
+
+# ldapuri = "ldap://someserver/
+
+[settings.mozrepo/service/dovecot] 
+#listen-interface = "localhost"
+
+
+#[settings.mozrepo/service/exim4]
+# the domain to use
+#domain = some domain
+
+# accept incomming request over LAN
+#localhost_only = False
+
+# other domains besides local_domains
+#relay_domains = [list of domains] if applicable
+
+# the upstream server to use
+#smarthost = some smtp server providing access to the internet
+#smarthost_port = 25
+
+# to forward stuff to internal smtp server
+#enable_int_smarthost = 0
+#domain_to_relay = ""
+#domain_smarthost = "some internal smtp server"
+
+## # --- config
+##
+## [settings.mozrepo/service/dovecot] 
+## listen-interface = "localhost" or "*" for everything
+##
+## [settings.mozrepo/service/pam-ldap-client]
+## basedc = "dc=somewhere,dc=com"
+##
+## # "user" with read right on LDAP
+## binddn = "cn=Manager" "" (to disable)
+## binddnpasswd = aPassword
+##
+## ldapuri = "ldap://someserver/
+
+

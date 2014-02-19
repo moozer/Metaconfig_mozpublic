@@ -10,6 +10,7 @@ dhcp = dict()
 cnames = dict()
 ptr = dict()
 hostlist = dict()
+static_ips = dict()
 
 #nameservers = ["192.168.1.1", "8.8.8.8"]
 #dhcp["LAN"] = dict( interface="eth0", from_ip="192.168.1.100", to_ip="192.168.1.150", netmask="255.255.255.0",
@@ -27,7 +28,11 @@ hostlist = dict()
 ## ptr records "domain" is automaticly added
 #ptr["someserver"] = dict( ip=1.2.3.4, reverse_ip=4.3.2.1 )
 
+## static allocated ips
+# static_ips["mail"] = 1.2.3.6
+
 # hostlist["1.2.3.4"] = ["nameA", "nameB"]
+mailserver="mail"
 
 [trigger.restart_dnsmasq]
 command = ["service", "dnsmasq", "restart"]

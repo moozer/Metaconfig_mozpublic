@@ -1,0 +1,3 @@
+%header("##")
+
+mx-host=%(domain),%(mailserver),10

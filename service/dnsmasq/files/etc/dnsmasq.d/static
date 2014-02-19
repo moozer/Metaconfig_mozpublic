@@ -1,0 +1,8 @@
+%header("##")
+
+%# file for staticly allocated dhcp adresses.
+
+#foreach host in static_ips
+  dhcp-host=%(host),%(static_ips[host])
+#end
+

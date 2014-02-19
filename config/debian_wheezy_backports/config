@@ -1,0 +1,16 @@
+#
+# Wheezy backports repos
+#
+
+
+[apt.source.debian-wheezy-backports]
+url = "http://cdn.debian.net/debian"
+dist = "wheezy-backports"
+components = ["main"]
+
+[settings]
+# pinning priority: see man apt_preferences
+# - default 100
+# - use 900 if it is to be used systematicly on top of wheezy
+priority = "100"
+
