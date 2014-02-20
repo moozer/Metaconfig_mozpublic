@@ -1,0 +1,33 @@
+#
+# iscsi target server
+# 
+#
+
+[apt]
+install += ["iscsitarget", "iscsitarget-dkms"]
+
+[settings]
+enable = True
+targets = dict()
+
+baseDate = "2014-01"
+
+## --- config
+# [settings-/mozrepo/service/iscsi-server]
+#reverseDomain = "com.example"
+# 
+#targets["testlvm"] = dict( targetDevice = "/dev/sdb",
+#                           useChap = True,
+#                           chapUser = "someuser",
+#                           chapPasswd = "aLongPasswd"
+#                           )
+#
+#
+
+
+[trigger.iscsitaarget-restart]
+files += ["/etc/default/iscsitarget"]
+files += ["/etc/iet/*"]
+command = ["service", "iscsitarget", "restart"]
+
+
