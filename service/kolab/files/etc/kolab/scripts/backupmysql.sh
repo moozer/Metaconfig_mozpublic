@@ -1,5 +1,11 @@
-#!/bin/sh
+%#!/bin/sh
 
-BACKDIR="/tmp"
+%header("##")
 
-mysqldump -pmysql123 -A > $BACKDIR/$(hostname)-kolab.sql
+BACKDIR=%(backup_dir)
+
+if [ ! -e $BACKDIR ]; then
+	mkdir -p $BACKDIR
+fi
+
+mysqldump -p%(mysqlpasswd) -A > $BACKDIR/$(hostname)-kolab.sql

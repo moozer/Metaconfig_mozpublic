@@ -1,11 +1,13 @@
-#!/bin/bash
+%#!/bin/bash
 
-# Script to pull data from ldap server and place it in ldif files
-# to enable file based backup
-#
-# originally from http://docs.kolab.org/administrator-guide/backup-and-restore.html
+%header("##")
 
-BACKDIR="/tmp"
+%# Script to pull data from ldap server and place it in ldif files
+%# to enable file based backup
+%#
+%# originally from http://docs.kolab.org/administrator-guide/backup-and-restore.html
+
+BACKDIR=%(backup_dir)
 
 if [ "$1" == "--before" ]; then
     for dir in `find /etc/dirsrv/ -mindepth 1 -maxdepth 1 -type d \
