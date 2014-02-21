@@ -2,6 +2,10 @@
 # - ldap, webmail, smtp and imap
 #
 
+# 389 has some issues with the interface...
+import "mozrepo/config/disable-ipv6"
+
+
 [apt.source.obs_kolabsys_com_debian]
 url = "http://obs.kolabsys.com:82/Kolab:/3.1/Debian_7.0/"
 dist = "./"
@@ -25,3 +29,11 @@ no_proxy_for_kolab = True # kolab repo is proxying already,
 [trigger.apt-keys]
 files = ["/etc/metaconfig/triggers/kolab-apt-key"]
 command = ["sh", "/etc/metaconfig/scripts/kolab-add-apt-keys.sh"]
+
+# the following solves the issue related to 389 being on iov6 only
+# see https://fedorahosted.org/389/ticket/47438
+
+[trigger.dirsrv-ipv4]
+files = ["/etc/metaconfig/triggers/kolab-389-on-ipv4"]
+command = ["sh", "/etc/metaconfig/scripts/kolab-389-on-ipv4.sh"]
+
