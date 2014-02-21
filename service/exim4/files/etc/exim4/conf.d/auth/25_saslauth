@@ -1,0 +1,14 @@
+%header("##")
+
+
+login_saslauthd_server:
+  driver = plaintext
+  public_name = LOGIN
+  server_prompts = "Username:: : Password::"
+  %# don't send system passwords over unencrypted connections
+  server_condition = ${if saslauthd{{$auth1}{$auth2}}{1}{0}}
+  server_set_id = $auth1
+  .ifndef AUTH_SERVER_ALLOW_NOTLS_PASSWORDS
+  server_advertise_condition = ${if eq{$tls_cipher}{}{}{*}}
+  .endif
+

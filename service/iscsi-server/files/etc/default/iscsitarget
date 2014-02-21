@@ -1,0 +1,11 @@
+%header("##")
+
+#if enable
+  ISCSITARGET_ENABLE=true
+#else
+  ISCSITARGET_ENABLE=false
+#end
+
+%# ietd options
+%# See ietd(8) for details
+ISCSITARGET_OPTIONS=""

@@ -1,0 +1,31 @@
+#
+# iscsi-client
+# connects to specified iscsi target using chap
+#
+
+
+[apt]
+install += "open-iscsi"
+
+[settings]
+#iscsitarget-host = somethostname og ip
+#iqn = some-very-long-iqn-string
+
+use_chap = 0
+#chap_password = The password
+#chap_username = the username
+
+
+## # -- Config template --
+##
+## # iscsi client configuration
+## [settings.mozrepo/service/iscsi-client-single
+## iscsitarget-host = somethostname og ip
+## iqn = some-very-long-iqn-string
+##
+## use_chap = 1
+## chap_password = The password
+## chap_username = the username
+##
+
+
