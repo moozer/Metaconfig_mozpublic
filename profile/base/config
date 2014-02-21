@@ -5,7 +5,7 @@ import "public/profile/standard"
 import "mozrepo/config/debian_stable"
 
 import "public/config/hostname"
-import "public/config/standard-users"
+#import "public/config/standard-users"
 import "public/config/rclocal"
 import "public/service/ssh"
 import "public/config/sudo"

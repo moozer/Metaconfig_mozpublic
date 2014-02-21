@@ -1,0 +1,5 @@
+%header("##")
+
+Package: *
+Pin: origin obs.kolabsys.com
+Pin-Priority: 501

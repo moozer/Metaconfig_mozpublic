@@ -1,0 +1,11 @@
+%header("##")
+
+#if no_proxy_for_kolab
+  %# do not use proxy for the kolab repo
+  %# double proxy issues.
+  Acquire::http::Proxy::obs.kolabsys.com "DIRECT";
+#else
+  %# kolab site uses default proxy settings.
+#end
+
+
