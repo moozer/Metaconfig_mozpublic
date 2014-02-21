@@ -21,6 +21,7 @@ components = []
 [apt]
 #install += "kolab"
 remove += ["exim4", "exim4-base", "exim4-config", "exim4-daemon-light"]
+install += "ldap-utils"
 
 [settings]
 no_proxy_for_kolab = True # kolab repo is proxying already, 
