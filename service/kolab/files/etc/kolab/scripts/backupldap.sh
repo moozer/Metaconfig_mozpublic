@@ -7,7 +7,7 @@
 %#
 %# originally from http://docs.kolab.org/administrator-guide/backup-and-restore.html
 
-BACKDIR=%(backup_dir)
+BACKDIR="%(backup_dir)"
 
 if [ "$1" == "--before" ]; then
     for dir in `find /etc/dirsrv/ -mindepth 1 -maxdepth 1 -type d \
@@ -16,8 +16,10 @@ if [ "$1" == "--before" ]; then
         for nsdb in `find /var/lib/dirsrv/${dir}/db/ -mindepth 1 \
                 -maxdepth 1 -type d | xargs -n 1 basename`; do
 
+            LDIFFILE=$BACKDIR/$(hostname)-$(echo ${dir} | sed -e 's/slapd-//g')-${nsdb}.ldif
+            echo saving to $LDIFFILE
             ns-slapd db2ldif -D /etc/dirsrv/${dir} -n ${nsdb} \
-                -a $BACKDIR/$(hostname)-$(echo ${dir} | sed -e 's/slapd-//g')-${nsdb}.ldif \
+                    -a $LDIFFILE \
                 >/dev/null 2>&1
 
         done

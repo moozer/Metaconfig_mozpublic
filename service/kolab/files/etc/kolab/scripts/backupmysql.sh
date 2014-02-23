@@ -2,7 +2,7 @@
 
 %header("##")
 
-BACKDIR=%(backup_dir)
+BACKDIR="%(backup_dir)"
 
 if [ ! -e $BACKDIR ]; then
 	mkdir -p $BACKDIR

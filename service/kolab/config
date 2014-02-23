@@ -22,10 +22,21 @@ components = []
 #install += "kolab"
 remove += ["exim4", "exim4-base", "exim4-config", "exim4-daemon-light"]
 install += "ldap-utils"
+install += "realpath" # for scripts
 
 [settings]
 no_proxy_for_kolab = True # kolab repo is proxying already, 
                           # and double proxying might be a problem.
+
+## -- config
+## contact_email = "support"
+## backup_dir = "/mnt/iscsitarget/kolab_backup"
+## mysqlpasswd = "mysql password"
+##
+## # this is needed also
+## [files]
+## permission[backup_dir] = "777"
+
 
 [trigger.apt-keys]
 files = ["/etc/metaconfig/triggers/kolab-apt-key"]
@@ -38,3 +49,5 @@ command = ["sh", "/etc/metaconfig/scripts/kolab-add-apt-keys.sh"]
 files = ["/etc/metaconfig/triggers/kolab-389-on-ipv4"]
 command = ["sh", "/etc/metaconfig/scripts/kolab-389-on-ipv4.sh"]
 
+[files]
+permission["/etc/kolab/scripts/*"] = "700"
